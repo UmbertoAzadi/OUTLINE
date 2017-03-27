@@ -1,16 +1,14 @@
 package com.unimib.CodeSmellDetectorML;
 
-
-import java.util.Hashtable;
-
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
+import java.util.Random;
 
 public class DataEvaluator {
 	private DataClassifier DC;
 	private Instances testing_dataset;
-	private Hashtable<Classifier, Evaluation> evaluated = new Hashtable<Classifier, Evaluation>();
+	//private Hashtable<Classifier, Evaluation> evaluated = new Hashtable<Classifier, Evaluation>();
 	
 	
 	public DataEvaluator(DataClassifier dc, Instances t){
@@ -26,16 +24,49 @@ public class DataEvaluator {
 		return this.evaluate(DC.getJ48_pruned());
 	}
 	
+	public String crossValidation(Classifier c){
+		return crossValidation(c, 10, 1);
+	}
+	
+	public String crossValidation(Classifier c, int folds, int seed){
+		try {
+			Evaluation eval = new Evaluation(DC.getDataset());
+			Random rand = new Random(seed);
+			eval.crossValidateModel(c, DC.getDataset(), folds, rand);
+			
+			System.out.println(eval.toSummaryString("Evaluation results:\n", false));
+			
+			System.out.println("Correct % = "+eval.pctCorrect());
+			System.out.println("Incorrect % = "+eval.pctIncorrect());
+			System.out.println("AUC = "+eval.areaUnderROC(1));
+			System.out.println("kappa = "+eval.kappa());
+			System.out.println("MAE = "+eval.meanAbsoluteError());
+			System.out.println("RMSE = "+eval.rootMeanSquaredError());
+			System.out.println("RAE = "+eval.relativeAbsoluteError());
+			System.out.println("RRSE = "+eval.rootRelativeSquaredError());
+			System.out.println("Precision = "+eval.precision(1));
+			System.out.println("Recall = "+eval.recall(1));
+			System.out.println("fMeasure = "+eval.fMeasure(1));
+			System.out.println("Error Rate = "+eval.errorRate());
+		    //the confusion matrix
+			System.out.println(eval.toMatrixString("=== Overall Confusion Matrix ===\n"));
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return "";
+	}
+	
 	public String evaluate(Classifier classifier){
 		try {
 			Evaluation evaluator;
-			if(evaluated.containsKey(classifier)){
-				evaluator = evaluated.get(classifier);
-			}else{
-				evaluator = new Evaluation(testing_dataset);
-				evaluator.evaluateModel(classifier, testing_dataset);
-				evaluated.put(classifier, evaluator);
-			}
+			evaluator = new Evaluation(testing_dataset);
+			evaluator.evaluateModel(classifier, testing_dataset);
+			
 			String summary = classifier.toString();
 			summary += "Area under ROC: " + evaluator.areaUnderROC(1);
 			summary += "\n fMeasure: " + evaluator.fMeasure(1);
