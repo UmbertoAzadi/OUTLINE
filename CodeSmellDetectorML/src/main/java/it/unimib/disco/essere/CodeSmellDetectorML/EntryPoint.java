@@ -3,6 +3,9 @@ package it.unimib.disco.essere.CodeSmellDetectorML;
 
 import weka.classifiers.Classifier;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 
 public class EntryPoint {
@@ -14,12 +17,26 @@ public class EntryPoint {
 	
 	public static void main(String[] args) { 
 		
+		List input = Arrays.asList(args);
 		EntryPoint workflow = new EntryPoint();
-		
 		
 		workflow.load(args[args.length - 1]);
 		workflow.classify();
-		workflow.serialize();
+		
+		String s;
+		
+		if(input.contains("-print")){
+			workflow.printClassifier();
+		}
+		
+		if(input.contains("-save")){
+			workflow.saveClassifier();
+		}
+			
+		if(input.contains("-ser"))
+			workflow.serialize();
+		
+		//if(input.contains("-read")){}
 		
 		/*
 		
@@ -45,9 +62,11 @@ public class EntryPoint {
 	
 	public void classify(){
 		classifier = new DataClassifier(configuration.getDataset(), classifiers);
-		
+	}
+	
+	public void saveClassifier(){
 		try{	
-			classifier.getSummary(configuration.getPath_for_reusult());
+			classifier.getSummary(configuration.getPath_for_result());
 		}catch(Exception e){
 			try {
 				System.out.println("Path not specified or incorrect");
@@ -59,22 +78,30 @@ public class EntryPoint {
 		}
 	}
 	
+	public void printClassifier(){
+		System.out.println(classifier.getSummary());
+	}
+	
 	public void serialize(){
 		serializer = new Serializer();
 		int i = 1;
+		String pathToPrint = "";
 		for(Classifier c: classifiers){
 			String name = classifier.generateNameForFile(c, i);
 			try{	
-				serializer.serialize(configuration.getPath_for_reusult() + "\\" + name + ".bsi", c);
+				serializer.serialize(configuration.getPath_for_result() + "\\" + name + ".bsi", c);
+				pathToPrint = configuration.getPath_for_result();
 			}catch(Exception e){
 				try {
 					String path = new java.io.File("").getAbsolutePath();
 					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".bsi", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}
 			i++;
 		}
+		System.out.println("The serialized files were saved in: "+ pathToPrint);
 	}
 }

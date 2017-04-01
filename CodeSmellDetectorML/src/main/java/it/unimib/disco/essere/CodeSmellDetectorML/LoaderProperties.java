@@ -47,7 +47,7 @@ public class LoaderProperties {
 		return dataset;
 	}
 	
-	public String getPath_for_reusult(){
+	public String getPath_for_result(){
 		return this.path_for_result;
 	}
 	
