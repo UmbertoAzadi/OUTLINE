@@ -40,7 +40,7 @@ For prediction are avaiable these flags:
   
   ### Exemples
   
-  *Exemple of a configuration file for serialization:
+  **Exemple of a configuration file for serialization:**
   
   dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
   
@@ -58,13 +58,13 @@ For prediction are avaiable these flags:
    
    _LibSVM = [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]
   
-  *Exemple of a configuration file for prediction:
+  **Exemple of a configuration file for prediction:**
   
    dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
    
    serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
   
-  *Exemple of execution
+  **Exemple of execution**
   
   java -jar CSDML_v1.0.jar -ser -save -print C:\Users\uazad\Documents\Progetto\configuration\try_serialization.properties
   
