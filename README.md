@@ -42,19 +42,19 @@ For prediction are avaiable these flags:
   
   * Exemple of a configuration file for serialization:
   
-  dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
-  path = C:/Users/uazad/Documents/Progetto/_Result
-  BOOSTED_J48_unpruned = [-U;]
-  Bagging_J48 = [;]
-  _J48_reduce_error = [-R]
-  _JRip 
-  BOOSTED_JRip
-  _LibSVM = [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]
+   dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+   path = C:/Users/uazad/Documents/Progetto/_Result
+   BOOSTED_J48_unpruned = [-U;]
+   Bagging_J48 = [;]
+   _J48_reduce_error = [-R]
+   _JRip 
+   BOOSTED_JRip
+   _LibSVM = [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]
   
   * Exemple of a configuration file for prediction:
   
-  dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
-  serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
+   dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+   serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
   
   * Exemple of execution
   
