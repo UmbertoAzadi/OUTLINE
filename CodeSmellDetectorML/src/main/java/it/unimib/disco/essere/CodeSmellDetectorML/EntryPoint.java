@@ -30,18 +30,26 @@ public class EntryPoint {
 				workflow.predict(args[args.length - 1], args[args.length - 2]);
 			
 		}else{
+			if(input.contains("-print") || input.contains("-save") || input.contains("-ser")){
+				workflow.load(args[args.length - 1]);
+				workflow.classify();
 		
-			workflow.load(args[args.length - 1]);
-			workflow.classify();
+				if(input.contains("-print"))
+					workflow.printClassifier();
 		
-			if(input.contains("-print"))
-				workflow.printClassifier();
-		
-			if(input.contains("-save"))
-				workflow.saveClassifier();
-			
-			if(input.contains("-ser"))
-				workflow.serialize();
+				if(input.contains("-save"))
+					workflow.saveClassifier();
+				
+				if(input.contains("-ser"))
+					workflow.serialize();
+			}else{
+				System.out.println("No operation selected, please use:");
+				System.out.println("-ser for serialize the classifier specified in the configuaration file");
+				System.out.println("-print for print the human-readable result of classification");
+				System.out.println("-save for save the human-readable result of classification");
+				System.out.println("-pred for predict the class of a new dataset");
+				System.out.println("\n For more information on how to use it please read the README.MD");
+			}
 		}
 		
 	}
@@ -61,7 +69,15 @@ public class EntryPoint {
 			try {
 				System.out.println("Path not specified or incorrect");
 				String path = new java.io.File("").getAbsolutePath();
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				
+				//              ||||||||||||||||||||||||||||||
+				// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				
+				//         ||||||||||||||||||||||||||||||
+				// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -84,8 +100,17 @@ public class EntryPoint {
 			}catch(Exception e){
 				try {
 					String path = new java.io.File("").getAbsolutePath();
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					
+					//	            ||||||||||||||||||||||||||||||
+					// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					
+					//		   ||||||||||||||||||||||||||||||
+					// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

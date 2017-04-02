@@ -53,7 +53,7 @@ public class DataClassifier {
 	}
 	
 	public void getSummary(String _path) throws Exception{
-		Path path = Paths.get(_path);
+		Path path = Paths.get(_path); 
 		int index_for_file = 1;
 		for(Classifier c: classifiers){
 			String name = this.generateNameForFile(c, index_for_file);
