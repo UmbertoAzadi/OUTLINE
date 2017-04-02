@@ -22,7 +22,7 @@ import weka.core.Instances;
 public class LoaderProperties {
 	
 	private String path_for_result;
-	private Instances dataset;
+	private DatasetHandler dataset;
 	private static String[] PATH_CLASSIFIER= {"weka.classifiers.trees.", 
 											  "weka.classifiers.bayes.", 
 											  "weka.classifiers.functions.",
@@ -32,76 +32,44 @@ public class LoaderProperties {
 	
 	public LoaderProperties(){}
 	
-	public void loadDataset(String path){
-		try{
-			DataSource source = new DataSource(path);
-			dataset = source.getDataSet();
-			dataset.setClassIndex(dataset.numAttributes()-1);
-		}catch(Exception e){
-			System.out.println("Unable to load the dataset, please make sure that the path is correct");
-			e.printStackTrace();
-		}
-	}
-
-	public Instances getDataset(){
-		return dataset;
-	}
-	
 	public String getPath_for_result(){
 		return this.path_for_result;
 	}
 	
-	public String toString(){
-		return dataset.toSummaryString();
+	public Instances getDataset(){
+		return dataset.getDataset();
 	}
 	
-	public void toCSV(String path){
-		CSVSaver saver = new CSVSaver();
-		saver.setInstances(dataset);
-		try {
-			saver.setFile(new File(path));
-			saver.writeBatch();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public void toArff(String path){
-		ArffSaver saver = new ArffSaver();
-		saver.setInstances(dataset);
+	public Properties readProperties(String path_properties) {
+		Properties properties = new Properties();
 		try{
-			saver.setFile(new File(path));
-			saver.writeBatch();
-		}catch(IOException e){
+			BufferedReader in;
+			in = new BufferedReader(new FileReader(path_properties));
+			properties.load(in);
+		}catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}catch(IOException e1){
+			e1.printStackTrace();
 		}
+		return properties;
 	}
 	
 	public ArrayList<Classifier> loadProperties(String path_properties){
 		ArrayList<Classifier> classifiers = new ArrayList<Classifier>();
-		Properties properties = new Properties();
-		
-		// LEGGO
-		BufferedReader in;
-		try {
-			in = new BufferedReader(new FileReader(path_properties));
-			 properties.load(in);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		Properties properties = null;
+
+		properties = this.readProperties(path_properties);
+
 		
 		// CARICO IL DATASET
 		String path_dataset = properties.getProperty("dataset");
-		this.loadDataset(path_dataset);
+		dataset = new DatasetHandler(path_dataset);
 		properties.remove("dataset");
 		
 		path_for_result = properties.getProperty("path");
 		properties.remove("path");
 	
-		
+		 
 		// ESTRAGGO E ITERO SULLE PROPERIETA'
 		Enumeration<?> e =  properties.propertyNames();
 		while (e.hasMoreElements()) {
@@ -202,6 +170,20 @@ public class LoaderProperties {
 			System.out.println("ERROR DURING ADDING OPTIONS");
 			e.printStackTrace();
 		}
-	} 
+	}
+	
+	public String[] loadPropertyForPrediction(String path){
+		Properties properties = new Properties();
+		properties = this.readProperties(path);
+		
+		String path_dataset = properties.getProperty("dataset");
+		System.out.println("LOAD_PROP_dataset: " + path_dataset);
+		
+		String path_serialized = properties.getProperty("serialized");
+		System.out.println("LOAD_PROP_serialized: " + path_serialized);
+		
+		String[] s = {path_dataset, path_serialized};
+		return s;
+	}
 
 }

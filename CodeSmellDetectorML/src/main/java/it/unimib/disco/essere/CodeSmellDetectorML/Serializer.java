@@ -9,15 +9,11 @@ public class Serializer {
 		weka.core.SerializationHelper.write(path, c);
 	}
 	
-	public Classifier read(String path){
+	public Classifier read(String path) throws Exception{
 		Classifier classifier = null;
-		try {
-			classifier = (Classifier)weka.core.SerializationHelper.read(path);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		classifier = (Classifier)weka.core.SerializationHelper.read(path);
+
 		return classifier;
 	}
-	
 	
 }

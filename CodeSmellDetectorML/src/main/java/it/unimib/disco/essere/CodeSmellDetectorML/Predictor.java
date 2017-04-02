@@ -16,32 +16,33 @@ public class Predictor {
 		this(dataset_to_be_predict.getDataset());
 	}
 	
-	public LoaderProperties makePredicition(Classifier c){
-		Instances datasetPredicted = dataset;
+	public DatasetHandler makePredicitions(Classifier c){
 		
-		for (int i = 0; i < datasetPredicted.numInstances(); i++) {
-			Instance newInst = datasetPredicted.instance(i);
+		for (int i = 0; i < dataset.numInstances(); i++) {
+			Instance newInst = dataset.instance(i);
 			
 			/* PER STAMPARE IL CONFRONTO TRA PREDIZIONI E VALORE EFFETTIVO
 			double actualClass = datasetPredicted.instance(i).classValue();
 			String actual = datasetPredicted.classAttribute().value((int) actualClass);
 			*/
 			
-			double predicted;
+			double predicted = 0;
 			
 			try {
 				predicted = c.classifyInstance(newInst);
 				newInst.setClassValue(predicted);
 			} catch (Exception e) {
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			
 			/* PER STAMPARE IL CONFRONTO TRA PREDIZIONI E VALORE EFFETTIVO
 			System.out.println(datasetPredicted.instance(i).value(0)+"  :  "+actual + ", " + predString);
 			*/
 		}
-		// SBAGLIATO!
-		LoaderProperties result = new LoaderProperties();
+		
+		DatasetHandler result = new DatasetHandler(dataset);
 		return result;
 	}
+	
+	
 }
