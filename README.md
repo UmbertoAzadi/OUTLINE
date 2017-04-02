@@ -7,14 +7,14 @@ So far the tool allows to learn a machine learning model, serialize the model le
 and predict the class of the instances contained in a new dataset.
 
 For learning and serialization are avaiable these flags:
-  * -ser 'configuration file' for serialize the model learn
-  * -print 'configuration file' for print at command line the human-readable result of the model learn
-  * -save 'configuration file' for save the human-readable result of the model learn in a file (one for each classifier chosen)
+  * -ser `configuration file` for serialize the model learn
+  * -print `configuration file` for print at command line the human-readable result of the model learn
+  * -save `configuration file` for save the human-readable result of the model learn in a file (one for each classifier chosen)
  
 For prediction are avaiable these flags:
-  * -pred 'configuration file' 
-  * -pred 'path of the serialized model' 'path of the dataset'
-  * -pred 'path of the dataset' 'path of the serialized model'
+  * -pred `configuration file` 
+  * -pred `path of the serialized model` `path of the dataset`
+  * -pred `path of the dataset` `path of the serialized model`
   
  
  ### Configuration file
@@ -23,20 +23,20 @@ For prediction are avaiable these flags:
  
   **Configuration file for serializaton**
   
-  dataset = 'path of the dataset' (required!)
+  dataset = `path of the dataset` (required!)
   
-  path = 'path where the serialized model will be saved' (optional)
+  path = `path where the serialized model will be saved` (optional)
   (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  'name of the ensemble method' '_' 'name of the classifier' '_' 'everything you want' = [<option>, <option>, ...]
+  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [<option>, <option>, ...]
   (if you don't want to specify options, you can just write the name as specified)
-  (if you want to specify a classifier without an ensemble method you must put the '_' before the name of the classifier!)
+  (if you want to specify a classifier without an ensemble method you must put the `_` before the name of the classifier!)
   
   **Configuration file for serializaton**
   
-  dataset = 'path dataset that contain the instances that have to be predict' (required!)
+  dataset = `path dataset that contain the instances that have to be predict` (required!)
   
-  serialized = 'path of the serialized file' (required!)
+  serialized = `path of the serialized file` (required!)
   
   ### Exemples
   
