@@ -28,7 +28,7 @@ For prediction are avaiable these flags:
   path = `path where the serialized model will be saved` (optional)
   (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [<option>, <option>, ...]
+  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [`option`, `option`, ...]
   (if you don't want to specify options, you can just write the name as specified)
   (if you want to specify a classifier without an ensemble method you must put the `_` before the name of the classifier!)
   
