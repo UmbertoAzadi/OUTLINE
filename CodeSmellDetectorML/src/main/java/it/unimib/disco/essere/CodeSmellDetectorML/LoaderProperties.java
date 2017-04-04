@@ -1,8 +1,5 @@
 package it.unimib.disco.essere.CodeSmellDetectorML;
 
-import weka.core.converters.ConverterUtils.DataSource;
-import weka.core.converters.CSVSaver;
-import weka.core.converters.ArffSaver;
 import weka.core.OptionHandler;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -13,10 +10,7 @@ import weka.classifiers.meta.AdaBoostM1;
 import java.lang.ArrayIndexOutOfBoundsException;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import weka.core.Instances;
 
 public class LoaderProperties {
@@ -46,10 +40,9 @@ public class LoaderProperties {
 			BufferedReader in;
 			in = new BufferedReader(new FileReader(path_properties));
 			properties.load(in);
-		}catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}catch(IOException e1){
-			e1.printStackTrace();
+		}catch(Exception e){
+			System.out.println("ERROR : Invalid or not found property file, please check the path");
+			System.exit(0);
 		}
 		return properties;
 	}
@@ -63,6 +56,8 @@ public class LoaderProperties {
 		
 		// CARICO IL DATASET
 		String path_dataset = properties.getProperty("dataset");
+		
+		
 		dataset = new DatasetHandler(path_dataset);
 		properties.remove("dataset");
 		
@@ -84,8 +79,23 @@ public class LoaderProperties {
 	
 	public Classifier extractClassifier(String key, String elem){
 		
+		
 		String[] parse_key = key.split("_");
-		String name = parse_key[1];
+		String name = "";
+		
+		try{	
+			name = parse_key[1];
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("-------------------------------------------------------------------------------------");
+			System.out.println("ERROR : There is an error in the configuration file, please make sure that all the");
+			System.out.println("	classifier specified respect this format:");
+			System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
+			System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
+			System.out.println("	                 (   required section    )"); 
+			System.out.println("-------------------------------------------------------------------------------------");
+			System.exit(0);
+		}
+		
 		boolean boost = false;
 		boolean other_ensemble_method = false;
 		OptionHandler oh = null;
@@ -99,10 +109,10 @@ public class LoaderProperties {
 			}
 		}
 	    
-	    // CONTROLLO CHE IL CAMPO CLASSE SIA VALIDO
+	    // CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
 	    int i = 0;
 	    while(oh == null && i < LoaderProperties.PATH_CLASSIFIER.length){
-	    	oh = this.findClass(name, LoaderProperties.PATH_CLASSIFIER[i]);
+	    	oh = this.findClass(name, LoaderProperties.PATH_CLASSIFIER[i], "Classifier");
 	    	i++;
 	    }
 	    
@@ -137,28 +147,35 @@ public class LoaderProperties {
 	    	c = temp;
 		}else{
 			if(other_ensemble_method){
-				OptionHandler oh_ensemble = this.findClass(parse_key[0], "weka.classifiers.meta.");
+				OptionHandler oh_ensemble = this.findClass(parse_key[0], "weka.classifiers.meta.", "Ensemble method");
 				this.addOptions(oh_ensemble, elem.split(","));
 				SingleClassifierEnhancer oh_ens = (SingleClassifierEnhancer) oh_ensemble;
 				oh_ens.setClassifier((Classifier) o);
 				c = oh_ens;
 			}else{
-				c = (Classifier) o; // <<<<<<< NON HO TROVATO ALTRO MODO!!!!!
+				c = (Classifier) o; 
 			}
 		}
 	    
 	    return c;
 	}
 	
-	private OptionHandler findClass(String name, String path){
+	private OptionHandler findClass(String name, String path, String type){
 		OptionHandler o = null;
 		try {
 			o = (OptionHandler) Class.forName(path + name).newInstance();
-		} catch (InstantiationException e1) {
-			e1.printStackTrace();
-		} catch (IllegalAccessException e1) {
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {}
+		} catch (Exception e1) {
+			System.out.println("-------------------------------------------------------------------------------------");
+			System.out.println("ERROR : There isn't a " + type + " with the name \"" + name +"\",");
+			System.out.println("	check the configuration file and please insert the name of a valid ");
+			System.out.println("	" + type + " and remember that the format is:"); 
+			System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
+			System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
+			System.out.println("	                 (   required section    )"); 
+			System.out.println("\nMESSAGE : " + e1.getMessage());
+			System.out.println("-------------------------------------------------------------------------------------");
+			System.exit(0);
+		}
 		
 		return o;
 	}
@@ -167,8 +184,14 @@ public class LoaderProperties {
 		try {
 			o.setOptions(options);
 		} catch (Exception e) {
-			System.out.println("ERROR DURING ADDING OPTIONS");
-			e.printStackTrace();
+			System.out.println("--------------------------------------------------");
+			System.out.print("ERROR : these options are incorrect: [");
+			for(String s : options)
+				System.out.print(s + ", ");
+			System.out.println("]");
+			System.out.println( "	plese check them in the weka documentation");
+			System.out.println("--------------------------------------------------");
+			System.exit(0);
 		}
 	}
 	
@@ -177,10 +200,7 @@ public class LoaderProperties {
 		properties = this.readProperties(path);
 		
 		String path_dataset = properties.getProperty("dataset");
-		System.out.println("LOAD_PROP_dataset: " + path_dataset);
-		
 		String path_serialized = properties.getProperty("serialized");
-		System.out.println("LOAD_PROP_serialized: " + path_serialized);
 		
 		String[] s = {path_dataset, path_serialized};
 		return s;

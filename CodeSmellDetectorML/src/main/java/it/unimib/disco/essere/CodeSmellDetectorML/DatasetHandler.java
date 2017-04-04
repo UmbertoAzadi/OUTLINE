@@ -17,9 +17,15 @@ public class DatasetHandler {
 			DataSource source = new DataSource(path);
 			dataset = source.getDataSet();
 			dataset.setClassIndex(dataset.numAttributes()-1);
-		}catch(Exception e){
-			System.out.println("Unable to load the dataset, please make sure that the path is correct");
-			//e.printStackTrace();
+		}
+		catch(Exception e){
+			System.out.println("------------------------------------------------------------------------------------------------");
+			System.out.println("ERROR : Incorrect dataset!");
+			System.out.println("	please check the path related to the dataset (remember to use <\\> not </> for the path),");
+			System.out.println("	and make sure that the dataset selected is well-formed ");
+			System.out.println("	(Exemple: make sure that the \"not know\" value is represent with \"?\")");
+			System.out.println("----------------------------------------------------------------------------------------------");
+			System.exit(0);
 		}
 	}
 	
@@ -45,7 +51,8 @@ public class DatasetHandler {
 			saver.setFile(new File(directory + "Predicted_" + name));
 			saver.writeBatch();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("ERROR : Unable to save the model in CSV extesion");
+			System.out.println("MESSAGE: " + e.getMessage()); 
 		}
 		
 	}
@@ -57,7 +64,8 @@ public class DatasetHandler {
 			saver.setFile(new File(path));
 			saver.writeBatch();
 		}catch(IOException e){
-			e.printStackTrace();
+			System.out.println("ERROR : Unable to save the model in ARFF extesion");
+			System.out.println("MESSAGE: " + e.getMessage()); 
 		}
 	}
 	

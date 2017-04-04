@@ -2,8 +2,6 @@ package it.unimib.disco.essere.CodeSmellDetectorML;
 
 
 import weka.classifiers.Classifier;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,11 +70,11 @@ public class EntryPoint {
 				
 				//              ||||||||||||||||||||||||||||||
 				// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 				
 				//         ||||||||||||||||||||||||||||||
 				// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 				
 			} catch (Exception e1) {
 				e1.printStackTrace();
@@ -103,16 +101,16 @@ public class EntryPoint {
 					
 					//	            ||||||||||||||||||||||||||||||
 					// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 					
 					//		   ||||||||||||||||||||||||||||||
 					// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 					
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					System.out.println("ERROR : "+e1.getMessage());
 				}
 			}
 			i++;
@@ -121,15 +119,20 @@ public class EntryPoint {
 	}
 	
 	public void predict(String path){
-
+		
 		String[] data = configuration.loadPropertyForPrediction(path);
-		String path_dataset = data[0];
-		String path_serialized = data[1];
+		String	path_dataset = data[0];
+		String	path_serialized = data[1];
+	
 		Classifier c = null;
 		try {
 			c = serializer.read(path_serialized);
-		} catch (Exception e) {
-			e.printStackTrace();
+		}catch(Exception e){
+			System.out.println("------------------------------------------------------------------");
+			System.out.println("ERROR : the serialized file is incorrect, please check the path ");
+			System.out.println("	and make sure that the file is a .model"); 
+			System.out.println("------------------------------------------------------------------");
+			System.exit(0);
 		}
 		
 		DatasetHandler dataset = new DatasetHandler(path_dataset);
@@ -151,8 +154,12 @@ public class EntryPoint {
 			path_serialized = temp;
 			try {
 				c = serializer.read(path_serialized);
-			} catch (Exception e) {
-				e.printStackTrace();
+			} catch(Exception e){
+				System.out.println("------------------------------------------------------------------");
+				System.out.println("ERROR : the serialized file is incorrect, please check the path ");
+				System.out.println("	and make sure that the file is a .model"); 
+				System.out.println("------------------------------------------------------------------");
+				System.exit(0);
 			}
 		}
 		DatasetHandler dataset = new DatasetHandler(path_dataset);

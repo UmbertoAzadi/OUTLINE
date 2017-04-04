@@ -1,4 +1,5 @@
 package it.unimib.disco.essere.CodeSmellDetectorML;
+
 import weka.classifiers.Classifier;
 
 public class Serializer {
@@ -10,9 +11,7 @@ public class Serializer {
 	}
 	
 	public Classifier read(String path) throws Exception{
-		Classifier classifier = null;
-		classifier = (Classifier)weka.core.SerializationHelper.read(path);
-
+		Classifier classifier = (Classifier)weka.core.SerializationHelper.read(path);
 		return classifier;
 	}
 	

@@ -18,9 +18,11 @@ public class DataClassifier {
 		this.dataset = data;
 		this.classifiers = classifiers;
 		
+		
 		for(Classifier c: classifiers){
 			this.buildClassifier(c);
 		}
+	
 	}
 
 	public DataClassifier(LoaderProperties data, List<Classifier> classifiers){
@@ -39,8 +41,7 @@ public class DataClassifier {
 		try {
 			c.buildClassifier(dataset);
 		} catch (Exception e) {
-			System.out.println("ERROR IN CLASSIFICATION");
-			e.printStackTrace();
+			System.out.println("Unable to apply " + c.getClass().getName() + ": " + e.getMessage());
 		}
 	}
 	

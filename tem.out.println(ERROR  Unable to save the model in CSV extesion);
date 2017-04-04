@@ -1,0 +1,88 @@
+[33mcommit 94bdc2c6dcbede247f9afc358afa386b4039556b[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:46:50 2017 +0200
+
+    Update README.md
+
+[33mcommit 7ca23a3c29125382cb7a5d9494e91c09ac543604[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:45:47 2017 +0200
+
+    Update README.md
+
+[33mcommit 6299b02eb2967dddd456b284bf982dd414a297cc[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:44:08 2017 +0200
+
+    Update README.md
+
+[33mcommit 28db79fc33ef26ff6eb102e76372f4db1827f805[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:41:36 2017 +0200
+
+    Update README.md
+
+[33mcommit b8c2bc67ed1cff6ba206a53b9250d1994b1f4e11[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:40:44 2017 +0200
+
+    Update README.md
+
+[33mcommit 722afb8575ccce340799c1143d6b01874eaeaf72[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:37:22 2017 +0200
+
+    Update README.md
+
+[33mcommit 327a6e6a830053bfabe5c2e4102bb815728d5e42[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Apr 2 22:27:25 2017 +0200
+
+    Create README.md
+
+[33mcommit cb2a55f386df0c555f9d88987310ee823e3f9527[m
+Author: uazad <uazad@DESKTOP-SHL4I9Q>
+Date:   Sun Apr 2 19:04:30 2017 +0200
+
+    Add some print in case of bad input
+
+[33mcommit 1382532d53fa363ad88a06ef32fec409b3324574[m
+Author: uazad <uazad@DESKTOP-SHL4I9Q>
+Date:   Sun Apr 2 17:58:15 2017 +0200
+
+    Adding the capabilities of using a serialized model for classify new instance
+
+[33mcommit 9d13484bd2c336d2a9a93ce344c5a63d2ad488ef[m
+Author: Umberto Azadi <u.azadi@campus.unimib.it>
+Date:   Sat Apr 1 14:10:36 2017 +0200
+
+    Add the flag for printing the human-readable result of the classifier
+    
+    and the serialization of it
+
+[33mcommit 2f0367ebf253599eaa7972abc87b19800a206f22[m
+Author: uazad <uazad@DESKTOP-SHL4I9Q>
+Date:   Sat Apr 1 11:24:25 2017 +0200
+
+    Generalize the tool for every possible classifier and resolved package names issue
+
+[33mcommit 47594efbe221bef4eb1bd81feef99c3b74236180[m
+Author: Umberto Azadi <u.azadi@campus.unimib.it>
+Date:   Mon Mar 27 10:53:28 2017 +0200
+
+    Add serialization and cross validation
+
+[33mcommit 539959bb939de0e2b7a50b0f462def5aca398420[m
+Author: Umberto Azadi <u.azadi@campus.unimib.it>
+Date:   Sun Mar 26 18:16:13 2017 +0200
+
+    First version of the tool
+    
+    So far the tool allow to load a dataset, use some classifiers, evaluate
+    them, and make prediction. All of this in a rough way.
+
+[33mcommit 03ccd81347b67baa312ddf10c9ffbfeb9e39b43a[m
+Author: UmbertoAzadi <u.azadi@campus.unimib.it>
+Date:   Sun Mar 26 18:06:00 2017 +0200
+
+    Initial commit
