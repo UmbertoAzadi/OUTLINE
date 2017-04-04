@@ -86,14 +86,7 @@ public class LoaderProperties {
 		try{	
 			name = parse_key[1];
 		}catch(ArrayIndexOutOfBoundsException e){
-			System.out.println("-------------------------------------------------------------------------------------");
-			System.out.println("ERROR : There is an error in the configuration file, please make sure that all the");
-			System.out.println("	classifier specified respect this format:");
-			System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
-			System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
-			System.out.println("	                 (   required section    )"); 
-			System.out.println("-------------------------------------------------------------------------------------");
-			System.exit(0);
+			this.checkNotNull(null, "", "");
 		}
 		
 		boolean boost = false;
@@ -112,9 +105,11 @@ public class LoaderProperties {
 	    // CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
 	    int i = 0;
 	    while(oh == null && i < LoaderProperties.PATH_CLASSIFIER.length){
-	    	oh = this.findClass(name, LoaderProperties.PATH_CLASSIFIER[i], "Classifier");
+	    	oh = this.findClass(name, LoaderProperties.PATH_CLASSIFIER[i]);
+	    	
 	    	i++;
 	    }
+	    this.checkNotNull(oh, "Classefier", name);
 	    
 	    if(!elem.equals("")){
 	    	String temp = elem.replaceAll(" ", "");
@@ -147,7 +142,8 @@ public class LoaderProperties {
 	    	c = temp;
 		}else{
 			if(other_ensemble_method){
-				OptionHandler oh_ensemble = this.findClass(parse_key[0], "weka.classifiers.meta.", "Ensemble method");
+				OptionHandler oh_ensemble = this.findClass(parse_key[0], "weka.classifiers.meta.");
+				this.checkNotNull(oh_ensemble, "Ensemble method", parse_key[0]); 
 				this.addOptions(oh_ensemble, elem.split(","));
 				SingleClassifierEnhancer oh_ens = (SingleClassifierEnhancer) oh_ensemble;
 				oh_ens.setClassifier((Classifier) o);
@@ -160,22 +156,16 @@ public class LoaderProperties {
 	    return c;
 	}
 	
-	private OptionHandler findClass(String name, String path, String type){
+	private OptionHandler findClass(String name, String path){
 		OptionHandler o = null;
-		try {
-			o = (OptionHandler) Class.forName(path + name).newInstance();
-		} catch (Exception e1) {
-			System.out.println("-------------------------------------------------------------------------------------");
-			System.out.println("ERROR : There isn't a " + type + " with the name \"" + name +"\",");
-			System.out.println("	check the configuration file and please insert the name of a valid ");
-			System.out.println("	" + type + " and remember that the format is:"); 
-			System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
-			System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
-			System.out.println("	                 (   required section    )"); 
-			System.out.println("\nMESSAGE : " + e1.getMessage());
-			System.out.println("-------------------------------------------------------------------------------------");
-			System.exit(0);
-		}
+		
+			try {
+				o = (OptionHandler) Class.forName(path + name).newInstance();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {}
 		
 		return o;
 	}
@@ -205,5 +195,33 @@ public class LoaderProperties {
 		String[] s = {path_dataset, path_serialized};
 		return s;
 	}
+	
+	
+	private void checkNotNull(Object o, String type, String name){
+		
+		 /* QUESTO METODO E' NECESSARIO POICHE' LA CHIAMATA A findClass ALLA RIGA 115 E' DENTRO UN WHILE
+		    QUINDI IL CONTROLLO VA FATTO DOPO CHE IL CICLO SI E' CONCLUSO */
 
+		if(o == null){
+			if(!type.equals("")){
+				System.out.println("-------------------------------------------------------------------------------------");
+				System.out.println("ERROR : There isn't a " + type + " with the name \"" + name +"\",");
+				System.out.println("	check the configuration file and please insert the name of a valid ");
+				System.out.println("	" + type + " and remember that the format is:"); 
+				System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
+				System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
+				System.out.println("	                 (   required section    )"); 
+				System.out.println("-------------------------------------------------------------------------------------");
+			}else{
+				System.out.println("-------------------------------------------------------------------------------------");
+				System.out.println("ERROR : There is an error in the configuration file, please make sure that all the");
+				System.out.println("	classifier specified respect this format:");
+				System.out.println("	<ensemble method>_<name of the classifier>_<everythigs you want> = <options>");
+				System.out.println("	                 ^^^^^^^^^^^^^^^^^^^^^^^^^ ");
+				System.out.println("	                 (   required section    )"); 
+				System.out.println("-------------------------------------------------------------------------------------");
+			}
+			System.exit(0);
+		}
+	}
 }

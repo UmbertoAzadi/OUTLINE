@@ -41,7 +41,7 @@ public class EntryPoint {
 				if(input.contains("-ser"))
 					workflow.serialize();
 			}else{
-				System.out.println("No operation selected, please use:");
+				System.out.println("No valid operation selected, please use:");
 				System.out.println("-ser for serialize the classifier specified in the configuaration file");
 				System.out.println("-print for print the human-readable result of classification");
 				System.out.println("-save for save the human-readable result of classification");
@@ -70,11 +70,11 @@ public class EntryPoint {
 				
 				//              ||||||||||||||||||||||||||||||
 				// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 				
 				//         ||||||||||||||||||||||||||||||
 				// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 				
 			} catch (Exception e1) {
 				e1.printStackTrace();
@@ -101,13 +101,13 @@ public class EntryPoint {
 					
 					//	            ||||||||||||||||||||||||||||||
 					// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 					
 					//		   ||||||||||||||||||||||||||||||
 					// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 					
 				} catch (Exception e1) {
 					System.out.println("ERROR : "+e1.getMessage());
