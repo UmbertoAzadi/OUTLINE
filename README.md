@@ -28,8 +28,9 @@ For prediction are avaiable these flags:
   path = `path where the serialized model will be saved` (optional)
   (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [`option`, `option`, ...]
-  (if you don't want to specify options, you can just write the name as specified)
+  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [`option`, `option`, ... ; `e_option`, `e_option`, ...]
+  where option refers to the classifier, instead e_option refers to ensemble method. Remember the ";" between them
+  (if you don't want to specify options, you can just write the name as specified, as long as you not apply an ensemble method in that case, you must write [;])
   (if you want to specify a classifier without an ensemble method you must put the `_` before the name of the classifier!)
   
   **Configuration file for serializaton**
@@ -66,10 +67,10 @@ For prediction are avaiable these flags:
   
   **Exemple of execution**
   
-  java -jar CSDML_v1.0.jar -ser -save -print C:\Users\uazad\Documents\Progetto\configuration\try_serialization.properties
+  java -jar CSDML_v1.0.jar -ser -save -print .\configuration\try_serialization.properties
   
-  java -jar CSDML_v1.0.jar -pred C:\Users\uazad\Desktop\università\Stage\Progetto\CodeSmellDetectorML\configuration\try_classification.properties
+  java -jar CSDML_v1.0.jar -pred .\configuration\try_classification.properties
   
-  java -jar CSDML_v1.0.jar -pred C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+  java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_JRip.model ./dataset/feature-envy.csv
   
-  java -jar CSDML_v1.0.jar -pred C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
+  java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_JRip.model
