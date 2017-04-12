@@ -81,8 +81,8 @@ For prediction are avaiable these flags:
 	
   **Exemple of a .yml configuration file for serialization:**
   
-dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
-classifiers:
+	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
+	classifiers:
     -   name: weka.classifiers.trees.J48
         options: [-U]
         ensemble: weka.classifiers.meta.AdaBoostM1
