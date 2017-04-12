@@ -1,0 +1,13 @@
+dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+path: 
+classifiers:
+    -   name: weka.classifiers.trees.J48
+        options: [-U]
+        ensemble: weka.classifiers.meta.AdaostM1
+        
+    -   name: weka.classifiers.trees.J48
+        ensemble: weka.classifiers.meta.Bagging
+        
+    -   name: weka.classifiers.trees.J48
+        options: [-R]
+    

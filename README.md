@@ -19,7 +19,7 @@ For prediction are avaiable these flags:
  
  ### Configuration file
  
- There are two type of configuration file, both of them .property :
+ There are two type of .properties configuration file:
  
   **Configuration file for serializaton**
   
@@ -28,49 +28,92 @@ For prediction are avaiable these flags:
   path = `path where the serialized model will be saved` (optional)
   (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  `name of the ensemble method` `_` `name of the classifier` `_` `everything you want` = [`option`, `option`, ... ; `e_option`, `e_option`, ...]
-  where option refers to the classifier, instead e_option refers to ensemble method. Remember the ";" between them
-  (if you don't want to specify options, you can just write the name as specified, as long as you not apply an ensemble method in that case, you must write [;])
-  (if you want to specify a classifier without an ensemble method you must put the `_` before the name of the classifier!)
+  `name of the classifier or ensemble method` `_` `everything you want` = [`options of the ensemble method`  `name of the classifier`] `options of the classifier`  
   
   **Configuration file for serializaton**
   
   dataset = `path dataset that contain the instances that have to be predict` (required!)
   
   serialized = `path of the serialized file` (required!)
+       
+      
+ There are two type of .yml configuration file:
+
+  **Configuration file for serializaton**
+  
+  dataset: `path of the dataset` (required!)
+  
+  path: `path where the serialized model will be saved` (optional)
+  (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
+  
+  classifiers:
+		-	name: `name of the classifier` (REQUIRED!) 
+			options: `options of the classifier` (optional)
+			ensemble: `name of the ensemble method` (optional)
+			ens_options: `options of the ensemble method` (optional)
+			comment: `everything you want` (optional, the program will ingnore this parameters)
+			
+  **Configuration file for serializaton**
+  
+  dataset: `path dataset that contain the instances that have to be predict` (required!)
+  
+  serialized: `path of the serialized file` (required!) 
   
   ### Exemples
   
-  **Exemple of a configuration file for serialization:**
+  **Exemple of a .properties configuration file for serialization:**
   
-  dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+	dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+ 
+	AdaBoostM1_unpruned -I 2 -W weka.classifiers.trees.J48 -- -U
+	Bagging -W weka.classifiers.trees.J48
+	J48 -R
+	JRip 
+	AdaBoostM1 -W weka.classifiers.rules.JRip
+	LibSVM -P 100 -S 1 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.2 -M 40.0 -C 1.0 -E 0.001 -seed 1
+
   
-   path = C:/Users/uazad/Documents/Progetto/_Result
-   
-   BOOSTED_J48_unpruned = [-U;]
-   
-   Bagging_J48 = [;]
-   
-   _J48_reduce_error = [-R]
-   
-   _JRip 
-   
-   BOOSTED_JRip
-   
-   _LibSVM = [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]
+  **Exemple of a .properties configuration file for prediction:**
   
-  **Exemple of a configuration file for prediction:**
-  
-   dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
    
-   serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
+	serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
+	
+  **Exemple of a .yml configuration file for serialization:**
+  
+dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
+classifiers:
+    -   name: weka.classifiers.trees.J48
+        options: [-U]
+        ensemble: weka.classifiers.meta.AdaBoostM1
+        
+    -   name: weka.classifiers.trees.J48
+        ensemble: weka.classifiers.meta.Bagging
+        
+    -   name: weka.classifiers.trees.J48
+        options: [-R]
+    
+    -   name: weka.classifiers.rules.JRip 
+        
+    -   name: weka.classifiers.rules.JRip
+        ensemble: weka.classifiers.meta.AdaBoostM1
+        
+    -   name: weka.classifiers.functions.LibSVM
+        options: [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]  
+
+  
+  **Exemple of a .yml configuration file for prediction:**
+  
+	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
+   
+	serialized: C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
   
   **Exemple of execution**
   
-  java -jar CSDML_v1.0.jar -ser -save -print .\configuration\try_serialization.properties
+	java -jar CSDML_v1.0.jar -ser -save -print .\configuration\try_serialization.properties
   
-  java -jar CSDML_v1.0.jar -pred .\configuration\try_classification.properties
+	java -jar CSDML_v1.0.jar -pred .\configuration\try_classification.properties
   
-  java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_JRip.model ./dataset/feature-envy.csv
+	java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_JRip.model ./dataset/feature-envy.csv
   
-  java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_JRip.model
+	java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_JRip.model

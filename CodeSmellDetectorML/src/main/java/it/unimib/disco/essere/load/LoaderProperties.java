@@ -1,0 +1,85 @@
+package it.unimib.disco.essere.load;
+
+import weka.core.OptionHandler;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Properties;
+
+import it.unimib.disco.essere.core.DatasetHandler;
+import weka.classifiers.Classifier;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class LoaderProperties extends Loader{
+	
+	public LoaderProperties(){
+		super();
+	}
+	 
+	private Properties readProperties(String path_properties) throws Exception{
+		Properties properties = new Properties();
+
+		BufferedReader in;
+		in = new BufferedReader(new FileReader(path_properties));
+		properties.load(in);
+		
+		return properties;
+	}
+	
+	public ArrayList<Classifier> load(String path_properties) throws Exception{
+		ArrayList<Classifier> classifiers = new ArrayList<Classifier>();
+		Properties properties = null;
+
+		properties = this.readProperties(path_properties);
+
+		// CARICO IL DATASET
+		String path_dataset = properties.getProperty("dataset");
+		dataset = new DatasetHandler(path_dataset);
+		properties.remove("dataset");
+		
+		path_for_result = properties.getProperty("path");
+		properties.remove("path");
+	
+		// ESTRAGGO E ITERO SULLE PROPERIETA'
+		Enumeration<?> e =  properties.propertyNames();
+		while (e.hasMoreElements()) {
+			String key = (String) e.nextElement();
+			String elem = properties.getProperty(key);
+			Classifier c = this.extractClassifier(key, elem);
+		    classifiers.add(c);
+		}
+		
+		return classifiers;
+	}
+	
+	public Classifier extractClassifier(String classifier, String element) throws Exception{
+		
+		classifier = classifier.split("_")[0];
+		
+		// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
+	    OptionHandler oh = this.findClass(classifier);
+	    this.checkNotNull(oh, "Classifier", classifier);
+	    
+	    if(!element.equals("")){
+	    	String[] option = element.split(" ");
+	    	this.addOptions(oh, option);
+	    }
+	    
+	    return (Classifier) oh;
+	} 
+
+	@Override
+	public String[] loadForPred(String path) throws Exception {
+		Properties properties = new Properties();
+		properties = this.readProperties(path);
+		String path_dataset = properties.getProperty("dataset");
+		String path_serialized = properties.getProperty("serialized");
+		
+		String[] result = {path_dataset, path_serialized};
+		
+		return result;
+	}
+	
+	
+}
