@@ -19,7 +19,7 @@ For prediction are avaiable these flags:
  
  ### Configuration file
  
- ####There are two type of .properties configuration file:
+ ___There are two type of .properties configuration file:___
  
   **Configuration file for serializaton**
   
@@ -36,7 +36,7 @@ For prediction are avaiable these flags:
   	serialized = `path of the serialized file` (required!)
        
       
- ####There are two type of .yml configuration file:
+ ___There are two type of .yml configuration file:___
 
   **Configuration file for serializaton**
   
