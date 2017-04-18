@@ -65,13 +65,12 @@ For prediction are avaiable these flags:
   
 	dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
  
-	AdaBoostM1_unpruned -I 2 -W weka.classifiers.trees.J48 -- -U
-	Bagging -W weka.classifiers.trees.J48
-	J48 -R
-	JRip 
-	AdaBoostM1 -W weka.classifiers.rules.JRip
-	LibSVM -P 100 -S 1 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.2 -M 40.0 -C 1.0 -E 0.001 -seed 1
-
+	J48_unpruned = weka.classifiers.meta.AdaBoostM1 -I 2 -W weka.classifiers.trees.J48 -- -U
+	weka.classifiers.meta.Bagging -W weka.classifiers.trees.J48
+	weka.classifiers.trees.J48 -R
+	weka.classifiers.rules.JRip 
+	weka.classifiers.meta.AdaBoostM1 -W weka.classifiers.rules.JRip
+	weka.classifiers.functions.LibSVM -P 100 -S 1 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.2 -M 40.0 -C 1.0 -E 0.001 -seed 1
   
   **Exemple of a .properties configuration file for prediction:**
   
@@ -110,10 +109,10 @@ classifiers:
   
   **Exemple of execution**
   
-	java -jar CSDML_v1.0.jar -ser -save -print .\configuration\try_serialization.properties
+	java -jar CSDML_v1.0.jar -ser -save -print .\configuration\serialization_valid.properties
   
 	java -jar CSDML_v1.0.jar -pred .\configuration\try_classification.properties
   
-	java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_JRip.model ./dataset/feature-envy.csv
+	java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_J48.model ./dataset/feature-envy.csv
   
-	java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_JRip.model
+	java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_J48.model

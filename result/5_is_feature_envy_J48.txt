@@ -1,0 +1,12 @@
+J48 pruned tree
+------------------
+
+ATFD_method <= 4: false (182.0/3.0)
+ATFD_method > 4: true (98.0/8.0)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+
+

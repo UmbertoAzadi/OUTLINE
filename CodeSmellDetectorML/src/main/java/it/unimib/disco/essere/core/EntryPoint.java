@@ -101,12 +101,12 @@ public class EntryPoint {
 				System.out.println("Path not specified or incorrect");
 				String path = new java.io.File("").getAbsolutePath();
 
-				//              ||||||||||||||||||||||||||||||
-				// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+				//                  ||||||||||||||||||||||||||||||
+				// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 
-				//         ||||||||||||||||||||||||||||||
-				//FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+				//                    ||||||||||||||||||||||||||||||
+				// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 
 			} catch (Exception e1) {
@@ -132,13 +132,13 @@ public class EntryPoint {
 				try {
 					String path = new java.io.File("").getAbsolutePath();
 
-					//	            ||||||||||||||||||||||||||||||
-					// COMMENTS JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+					//	                ||||||||||||||||||||||||||||||
+					// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
 					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 
-					//		   ||||||||||||||||||||||||||||||
-					// FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+					//		             ||||||||||||||||||||||||||||||
+					// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
 					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 

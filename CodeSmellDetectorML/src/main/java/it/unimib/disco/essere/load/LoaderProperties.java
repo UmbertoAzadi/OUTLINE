@@ -53,13 +53,25 @@ public class LoaderProperties extends Loader{
 		return classifiers;
 	}
 	
-	public Classifier extractClassifier(String classifier, String element) throws Exception{
+	public Classifier extractClassifier(String key, String element) throws Exception{
 		
-		classifier = classifier.split("_")[0];
+		OptionHandler oh = null;
 		
+		String classifier = key;
+			
 		// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
-	    OptionHandler oh = this.findClass(classifier);
-	    this.checkNotNull(oh, "Classifier", classifier);
+		oh = this.findClass(classifier);
+		
+		if(oh == null){
+			element = element + " ";
+			classifier = element.split(" ")[0];
+			element = element.substring(element.indexOf(" "));
+			
+			// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
+			oh = this.findClass(classifier);
+		}
+
+		this.checkNotNull(oh, "Classifier", classifier);
 	    
 	    if(!element.equals("")){
 	    	String[] option = element.split(" ");
