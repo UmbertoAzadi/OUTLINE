@@ -23,30 +23,27 @@ For prediction are avaiable these flags:
  
   **Configuration file for serializaton**
   
-  dataset = `path of the dataset` (required!)
+	dataset = `path of the dataset` (required!)
+	path = `path where the serialized model will be saved` (optional)
+  	(if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  path = `path where the serialized model will be saved` (optional)
-  (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
-  
-  `name of the classifier or ensemble method` `_` `everything you want` = [`options of the ensemble method`  `name of the classifier`] `options of the classifier`  
+  	`name of the classifier or ensemble method` `_` `everything you want` = [`options of the ensemble method`  `name of the classifier`] `options of the classifier`  
   
   **Configuration file for serializaton**
   
-  dataset = `path dataset that contain the instances that have to be predict` (required!)
+  	dataset = `path dataset that contain the instances that have to be predict` (required!)
   
-  serialized = `path of the serialized file` (required!)
+  	serialized = `path of the serialized file` (required!)
        
       
  There are two type of .yml configuration file:
 
   **Configuration file for serializaton**
   
-  dataset: `path of the dataset` (required!)
-  
-  path: `path where the serialized model will be saved` (optional)
-  (if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
-  
-  classifiers:
+  	dataset: `path of the dataset` (required!)
+	path: `path where the serialized model will be saved` (optional)
+	(if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
+  	classifiers:
 		-	name: `name of the classifier` (REQUIRED!) 
 			options: `options of the classifier` (optional)
 			ensemble: `name of the ensemble method` (optional)
@@ -55,9 +52,8 @@ For prediction are avaiable these flags:
 			
   **Configuration file for serializaton**
   
-  dataset: `path dataset that contain the instances that have to be predict` (required!)
-  
-  serialized: `path of the serialized file` (required!) 
+	dataset: `path dataset that contain the instances that have to be predict` (required!)
+	serialized: `path of the serialized file` (required!) 
   
   ### Exemples
   
@@ -80,8 +76,8 @@ For prediction are avaiable these flags:
 	
   **Exemple of a .yml configuration file for serialization:**
   
-dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
-classifiers:
+	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
+	classifiers:
     -   name: weka.classifiers.trees.J48
         options: [-U]
         ensemble: weka.classifiers.meta.AdaBoostM1
