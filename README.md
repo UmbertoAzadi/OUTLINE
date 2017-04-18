@@ -19,7 +19,7 @@ For prediction are avaiable these flags:
  
  ### Configuration file
  
- There are two type of .properties configuration file:
+ ####There are two type of .properties configuration file:
  
   **Configuration file for serializaton**
   
@@ -29,14 +29,14 @@ For prediction are avaiable these flags:
   
   	`name of the classifier or ensemble method` `_` `everything you want` = [`options of the ensemble method`  `name of the classifier`] `options of the classifier`  
   
-  **Configuration file for serializaton**
+  **Configuration file for prediction**
   
   	dataset = `path dataset that contain the instances that have to be predict` (required!)
   
   	serialized = `path of the serialized file` (required!)
        
       
- There are two type of .yml configuration file:
+ ####There are two type of .yml configuration file:
 
   **Configuration file for serializaton**
   
@@ -50,7 +50,7 @@ For prediction are avaiable these flags:
 			ens_options: `options of the ensemble method` (optional)
 			comment: `everything you want` (optional, the program will ingnore this parameters)
 			
-  **Configuration file for serializaton**
+  **Configuration file for prediction**
   
 	dataset: `path dataset that contain the instances that have to be predict` (required!)
 	serialized: `path of the serialized file` (required!) 
