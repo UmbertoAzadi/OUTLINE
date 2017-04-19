@@ -2,6 +2,7 @@ package it.unimib.disco.essere.load;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.ho.yaml.Yaml;
 
@@ -63,10 +64,12 @@ public class LoaderYaml extends Loader{
 	    return c;
 	}
 	
-	public String[] loadForPred(String path) throws Exception{
+	public ArrayList<String> loadForPred(String path) throws Exception{
 		YamlPred config = (YamlPred) this.parseYaml(path)[1];
 		
-		String[] result = {config.dataset, config.serialized};
+		ArrayList<String> result = new ArrayList<String>();
+		result.add(config.dataset);
+		result.add(config.serialized);
 		
 		return result;
 	}

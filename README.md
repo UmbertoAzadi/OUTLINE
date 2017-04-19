@@ -72,8 +72,9 @@ For prediction are avaiable these flags:
   
 	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
    
-	serialized = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
-	
+	key1 = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
+	key2 = C:/Users/uazad/Documents/Progetto/result/1_is_feature_envy_AdaBoostM1_J48.model
+  
   **Exemple of a .yml configuration file for serialization:**
   
 	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 

@@ -4,16 +4,12 @@ package it.unimib.disco.essere.core;
 import weka.classifiers.Classifier;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
-
-import org.ho.yaml.Yaml;
 
 import it.unimib.disco.essere.load.*;
-import it.unimib.disco.essere.yaml.*;
 
 public class EntryPoint {
 
@@ -32,10 +28,12 @@ public class EntryPoint {
 		} catch (Exception e) {
 			// do nothing, the error message are already print out
 		}
+		
 	}
 	
 	public void start(String[] args) throws Exception{
 		List<String> input = Arrays.asList(args);
+		
 		if(input.contains("-pred")){
 			if(args.length == 2)
 				this.predict(args[args.length - 1]);
@@ -103,11 +101,11 @@ public class EntryPoint {
 
 				//                  ||||||||||||||||||||||||||||||
 				// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 
 				//                    ||||||||||||||||||||||||||||||
 				// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 
 			} catch (Exception e1) {
 				throw new Exception();
@@ -134,13 +132,13 @@ public class EntryPoint {
 
 					//	                ||||||||||||||||||||||||||||||
 					// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 
 					//		             ||||||||||||||||||||||||||||||
 					// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 
 				} catch (Exception e1) {
 					System.out.println("ERROR : "+e1.getMessage());
@@ -153,10 +151,18 @@ public class EntryPoint {
 	}
 
 	public void predict(String path) throws Exception{
+		
+		configuration = new LoaderProperties();
+		ArrayList<String> paths =  configuration.loadForPred(path);
+		String	path_dataset =  paths.get(0);
+		paths.remove(0);
 
-		String	path_dataset =  this.getDatasetForPred(path);
-		String	path_serialized =  this.getSerializeForPred(path);
-
+		for(String s: paths){
+			predWithOneClassifier(path_dataset, s);
+		}
+	}
+	
+	private void predWithOneClassifier(String path_dataset, String path_serialized) throws Exception{
 		Classifier c = null;
 		try {
 			c = serializer.read(path_serialized);
@@ -173,7 +179,14 @@ public class EntryPoint {
 		predictor = new Predictor(dataset.getDataset());
 		DatasetHandler datasetPredicted = predictor.makePredicitions(c, false);
 
-		datasetPredicted.toCSV(path_dataset);
+		String directory = path_dataset.substring(0, path_dataset.lastIndexOf("/")+1);
+		String name = path_dataset.substring(path_dataset.lastIndexOf("/") + 1);
+		String nameClassifier = c.getClass().getName();
+		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf(".")).replace(".", "");
+		
+		String path = directory + "Predicted_" + nameClassifier + "_" + name;
+		
+		datasetPredicted.toCSV(path);
 	}
 
 	public void predict(String path_1, String path_2) throws Exception{
@@ -201,15 +214,22 @@ public class EntryPoint {
 		predictor = new Predictor(dataset.getDataset());
 		DatasetHandler datasetPredicted = predictor.makePredicitions(c, false);
 
-		datasetPredicted.toCSV(path_dataset);
+		String directory = path_dataset.substring(0, path_dataset.lastIndexOf("/")+1);
+		String name = path_dataset.substring(path_dataset.lastIndexOf("/") + 1);
+		String nameClassifier = c.getClass().getName();
+		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf(".")).replace(".", "");
+		
+		String path = directory + "Predicted_" + nameClassifier + "_" + name;
+		
+		datasetPredicted.toCSV(path);
 	}
 	
-	public String getDatasetForPred(String path) throws Exception{
+	/*public String getDatasetForPred(String path) throws Exception{
 		String	path_dataset = "";
 		try {
 			configuration = new LoaderYaml();
-			String[] paths =  configuration.loadForPred(path);
-			path_dataset = paths[0];
+			ArrayList<String> paths =  configuration.loadForPred(path);
+			path_dataset = paths.get(0);
 		} catch (Exception e) {
 			try {
 				configuration = new LoaderProperties();
@@ -228,8 +248,8 @@ public class EntryPoint {
 		String path_serialized = "";
 		try {
 			configuration = new LoaderYaml();
-			String[] paths =  configuration.loadForPred(path);
-			path_serialized = paths[1];			
+			ArrayList<String> paths =  configuration.loadForPred(path);
+			path_serialized = paths.get(0);			
 		} catch (Exception e) {
 			try {
 				configuration = new LoaderProperties();
@@ -242,7 +262,7 @@ public class EntryPoint {
 			}
 		}
 		return path_serialized;
-	}
+	}*/
 
 	/*
 	public void predOneInst(String path){

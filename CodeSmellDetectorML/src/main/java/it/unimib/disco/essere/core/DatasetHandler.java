@@ -13,7 +13,7 @@ public class DatasetHandler {
 	private Instances dataset;
 	
 	public DatasetHandler(String path) throws Exception{
-		try{
+		try{ 
 			DataSource source = new DataSource(path);
 			dataset = source.getDataSet();
 			dataset.setClassIndex(dataset.numAttributes()-1);
@@ -45,11 +45,9 @@ public class DatasetHandler {
 	public void toCSV(String path){
 		CSVSaver saver = new CSVSaver();
 		saver.setInstances(dataset);
-		String directory = path.substring(0, path.lastIndexOf("/")+1);
-		String name = path.substring(path.lastIndexOf("/") + 1);
 		try {
-			System.out.println("The predict model is saved in: " + directory + "Predicted_" + name);
-			saver.setFile(new File(directory + "Predicted_" + name));
+			System.out.println("The predict model is saved in: " + path);
+			saver.setFile(new File(path));
 			saver.writeBatch();
 		} catch (IOException e) {
 			System.out.println("ERROR : Unable to save the model in CSV extesion");

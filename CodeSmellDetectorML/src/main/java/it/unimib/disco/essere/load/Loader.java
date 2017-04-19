@@ -23,7 +23,7 @@ public abstract class Loader {
 	public Loader(){}
 	
 	public abstract ArrayList<Classifier> load(String path) throws Exception;
-	public abstract String[] loadForPred(String path) throws Exception;
+	public abstract ArrayList<String> loadForPred(String path) throws Exception;
 	
 	public String getPath_for_result(){
 		return this.path_for_result;

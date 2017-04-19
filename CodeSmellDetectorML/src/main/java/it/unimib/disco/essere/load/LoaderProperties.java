@@ -1,6 +1,7 @@
 package it.unimib.disco.essere.load;
 
 import weka.core.OptionHandler;
+
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -82,13 +83,23 @@ public class LoaderProperties extends Loader{
 	} 
 
 	@Override
-	public String[] loadForPred(String path) throws Exception {
+	public ArrayList<String> loadForPred(String path) throws Exception {
 		Properties properties = new Properties();
 		properties = this.readProperties(path);
-		String path_dataset = properties.getProperty("dataset");
-		String path_serialized = properties.getProperty("serialized");
+		ArrayList<String> result = new ArrayList<String>();
 		
-		String[] result = {path_dataset, path_serialized};
+		String path_dataset = properties.getProperty("dataset");
+		properties.remove("dataset");
+		
+		// ESTRAGGO E ITERO SULLE PROPERIETA'
+		Enumeration<?> e =  properties.propertyNames();
+		while (e.hasMoreElements()) {
+			String key = (String) e.nextElement();
+			String classifier = properties.getProperty(key);
+			result.add(classifier);
+		}
+		
+		result.add(0, path_dataset);
 		
 		return result;
 	}
