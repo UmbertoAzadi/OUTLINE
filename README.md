@@ -27,7 +27,10 @@ For prediction are avaiable these flags:
 	path = `path where the serialized model will be saved` (optional)
   	(if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
   
-  	`name of the classifier or ensemble method` `_` `everything you want` = [`options of the ensemble method`  `name of the classifier`] `options of the classifier`  
+  	key = [`name of the ensemble method` `options of the ensemble method`]  `name of the classifier` `options of the classifier`(required at least one classifier)
+	N.B. the names are inteded as the name __complete with the path__ of the weka class that corrispond with the classifier 
+	     you want to use (see [weka documetation](http://weka.sourceforge.net/doc.stable/)). You can also copy and paste the
+	     configuration of the classifier generate by the weka GUI.
   
   **Configuration file for prediction**
   
