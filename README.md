@@ -33,7 +33,7 @@ For prediction are avaiable these flags:
   
   	dataset = `path dataset that contain the instances that have to be predict` (required!)
   
-  	serialized = `path of the serialized file` (required!)
+  	key = `path of the serialized file` (required at least one)
        
       
  ___There are two type of .yml configuration file:___
@@ -50,10 +50,6 @@ For prediction are avaiable these flags:
 			ens_options: `options of the ensemble method` (optional)
 			comment: `everything you want` (optional, the program will ingnore this parameters)
 			
-  **Configuration file for prediction**
-  
-	dataset: `path dataset that contain the instances that have to be predict` (required!)
-	serialized: `path of the serialized file` (required!) 
   
   ### Exemples
   
@@ -97,12 +93,6 @@ For prediction are avaiable these flags:
     -   name: weka.classifiers.functions.LibSVM
         options: [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]  
 
-  
-  **Exemple of a .yml configuration file for prediction:**
-  
-	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
-   
-	serialized: C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
   
   **Exemple of execution**
   
