@@ -38,19 +38,4 @@ public class TestBigConfiguration extends TestCase{
     	assertTrue(correct);
     }
     
-    
-	@Test 
-    public void testBigYaml(){
-    	String[] args = {"-ser", 
-    					 "-save",  
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.yml"
-    	}; // end declaration
-    	
-    	try{
-    		workflow.start(args);
-    	}catch(Exception e){
-    		correct = false;
-    	}
-    	assertTrue(correct);
-    }
 }

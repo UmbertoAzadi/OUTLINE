@@ -3,8 +3,6 @@ package it.unimib.disco.essere.core;
 
 import weka.classifiers.Classifier;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,25 +63,13 @@ public class EntryPoint {
 	}
 	
 	public void load(String path) throws Exception{
-		try{
-			configuration = new LoaderYaml();
+		try {
+			configuration = new LoaderProperties();
 			classifiers = configuration.load(path);
-		}catch(Exception e){
-			if(e.getMessage().equals("Not a yaml file")){
-				try {
-					configuration = new LoaderProperties();
-					classifiers = configuration.load(path);
-				} catch (Exception e1) {
-					System.out.println("ERROR : Invalid or not found property file, please check the path");
-					//System.exit(0);
-					throw new Exception();
-				}
-			}else{
-				System.out.println("ERROR : Invalid or not found property file, please check the path");
-				//System.exit(0);
-				throw new Exception();
-			}
-			
+		} catch (Exception e1) {
+			System.out.println("ERROR : Invalid or not found property file, please check the path");
+			//System.exit(0);
+			throw new Exception();
 		}
 	}
 
@@ -101,11 +87,11 @@ public class EntryPoint {
 
 				//                  ||||||||||||||||||||||||||||||
 				// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 
 				//                    ||||||||||||||||||||||||||||||
 				// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 
 			} catch (Exception e1) {
 				throw new Exception();
@@ -132,13 +118,13 @@ public class EntryPoint {
 
 					//	                ||||||||||||||||||||||||||||||
 					// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 
 					//		             ||||||||||||||||||||||||||||||
 					// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 
 				} catch (Exception e1) {
 					System.out.println("ERROR : "+e1.getMessage());
@@ -151,7 +137,6 @@ public class EntryPoint {
 	}
 
 	public void predict(String path) throws Exception{
-		
 		configuration = new LoaderProperties();
 		ArrayList<String> paths =  configuration.loadForPred(path);
 		String	path_dataset =  paths.get(0);

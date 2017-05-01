@@ -40,19 +40,6 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
   	key = `path of the serialized file` (required at least one)
        
       
- ___There are two type of .yml configuration file:___
-
-  **Configuration file for serializaton**
-  
-  	dataset: `path of the dataset` (required!)
-	path: `path where the serialized model will be saved` (optional)
-	(if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
-  	classifiers:
-		-	name: `name of the classifier` (REQUIRED!) 
-			options: `options of the classifier` (optional)
-			ensemble: `name of the ensemble method` (optional)
-			ens_options: `options of the ensemble method` (optional)
-			comment: `everything you want` (optional, the program will ingnore this parameters)
 			
   
   ### Exemples
@@ -74,28 +61,6 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
    
 	key1 = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
 	key2 = C:/Users/uazad/Documents/Progetto/result/1_is_feature_envy_AdaBoostM1_J48.model
-  
-  **Exemple of a .yml configuration file for serialization:**
-  
-	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv 
-	classifiers:
-    -   name: weka.classifiers.trees.J48
-        options: [-U]
-        ensemble: weka.classifiers.meta.AdaBoostM1
-        
-    -   name: weka.classifiers.trees.J48
-        ensemble: weka.classifiers.meta.Bagging
-        
-    -   name: weka.classifiers.trees.J48
-        options: [-R]
-    
-    -   name: weka.classifiers.rules.JRip 
-        
-    -   name: weka.classifiers.rules.JRip
-        ensemble: weka.classifiers.meta.AdaBoostM1
-        
-    -   name: weka.classifiers.functions.LibSVM
-        options: [-P, 100, -S, 1, -K, 2, -D, 3, -G, 0.0, -R, 0.0, -N, 0.2, -M, 40.0, -C, 1.0, -E, 0.001, -seed, 1]  
 
   
   **Exemple of execution**

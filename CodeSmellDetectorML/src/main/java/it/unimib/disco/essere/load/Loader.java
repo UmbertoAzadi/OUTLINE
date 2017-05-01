@@ -34,13 +34,15 @@ public abstract class Loader {
 	}
 	
 	protected void addOptions(OptionHandler o, String[] options) throws Exception{
+		String[] tmp = new String[options.length]; 
+		System.arraycopy(options, 0, tmp, 0, options.length);
 		if(options != null){
 			try {
 				o.setOptions(options);
 			} catch (Exception e) {
 				System.out.println("-------------------------------------------------------------------------------------------------");
 				System.out.println("ERROR : these options are incorrect: ");
-				System.out.println("\t"+Arrays.toString(options));
+				System.out.println("\t"+Arrays.toString(tmp));
 				System.out.println("	plese check them in the weka documentation");
 				System.out.println(""); 
 				System.out.println("--------------------------------------------------------------------------------------------------");
