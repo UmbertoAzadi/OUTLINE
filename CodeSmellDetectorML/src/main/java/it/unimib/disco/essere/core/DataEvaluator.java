@@ -27,7 +27,7 @@ public class DataEvaluator {
 		this(dc, DL.getDataset());
 	}
 	
-	/*
+	
 	public String crossValidation(Classifier c){
 		return crossValidation(c, 10, 1);
 	}
@@ -41,7 +41,7 @@ public class DataEvaluator {
 			e.printStackTrace();
 		}
 		return ""; 
-	}*/
+	}
 	
 	public Evaluation evaluate(Classifier classifier){
 		Evaluation evaluator = null;

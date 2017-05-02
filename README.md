@@ -15,8 +15,9 @@ For prediction are avaiable these flags:
   * -pred `configuration file` 
   * -pred `path of the serialized model` `path of the dataset`
   * -pred `path of the dataset` `path of the serialized model`
-  
- 
+    
+N.B. the dataset for the prediction __must _not_ contain the class that is supposed to be predected__
+   
  ### Configuration file
  
  ___There are two type of .properties configuration file:___
