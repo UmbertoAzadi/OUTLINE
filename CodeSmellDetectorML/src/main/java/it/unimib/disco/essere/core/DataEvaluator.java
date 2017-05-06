@@ -9,41 +9,54 @@ import java.util.Random;
 import it.unimib.disco.essere.load.LoaderProperties;
 
 public class DataEvaluator {
-	private DataClassifier DC;
-	private Instances testing_dataset;
-	private ArrayList<Evaluation> evaluators = new ArrayList<Evaluation>();
+	//private DataClassifier DC;
+	//private Instances testing_dataset;
+	private Instances dataset;
+	//private ArrayList<Evaluation> evaluators = new ArrayList<Evaluation>();
 	
-	
+	public DataEvaluator(Instances ins){
+		this.dataset = ins;
+	}
+	/*
 	public DataEvaluator(DataClassifier dc, Instances t){
-		System.out.println(dc.getSummary());
+		//System.out.println(dc.getSummary());
 		this.DC = dc;
 		this.testing_dataset = t;
 		for(Classifier c: DC.getClassifiers()){
 			evaluators.add(this.evaluate(c));
 		}
-	}
+	}*/
 	
+	/*
 	public DataEvaluator(DataClassifier dc, LoaderProperties DL ){
 		this(dc, DL.getDataset());
 	}
+	*/
 	
-	
-	public String crossValidation(Classifier c){
+	public String crossValidation(Classifier c) throws Exception{
 		return crossValidation(c, 10, 1);
 	}
 	
-	public String crossValidation(Classifier c, int folds, int seed){
+	public String crossValidation(Classifier c, int folds, int seed) throws Exception{
+		String result = "";
 		try {
-			Evaluation eval = new Evaluation(DC.getDataset());
+			Evaluation eval = new Evaluation(dataset);
 			Random rand = new Random(seed);
-			eval.crossValidateModel(c, DC.getDataset(), folds, rand);		    
+			eval.crossValidateModel(c, dataset, folds, rand);	
+			result = eval.toSummaryString()  
+					 +"Area Under ROC                         " + eval.areaUnderROC(0) 
+					 +"\nFmeasure                               "+ eval.fMeasure(0) + "\n";
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("-------------------------------------------------------------------------");
+			System.out.println("ERROR: UNABLE TO PERFORM THE CROSSVALIDATION");
+			System.out.println(e.getMessage());
+			System.out.println("-------------------------------------------------------------------------");
+			throw new Exception();
 		}
-		return ""; 
+		return result; 
 	}
 	
-	public Evaluation evaluate(Classifier classifier){
+	/*public Evaluation evaluate(Classifier classifier){
 		Evaluation evaluator = null;
 		try {
 			evaluator  = new Evaluation(testing_dataset);
@@ -70,6 +83,6 @@ public class DataEvaluator {
 			i++;
 		}
 		return summary;
-	}
+	}*/
 
 }

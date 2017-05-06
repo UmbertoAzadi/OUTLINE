@@ -4,7 +4,7 @@ How to use:
 -----------
 
 So far the tool allows to learn a machine learning model, serialize the model learn, 
-and predict the class of the instances contained in a new dataset.
+predict the class of the instances contained in a new dataset and apply a cross validation.
 
 For learning and serialization are avaiable these flags:
   * -ser `configuration file` for serialize the model learn
@@ -15,6 +15,12 @@ For prediction are avaiable these flags:
   * -pred `configuration file` 
   * -pred `path of the serialized model` `path of the dataset`
   * -pred `path of the dataset` `path of the serialized model`
+  
+For cross validation are avaiable this flag:
+  * -cross `configuration file`
+  * -cross -fold `number` `configuration file`
+  * -cross -seed `number` `configuration file`
+  * -cross -fold `number` -seed `number` `configuration file`  
     
 N.B. the dataset for the prediction __must _not_ contain the class that is supposed to be predected__
    
@@ -22,7 +28,7 @@ N.B. the dataset for the prediction __must _not_ contain the class that is suppo
  
  ___There are two type of .properties configuration file:___
  
-  **Configuration file for serializaton**
+  **Configuration file for serializaton and cross validation**
   
 	dataset = `path of the dataset` (required!)
 	path = `path where the serialized model will be saved` (optional)
@@ -73,3 +79,5 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
 	java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_J48.model ./dataset/feature-envy.csv
   
 	java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_J48.model
+   
+	java -jar CSDML_v1.0.jar -cross -seed 2 -fold 8 .\configuration\serialization_valid.properties

@@ -16,6 +16,7 @@ public class EntryPoint {
 	private Serializer serializer = new Serializer();
 	private DataClassifier  classifier;
 	private Predictor predictor;
+	private DataEvaluator evaluator;
 
 	public EntryPoint(){}
 	
@@ -25,6 +26,8 @@ public class EntryPoint {
 			workflow.start(args);
 		} catch (Exception e) {
 			// do nothing, the error message are already print out
+			System.out.println("If there isn't any error message you don't specified any operation!");
+			System.out.println("For print the list of the operation use the flag -help or see it in the README.md");
 		}
 		
 	}
@@ -33,33 +36,78 @@ public class EntryPoint {
 		List<String> input = Arrays.asList(args);
 		
 		if(input.contains("-pred")){
-			if(args.length == 2)
-				this.predict(args[args.length - 1]);
-			else
-				this.predict(args[args.length - 1], args[args.length - 2]);
-
+			pred(args);
 		}else{
+			this.load(args[args.length - 1]);
 			if(input.contains("-print") || input.contains("-save") || input.contains("-ser")){
-				this.load(args[args.length - 1]);
-				this.classify(); 
-
-				if(input.contains("-print"))
-					this.printClassifier();
-
-				if(input.contains("-save"))
-					this.saveClassifier();
-
-				if(input.contains("-ser"))
-					this.serialize();
+				ser_print_save(args, input);
 			}else{
-				System.out.println("No valid operation selected, please use:");
-				System.out.println("-ser for serialize the classifier specified in the configuaration file");
-				System.out.println("-print for print the human-readable result of classification");
-				System.out.println("-save for save the human-readable result of classification");
-				System.out.println("-pred for predict the class of a new dataset");
-				System.out.println("\n For more information on how to use it please read the README.MD");
+				if(input.contains("-cross")){
+					cross(args, input);
+				}else{
+					print_avaiable_flag();
+				}
 			}
 		}
+		
+		
+	}
+
+	private void cross(String[] args, List<String> input) throws Exception {
+		int fold = 10;
+		int seed = 1;
+		if(input.contains("-fold")){
+			try{
+				int index_fold = input.indexOf("-fold") + 1;
+				fold = Integer.parseInt(input.get(index_fold));
+				fold = Math.abs(fold);
+			}catch(Exception e){
+				fold = 10;
+				System.out.println("WARNING: the number of fold are not correct specified, the default number (10) will be used");
+			}
+		}
+		if(input.contains("-seed")){
+			try{
+				int index_seed = input.indexOf("-seed") + 1;
+				seed = Integer.parseInt(input.get(index_seed));
+				seed = Math.abs(seed);
+			}catch(Exception e){
+				seed = 1;
+				System.out.println("WARNING: the number of seed are not correct specified, the default number (1) will be used");
+			}
+		}
+		
+		this.crossValidation(fold, seed);
+	}
+
+	private void print_avaiable_flag() {
+		System.out.println("No valid operation selected, please use:");
+		System.out.println("-ser for serialize the classifier specified in the configuaration file");
+		System.out.println("-print for print the human-readable result of classification");
+		System.out.println("-save for save the human-readable result of classification");
+		System.out.println("-pred for predict the class of a new dataset");
+		System.out.println("-cross for using the cross validation for classify and evaluate");
+		System.out.println("\n For more information on how to use it please read the README.MD");
+	}
+
+	private void ser_print_save(String[] args, List<String> input) throws Exception {
+		this.classify(); 
+
+		if(input.contains("-print"))
+			this.printClassifier();
+
+		if(input.contains("-save"))
+			this.saveClassifier();
+
+		if(input.contains("-ser"))
+			this.serialize();
+	}
+
+	private void pred(String[] args) throws Exception {
+		if(args.length == 2)
+			this.predict(args[args.length - 1]);
+		else
+			this.predict(args[args.length - 1], args[args.length - 2]);
 	}
 	
 	public void load(String path) throws Exception{
@@ -87,11 +135,11 @@ public class EntryPoint {
 
 				//                  ||||||||||||||||||||||||||||||
 				// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
 
 				//                    ||||||||||||||||||||||||||||||
 				// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
+				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
 
 			} catch (Exception e1) {
 				throw new Exception();
@@ -118,13 +166,13 @@ public class EntryPoint {
 
 					//	                ||||||||||||||||||||||||||||||
 					// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
+					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
 
 					//		             ||||||||||||||||||||||||||||||
 					// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
+					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
 
 				} catch (Exception e1) {
 					System.out.println("ERROR : "+e1.getMessage());
@@ -193,7 +241,7 @@ public class EntryPoint {
 				System.out.println("------------------------------------------------------------------");
 				//System.exit(0);
 				throw new Exception();
-			}
+			} 
 		}
 		DatasetHandler dataset = new DatasetHandler(path_dataset);
 		predictor = new Predictor(dataset.getDataset());
@@ -208,4 +256,14 @@ public class EntryPoint {
 		
 		datasetPredicted.toCSV(path);
 	}
+	
+	public void crossValidation(int fold, int seed) throws Exception{
+		
+		evaluator = new DataEvaluator(configuration.getDataset());
+		for(Classifier c: classifiers){
+			System.out.println("_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(c, fold, seed));
+		}
+	}
+	
+	
 }
