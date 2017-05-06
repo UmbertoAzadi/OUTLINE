@@ -16,13 +16,15 @@ For prediction are avaiable these flags:
   * -pred `path of the serialized model` `path of the dataset`
   * -pred `path of the dataset` `path of the serialized model`
   
+  N.B. the dataset for the prediction __must _not_ contain the class that is supposed to be predected__
+  
 For cross validation are avaiable this flag:
   * -cross `configuration file`
   * -cross -fold `number` `configuration file`
   * -cross -seed `number` `configuration file`
   * -cross -fold `number` -seed `number` `configuration file`  
     
-N.B. the dataset for the prediction __must _not_ contain the class that is supposed to be predected__
+  N.B. if the fold or the seed are not specified the default numebers will be used, which are respectively 10 and 1
    
  ### Configuration file
  
