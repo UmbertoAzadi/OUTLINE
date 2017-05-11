@@ -35,8 +35,9 @@ public class LoaderProperties extends Loader{
 		properties = this.readProperties(path_properties);
 
 		// CARICO IL DATASET
-		String path_dataset = properties.getProperty("dataset");
-		dataset = new DatasetHandler(path_dataset);
+		PathDataset = properties.getProperty("dataset");
+		
+		dataset = new DatasetHandler(PathDataset);
 		properties.remove("dataset");
 		
 		path_for_result = properties.getProperty("path");
@@ -59,7 +60,7 @@ public class LoaderProperties extends Loader{
 		OptionHandler oh = null;
 		
 		String classifier = key;
-			
+		
 		// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
 		oh = this.findClass(classifier);
 		
@@ -70,10 +71,11 @@ public class LoaderProperties extends Loader{
 			
 			// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
 			oh = this.findClass(classifier);
+			
 		}
 
 		this.checkNotNull(oh, "Classifier", classifier);
-	    
+		
 	    if(!element.equals("")){
 	    	String[] option = element.split(" ");
 	    	this.addOptions(oh, option);
@@ -88,7 +90,7 @@ public class LoaderProperties extends Loader{
 		properties = this.readProperties(path);
 		ArrayList<String> result = new ArrayList<String>();
 		
-		String path_dataset = properties.getProperty("dataset");
+		String PathDataset = properties.getProperty("dataset");
 		properties.remove("dataset");
 		
 		// ESTRAGGO E ITERO SULLE PROPERIETA'
@@ -99,7 +101,7 @@ public class LoaderProperties extends Loader{
 			result.add(classifier);
 		}
 		
-		result.add(0, path_dataset);
+		result.add(0, PathDataset);
 		
 		return result; 
 	}

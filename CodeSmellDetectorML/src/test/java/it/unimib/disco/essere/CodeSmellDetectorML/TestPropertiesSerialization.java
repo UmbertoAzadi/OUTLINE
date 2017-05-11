@@ -128,4 +128,21 @@ public class TestPropertiesSerialization extends TestCase {
     	}
     	assertTrue(correct);
     }      
+    
+    /*
+	@Test 
+    public void testBigProperties(){
+    	String[] args = {"-ser",  
+    					 "-save",  
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties"
+    	}; // end declaration
+    	
+    	try{
+    		workflow.start(args);
+    	}catch(Exception e){
+    		correct = false;
+    	}
+    	assertTrue(correct);
+    }
+    */
 }

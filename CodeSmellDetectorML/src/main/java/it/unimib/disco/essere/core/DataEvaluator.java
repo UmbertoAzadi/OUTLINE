@@ -3,10 +3,7 @@ package it.unimib.disco.essere.core;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
-import java.util.ArrayList;
 import java.util.Random;
-
-import it.unimib.disco.essere.load.LoaderProperties;
 
 public class DataEvaluator {
 	//private DataClassifier DC;

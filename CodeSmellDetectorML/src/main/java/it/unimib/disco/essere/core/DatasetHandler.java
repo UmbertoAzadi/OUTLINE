@@ -46,7 +46,7 @@ public class DatasetHandler {
 		CSVSaver saver = new CSVSaver();
 		saver.setInstances(dataset);
 		try {
-			System.out.println("The predict model is saved in: " + path);
+			System.out.println("Saving the .csv...");
 			saver.setFile(new File(path));
 			saver.writeBatch();
 		} catch (IOException e) {
@@ -60,6 +60,7 @@ public class DatasetHandler {
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(dataset);
 		try{
+			System.out.println("Saving the .arff...");
 			saver.setFile(new File(path));
 			saver.writeBatch();
 		}catch(IOException e){

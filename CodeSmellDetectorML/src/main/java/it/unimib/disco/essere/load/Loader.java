@@ -12,13 +12,7 @@ public abstract class Loader {
 	
 	protected String path_for_result;
 	protected DatasetHandler dataset;
-	protected static String[] PATH_CLASSIFIER= {"weka.classifiers.trees.",
-											  "weka.classifiers.bayes.", 
-											  "weka.classifiers.functions.",
-											  "weka.classifiers.rules.",
-											  "weka.classifiers.meta.",
-											  "weka.classifiers.lazy.",
-											  "weka.classifiers.misc."};
+	protected String PathDataset;
 	
 	public Loader(){}
 	
@@ -31,6 +25,10 @@ public abstract class Loader {
 	
 	public Instances getDataset(){
 		return dataset.getDataset();
+	}
+	
+	public String gatPathDataset(){
+		return PathDataset;
 	}
 	
 	protected void addOptions(OptionHandler o, String[] options) throws Exception{
