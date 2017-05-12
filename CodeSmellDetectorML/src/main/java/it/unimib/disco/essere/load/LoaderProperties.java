@@ -41,8 +41,17 @@ public class LoaderProperties extends Loader{
 		properties.remove("dataset");
 		
 		path_for_result = properties.getProperty("path");
-		properties.remove("path");
+		
+		if(path_for_result != null){
+			char last_elem = path_for_result.charAt(path_for_result.length() - 1);
+			properties.remove("path");
 	
+			while(last_elem == ' '){
+				path_for_result = path_for_result.substring(0, path_for_result.length() - 1);
+				last_elem = path_for_result.charAt(path_for_result.length() - 1);
+			}
+		}
+		
 		// ESTRAGGO E ITERO SULLE PROPERIETA'
 		Enumeration<?> e =  properties.propertyNames();
 		while (e.hasMoreElements()) {

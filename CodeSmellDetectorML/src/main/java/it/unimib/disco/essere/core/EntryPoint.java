@@ -27,7 +27,7 @@ public class EntryPoint {
 
 	public EntryPoint(){}
 
-	public static void main(String[] args){ 
+	public static void main(String[] args) throws Exception{ 
 		EntryPoint workflow = new EntryPoint();
 		
 		String path = new java.io.File("").getAbsolutePath();
@@ -87,6 +87,7 @@ public class EntryPoint {
 		boolean randomized = false;
 		double percentage = 66.0;
 		int runs = 10;
+		boolean printOnFile = false;
 		
 		if(input.contains("-exptype")){
 			exptype = input.get(input.indexOf("-exptype") + 1);
@@ -137,8 +138,17 @@ public class EntryPoint {
 			runs = 10;
 		}
 		
+		if(configuration.getPath_for_result() != null){
+			printOnFile = true;
+		}
+		
 		String result = experiment.experiment(exptype, splittype, folds, randomized, percentage, runs);
-		System.out.println(result);
+		
+		if(printOnFile){
+			printInConfiPath(result, "Saving the result of the experiment...", "Experiment_Result", ".txt");
+		}else{
+			System.out.println(result);
+		}
 	}
 
 	private void cross(String[] args, List<String> input) throws Exception {
@@ -359,20 +369,35 @@ public class EntryPoint {
 			message +=  "_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(c, fold, seed)+"\n";
 		}
 		if(printOnFile){
-			System.out.println("Saving the result of the cross validation...");
-			try{
-				PrintWriter writer;
-				String path = configuration.getPath_for_result().replaceAll(" ", "");
-				writer = new PrintWriter(path + "\\" + "CrossValidation_Result(rename_this_file).txt", "UTF-8");
-				writer.println(message);
-				writer.close();
-				System.out.println("The result of the cross validation were saved in "+path + "\\" + "CrossValidation_Result(rename_this_file).txt");
-			}catch(Exception e){
-				System.out.println("ERROR: Unable to save the result on the specified path");
-				e.printStackTrace();
-			}
+			printInConfiPath(message, "Saving the result of the cross validation...", "CrossValidation_Result", ".txt");
 		}else{
 			System.out.println(message);
+		}
+	}
+
+	private void printInConfiPath(String textToPrint, String messageToShow, String nameOfTheFile, String extensionWithPoint) throws Exception {
+		System.out.println(messageToShow);
+		try{
+			PrintWriter writer;
+			String path = configuration.getPath_for_result();
+			
+			String name = "\\" + nameOfTheFile + extensionWithPoint;
+			File f = new File(path + name);
+			int i = 0;
+			
+			while(f.exists()) { 
+				name = "\\" + nameOfTheFile + "_" + i + extensionWithPoint;
+				f = new File(path + name);
+				i++;
+			}
+			
+			writer = new PrintWriter(path + name, "UTF-8");
+			writer.println(textToPrint);
+			writer.close();
+			System.out.println("The result of the cross validation were saved in "+path + name);
+		}catch(Exception e){
+			System.out.println("ERROR: Unable to save the result on the specified path");
+			throw e;
 		}
 	}
 

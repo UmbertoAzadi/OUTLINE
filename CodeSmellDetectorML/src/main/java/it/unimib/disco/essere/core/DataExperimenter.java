@@ -171,13 +171,22 @@ public class DataExperimenter {
 		InstancesResultListener irl = new InstancesResultListener();
 		
 		if(this.pathForResult != null){
-			irl.setOutputFile(new File(this.pathForResult+ "\\" + "ResultExperiment.arff"));
+			String name = "\\" + "ResultExperiment.arff";
+			File file = new File(this.pathForResult+ name);
+			int i = 0;
+			
+			while(file.exists()) { 
+				name = "\\" + "ResultExperiment_"+i+".arff";
+				file = new File(this.pathForResult + name);
+				i++;
+			}
+			
+			irl.setOutputFile(new File(this.pathForResult+ name));
 		}else{
 			String path = new java.io.File("").getAbsolutePath();
 
 			if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
 				irl.setOutputFile(new File(path.substring(0, path.lastIndexOf("\\"))+"\\result\\" + "ResultExperiment.arff"));
-
 			}else{
 				irl.setOutputFile(new File(path+"\\CodeSmellDetectorML\\result\\" + "ResultExperiment.arff"));
 			}
