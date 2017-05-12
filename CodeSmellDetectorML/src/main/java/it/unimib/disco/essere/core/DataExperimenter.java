@@ -175,13 +175,12 @@ public class DataExperimenter {
 		}else{
 			String path = new java.io.File("").getAbsolutePath();
 
-			//        		    ||||||||||||||||||||||||||||||
-			// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-			irl.setOutputFile(new File(path.substring(0, path.lastIndexOf("\\"))+"\\result\\" + "ResultExperiment.arff"));
+			if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+				irl.setOutputFile(new File(path.substring(0, path.lastIndexOf("\\"))+"\\result\\" + "ResultExperiment.arff"));
 
-			//                    ||||||||||||||||||||||||||||||
-			// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-			//irl.setOutputFile(new File(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML\\result\\" + "ResultExperiment.arff"));
+			}else{
+				irl.setOutputFile(new File(path+"\\CodeSmellDetectorML\\result\\" + "ResultExperiment.arff"));
+			}
 		}
 		return irl;
 	}

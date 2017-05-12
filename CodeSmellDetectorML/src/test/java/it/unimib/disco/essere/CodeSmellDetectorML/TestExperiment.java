@@ -109,7 +109,7 @@ public class TestExperiment extends TestCase{
     }
     
     /*
-    !!!!!!! THIS TEST NEED 1h 20m TO BE RUN !!!!!!!!!!!!
+    //!!!!!!! THIS TEST NEED 1h 35m TO BE RUN  (5745,768 s) !!!!!!!!!!!!
     @Test
     public void testTryStressTest(){
     	String[] args = {"-wekaExp",
@@ -127,4 +127,5 @@ public class TestExperiment extends TestCase{
     	assertTrue(correct);
     }
     */
+    
 }

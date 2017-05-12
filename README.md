@@ -27,7 +27,7 @@ For cross validation are avaiable these flags:
 
   N.B. if the fold or the seed are not specified the default numebers will be used, which are respectively 10 and 1
   
-For weka experimet are avaiable these flags:
+For weka experiment are avaiable these flags:
   * -wekaExp -exptype `classification` -splittype `crossvalidation` -runs `# of runs` -folds `# of cross-validation folds`  `configuration file` 
   * -wekaExp -exptype `regression` -splittype `crossvalidation` -runs `# of runs` -folds `# of cross-validation folds` (-randomized)  `configuration file`      
   * -wekaExp -exptype `classification` -splittype `randomsplit` -runs `# of runs` -percentage `percentage for randomsplit`  `configuration file` 

@@ -21,7 +21,7 @@ public class EntryPoint {
 	private DataClassifier  classifier;
 	private Predictor predictor;
 	private DataEvaluator evaluator;
-	private DataExperimenter experimet;
+	private DataExperimenter experiment;
 
 	private static long startTime = System.currentTimeMillis();
 
@@ -29,6 +29,10 @@ public class EntryPoint {
 
 	public static void main(String[] args){ 
 		EntryPoint workflow = new EntryPoint();
+		
+		String path = new java.io.File("").getAbsolutePath();
+		System.out.println("The path is: "+path+"\n\n\n\n");
+		
 		try {
 			workflow.start(args);
 		} catch (Exception e) {
@@ -46,18 +50,20 @@ public class EntryPoint {
 			something = true;
 			pred(args);
 		}else{
-			this.load(args[args.length - 1]);
+			// this.load(args[args.length - 1]); dentro gli if altrimenti non stampa i flag
 			if(input.contains("-print") || input.contains("-save") || input.contains("-ser")){
+				this.load(args[args.length - 1]);
 				something = true;
 				ser_print_save(args, input);
 			}
 			if(input.contains("-cross")){
+				this.load(args[args.length - 1]);
 				something = true;
 				cross(args, input);
 			}
 			if(input.contains("-wekaExp")){
+				this.load(args[args.length - 1]);
 				something = true;
-				// estrarre PathDataset, fold da (-fold), 
 				wekaExp(input);
 			}
 		}
@@ -74,7 +80,7 @@ public class EntryPoint {
 		File file = new File(configuration.gatPathDataset());
 		model.addElement(file);
 		
-		experimet = new DataExperimenter(classifiers, model, configuration.getPath_for_result());
+		experiment = new DataExperimenter(classifiers, model, configuration.getPath_for_result());
 		String exptype = "classification";
 		String splittype = "crossvalidation";
 		int folds = 10;
@@ -131,7 +137,7 @@ public class EntryPoint {
 			runs = 10;
 		}
 		
-		String result = experimet.experiment(exptype, splittype, folds, randomized, percentage, runs);
+		String result = experiment.experiment(exptype, splittype, folds, randomized, percentage, runs);
 		System.out.println(result);
 	}
 
@@ -175,7 +181,8 @@ public class EntryPoint {
 		System.out.println("-save for save the human-readable result of classification");
 		System.out.println("-pred for predict the class of a new dataset");
 		System.out.println("-cross for using the cross validation for classify and evaluate");
-		System.out.println("\n For more information on how to use it please read the README.MD");
+		System.out.println("-wekaExp for perorm a experiment (as intended by weka)");
+		System.out.println("\n For more information on how to use it please read the README.md");
 	}
 
 	private void ser_print_save(String[] args, List<String> input) throws Exception {
@@ -227,15 +234,13 @@ public class EntryPoint {
 			try {
 				System.out.println("WARNING: Path not specified or incorrect");
 				String path = new java.io.File("").getAbsolutePath();
-
-				//                  ||||||||||||||||||||||||||||||
-				// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
-
-				//                    ||||||||||||||||||||||||||||||
-				// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-				//classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result");
-
+				
+				if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+					classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+				}else{
+					classifier.getSummary(path + "\\result");
+				}
+				
 			} catch (Exception e1) {
 				throw new Exception();
 			}
@@ -259,15 +264,13 @@ public class EntryPoint {
 				try {
 					String path = new java.io.File("").getAbsolutePath();
 
-					//	                ||||||||||||||||||||||||||||||
-					// COMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-					pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\result";
-
-					//		             ||||||||||||||||||||||||||||||
-					// DECOMMENTS FOR JAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-					//serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result" + "\\" + name + ".model", c);
-					//pathToPrint = path.substring(0, path.lastIndexOf("\\"))+"\\CodeSmellDetectorML"+"\\result";
+					if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+						serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
+						pathToPrint = path.substring(0, path.lastIndexOf("\\")) + "\\result";
+					}else{ 
+						serializer.serialize(path+"\\result" + "\\" + name + ".model", c);
+						pathToPrint = path + "\\result";
+					}
 
 				} catch (Exception e1) {
 					System.out.println("ERROR : "+e1.getMessage());
