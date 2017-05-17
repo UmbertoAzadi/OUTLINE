@@ -5,7 +5,8 @@ import java.beans.PropertyDescriptor;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 
@@ -26,30 +27,54 @@ import weka.experiment.ResultMatrixPlainText;
 import weka.experiment.SplitEvaluator;
 
 public class DataExperimenter {
+
+	private static final String[] EXPTYPE_VALUES = {"classification", "regression"};
+	private static final String[] SPLITTYPE_VALUES = {"crossvalidation", "randomsplit"};
+	protected static final String DEFAULT_EXPTYPE = "classification";
+	protected static final String DEFAULT_SPLITTYPE = "crossvalidation";
+	protected static final int DEFAULT_FOLDS = 10;
+	protected static final boolean DEFAULT_RANDOMIZED = false;
+	protected static final double DEFAULT_PERCENTAGE = 66.0;
+	protected static final int DEFAULT_RUNS = 10;
+
+	private static final Logger LOGGER = Logger.getLogger(DataExperimenter.class.getName());
 	
-	private ArrayList<Classifier> classifiers;
+	private List<Classifier> classifiers;
 	private String pathForResult = null;
 	private DefaultListModel<File> model;
-	
-	public DataExperimenter(ArrayList<Classifier> classifiers, DefaultListModel<File> datasets){
+
+
+	public DataExperimenter(List<Classifier> classifiers, DefaultListModel<File> datasets){
 		this.classifiers = classifiers;
 		this.model = datasets;
 	}
-	
-	public DataExperimenter(ArrayList<Classifier> classifiers, DefaultListModel<File> datasets, String pathForResult){
+
+	public DataExperimenter(List<Classifier> classifiers, DefaultListModel<File> datasets, String pathForResult){
 		this.classifiers = classifiers;
 		this.model = datasets;
 		this.pathForResult = pathForResult;
 	}
 	
-	public String experimetWithDefaultValues() throws Exception{
-		String result = this.experiment("classification", "crossvalidation", 10, false, 66.0, 10);
-		return result;
+	public boolean exptypeCheckValue(String exptype){
+		return exptype.equals(EXPTYPE_VALUES[0]) || exptype.equals(EXPTYPE_VALUES[1]);
 	}
-	
+
+	public boolean splittypeCheckValue(String splittype){
+		return splittype.equals(SPLITTYPE_VALUES[0]) || splittype.equals(SPLITTYPE_VALUES[1]);
+	}
+
+	public String experimetWithDefaultValues() throws Exception{
+		return this.experiment(DataExperimenter.DEFAULT_EXPTYPE, 
+				DataExperimenter.DEFAULT_SPLITTYPE, 
+				DataExperimenter.DEFAULT_FOLDS, 
+				DataExperimenter.DEFAULT_RANDOMIZED, 
+				DataExperimenter.DEFAULT_PERCENTAGE, 
+				DataExperimenter.DEFAULT_RUNS);
+	}
+
 	public String experiment(String exptype, String splittype, int folds, boolean randomized, double percentage, int runs) throws Exception{
 
-		// 1. setup the experiment
+		// 1. setup the experiment 
 		System.out.println("Setting up...");
 		Experiment exp = new Experiment();
 		Classifier[] a = new Classifier[classifiers.size()];
@@ -60,22 +85,22 @@ public class DataExperimenter {
 		SplitEvaluator se = null;
 		Classifier sec    = null;
 		boolean classification = false;
-		if (exptype.equals("classification")) {
+		if (EXPTYPE_VALUES[0].equals(exptype)) {
 			classification = true;
 			se  = new ClassifierSplitEvaluator();
 			sec = ((ClassifierSplitEvaluator) se).getClassifier();
-		}else if(exptype.equals("regression")){
+		}else if(EXPTYPE_VALUES[1].equals(exptype)){
 			se  = new RegressionSplitEvaluator();
 			sec = ((RegressionSplitEvaluator) se).getClassifier();
 		}
 
 		// crossvalidation or randomsplit
-		if (splittype.equals("crossvalidation")) {
+		if (SPLITTYPE_VALUES[0].equals(splittype)) {
 			CrossValidationResultProducer cvrp = new CrossValidationResultProducer();
 			cvrp.setNumFolds(folds);
 			setUpCrossValidaton(exp, se, sec, cvrp);
 		}
-		else if (splittype.equals("randomsplit")) {
+		else if (SPLITTYPE_VALUES[1].equals(splittype)) {
 			RandomSplitResultProducer rsrp = new RandomSplitResultProducer();
 
 			if(randomized)
@@ -107,7 +132,8 @@ public class DataExperimenter {
 			System.out.println("Finishing...");
 			exp.postProcess();
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.severe("Unable to run the experimet: " + e.getMessage());
+			throw e;
 		}
 
 		// 3. calculate statistics and output them
@@ -118,9 +144,9 @@ public class DataExperimenter {
 		return matrix.toString();
 	}
 
-	private void setUpRandomsplit(Experiment exp, SplitEvaluator se, Classifier sec, RandomSplitResultProducer rsrp) {
+	private void setUpRandomsplit(Experiment exp, SplitEvaluator se, Classifier sec, RandomSplitResultProducer rsrp) throws IntrospectionException {
 		rsrp.setSplitEvaluator(se);
-		
+
 		PropertyNode[] propertyPath = new PropertyNode[2];
 		try {
 			propertyPath[0] = new PropertyNode(
@@ -135,7 +161,8 @@ public class DataExperimenter {
 					se.getClass());
 		}
 		catch (IntrospectionException e) {
-			e.printStackTrace();
+			LOGGER.severe("Unable to set up the randomsplit: " + e.getMessage());
+			throw e;
 		}
 
 		exp.setResultProducer(rsrp);
@@ -143,7 +170,7 @@ public class DataExperimenter {
 	}
 
 	private void setUpCrossValidaton(Experiment exp, SplitEvaluator se, Classifier sec,
-			CrossValidationResultProducer cvrp) {
+			CrossValidationResultProducer cvrp) throws IntrospectionException {
 		cvrp.setSplitEvaluator(se);
 
 		PropertyNode[] propertyPath = new PropertyNode[2];
@@ -160,35 +187,37 @@ public class DataExperimenter {
 					se.getClass());
 		}
 		catch (IntrospectionException e) {
-			e.printStackTrace();
+			LOGGER.severe("Unable to set up the crossvalidation: " + e.getMessage());
+			throw e;
 		}
-		
+
 		exp.setResultProducer(cvrp);
-	    exp.setPropertyPath(propertyPath);
+		exp.setPropertyPath(propertyPath);
 	}
 
 	private InstancesResultListener createFileForResult() {
 		InstancesResultListener irl = new InstancesResultListener();
-		
+		String statisticFileName = "ExperimentStatistics";
+
 		if(this.pathForResult != null){
-			String name = "\\" + "ResultExperiment.arff";
+			String name = "\\" + statisticFileName + ".arff";
 			File file = new File(this.pathForResult+ name);
 			int i = 0;
-			
+
 			while(file.exists()) { 
-				name = "\\" + "ResultExperiment_"+i+".arff";
+				name = "\\"+ statisticFileName+"_"+i+".arff";
 				file = new File(this.pathForResult + name);
 				i++;
 			}
-			
+
 			irl.setOutputFile(new File(this.pathForResult+ name));
 		}else{
 			String path = new java.io.File("").getAbsolutePath();
-
+			
 			if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
-				irl.setOutputFile(new File(path.substring(0, path.lastIndexOf("\\"))+"\\result\\" + "ResultExperiment.arff"));
+				irl.setOutputFile(new File(path.substring(0, path.lastIndexOf('\\'))+"\\result\\" + statisticFileName + ".arff"));
 			}else{
-				irl.setOutputFile(new File(path+"\\CodeSmellDetectorML\\result\\" + "ResultExperiment.arff"));
+				irl.setOutputFile(new File(path+"\\result\\" + statisticFileName + ".arff"));
 			}
 		}
 		return irl;
@@ -198,29 +227,26 @@ public class DataExperimenter {
 		PairedTTester tester = new PairedCorrectedTTester();
 		Instances result;
 
-		try {
-			result = new Instances(new BufferedReader(new FileReader(irl.getOutputFile())));
+		try(FileReader file = new FileReader(irl.getOutputFile())){
+			result = new Instances(new BufferedReader(file));
 		} catch (Exception e) {
-			System.out.println("ERROR: Unable to use the ResultExperiment.arff file");
-			throw new Exception("Unable to use the ResultExperiment.arff file");
+			LOGGER.severe("Unable to use the ResultExperiment.arff file");
+			throw e;
 		}
 
 		tester.setInstances(result);
 		tester.setSortColumn(-1);
 		tester.setRunColumn(result.attribute("Key_Run").index());
-		
+
 		//if (classification)
-		if(splittype.equals("crossvalidation")){	
+		if("crossvalidation".equals(splittype)){	
 			tester.setFoldColumn(result.attribute("Key_Fold").index());
 		}
 		tester.setResultsetKeyColumns(
-				new Range(
-						"" 
-								+ (result.attribute("Key_Dataset").index() + 1)));
+				new Range(Integer.toString(result.attribute("Key_Dataset").index() + 1)));
 		tester.setDatasetKeyColumns(
 				new Range(
-						"" 
-								+ (result.attribute("Key_Scheme").index() + 1)
+						 (result.attribute("Key_Scheme").index() + 1)
 								+ ","
 								+ (result.attribute("Key_Scheme_options").index() + 1)
 								+ ","
@@ -229,16 +255,14 @@ public class DataExperimenter {
 		tester.setDisplayedResultsets(null);       
 		tester.setSignificanceLevel(0.05);
 		tester.setShowStdDevs(true);
-		
+
 		// fill result matrix (but discarding the output)
 		if (classification)
 			tester.multiResultsetFull(0, result.attribute("Percent_correct").index());
 		else
 			tester.multiResultsetFull(0, result.attribute("Correlation_coefficient").index());
-		
+
 		// output results for reach dataset
-		System.out.println("\nResult:");
-		ResultMatrix matrix = tester.getResultMatrix();
-		return matrix;
+		return tester.getResultMatrix();
 	}
 }

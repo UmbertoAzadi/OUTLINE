@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 
@@ -15,31 +16,36 @@ import it.unimib.disco.essere.load.*;
 
 public class EntryPoint {
 
+	private static final Logger LOGGER = Logger.getLogger(EntryPoint.class.getName());
+
 	private ArrayList<Classifier> classifiers;
 	private Loader configuration;
 	private Serializer serializer = new Serializer();
 	private DataClassifier  classifier;
-	private Predictor predictor;
-	private DataEvaluator evaluator;
-	private DataExperimenter experiment;
+	// usati solo in un metodo per ora:
+	// private Predictor predictor; 
+	// private DataEvaluator evaluator;
+	// private DataExperimenter experiment;
 
 	private static long startTime = System.currentTimeMillis();
 
-	public EntryPoint(){}
+	public EntryPoint(){
+		/* Default constructor for the API*/
+	}
 
 	public static void main(String[] args) throws Exception{ 
 		EntryPoint workflow = new EntryPoint();
-		
-		String path = new java.io.File("").getAbsolutePath();
-		System.out.println("The path is: "+path+"\n\n\n\n");
-		
+
 		try {
 			workflow.start(args);
 		} catch (Exception e) {
+			LOGGER.severe("Program fail because: " + e);
 			// do nothing, the error message are already print out
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("It took " + (endTime - startTime) + " milliseconds");
+		String time = String.format("Total time in sec: %1$s", (endTime - startTime)/1000);
+		LOGGER.info(time);
+		//LOGGER.info(String.format("Total time in sec: %1$s", (endTime - startTime)/1000));
 	}
 
 	public void start(String[] args) throws Exception{
@@ -54,12 +60,12 @@ public class EntryPoint {
 			if(input.contains("-print") || input.contains("-save") || input.contains("-ser")){
 				this.load(args[args.length - 1]);
 				something = true;
-				ser_print_save(args, input);
+				serPrintSave(input);
 			}
 			if(input.contains("-cross")){
 				this.load(args[args.length - 1]);
 				something = true;
-				cross(args, input);
+				cross(input);
 			}
 			if(input.contains("-wekaExp")){
 				this.load(args[args.length - 1]);
@@ -69,81 +75,88 @@ public class EntryPoint {
 		}
 
 		if(!something){
-			print_avaiable_flag();
+			printAvaiableFlag();
 		}
 	}
 
 	public void wekaExp(List<String> input) throws Exception{
-		
+
 		// create a list of dataset that contain just the one specify in the config file
 		DefaultListModel<File> model = new DefaultListModel<File>();
 		File file = new File(configuration.gatPathDataset());
 		model.addElement(file);
-		
-		experiment = new DataExperimenter(classifiers, model, configuration.getPath_for_result());
-		String exptype = "classification";
-		String splittype = "crossvalidation";
-		int folds = 10;
-		boolean randomized = false;
-		double percentage = 66.0;
-		int runs = 10;
+
+		DataExperimenter experiment = new DataExperimenter(classifiers, model, configuration.getPathForResult());
+		String exptype = DataExperimenter.DEFAULT_EXPTYPE;
+		String splittype = DataExperimenter.DEFAULT_SPLITTYPE;
+		int folds = DataExperimenter.DEFAULT_FOLDS;
+		boolean randomized = DataExperimenter.DEFAULT_RANDOMIZED;
+		double percentage = DataExperimenter.DEFAULT_PERCENTAGE;
+		int runs = DataExperimenter.DEFAULT_RUNS;
 		boolean printOnFile = false;
-		
+
 		if(input.contains("-exptype")){
 			exptype = input.get(input.indexOf("-exptype") + 1);
 
-			if(!exptype.equals("classification") && !exptype.equals("regression")){
-				System.out.println("WARNING: the exptype value wasn't valid, the default value will be used (classification)");
-				exptype = "classification";
+			if(!experiment.exptypeCheckValue(exptype)){
+				String warning = String.format("the exptype value wasn't valid, the default value will be used (%1$s) ", 
+						DataExperimenter.DEFAULT_EXPTYPE); 
+				LOGGER.warning(warning);
+				exptype = DataExperimenter.DEFAULT_EXPTYPE;
 			}
 		}
-		
+
 		if(input.contains("-splittype")){
 			splittype = input.get(input.indexOf("-splittype") + 1);
 
-			if(!splittype.equals("crossvalidation") && !splittype.equals("randomsplit")){
-				System.out.println("WARNING: the splittype value wasn't valid, the default value will be used (crossvalidation)");
-				splittype = "crossvalidation";
+			if(!experiment.splittypeCheckValue(splittype)){
+				String warning = String.format("the splittype value wasn't valid, the default value will be used (%1$s) ", 
+						DataExperimenter.DEFAULT_SPLITTYPE); 
+				LOGGER.warning(warning);
+				splittype = DataExperimenter.DEFAULT_SPLITTYPE;
 			}
 		}
-		
+
 		try{
 			if(input.contains("-folds")){
 				folds = Integer.parseInt(input.get(input.indexOf("-folds")+1));
 			}	
 		}catch(Exception e){
-			System.out.println("WARNING: the fold value wasn't valid, the default value will be used (10)");
-			folds = 10;
+			LOGGER.warning("the fold value wasn't valid [" + e + "], the default value will be used (" 
+					+ DataExperimenter.DEFAULT_FOLDS + ") ");
+			folds = DataExperimenter.DEFAULT_FOLDS;
 		}
-		
+
 		if(input.contains("-randomized")){
 			randomized = true;
 		}
-		
+
 		try{
 			if(input.contains("-percentage")){
 				percentage = Double.parseDouble(input.get(input.indexOf("-percentage") + 1));
 			}
 		}catch(Exception e){
-			System.out.println("WARNING: the percentage value wasn't valid, the default value will be used (66.0)");
-			percentage = 66.0;
+			LOGGER.warning("the percentage value wasn't valid [" + e + "], the default value will be used (" 
+					+ DataExperimenter.DEFAULT_PERCENTAGE + ") ");
+			percentage = DataExperimenter.DEFAULT_PERCENTAGE;
 		}
-		
+
 		try{
 			if(input.contains("-runs")){
 				runs = Integer.parseInt(input.get(input.indexOf("-runs") + 1));
 			}
 		}catch(Exception e){
-			System.out.println("WARNING: the runs value wasn't valid, the default value will be used (10)");
-			runs = 10;
+			LOGGER.warning("the runs value wasn't valid [" + e + "], the default value will be used (" 
+					+ DataExperimenter.DEFAULT_RUNS + ")");
+			runs = DataExperimenter.DEFAULT_RUNS;
 		}
-		
-		if(configuration.getPath_for_result() != null){
+
+		if(configuration.getPathForResult() != null){
 			printOnFile = true;
 		}
-		
+
 		String result = experiment.experiment(exptype, splittype, folds, randomized, percentage, runs);
-		
+
 		if(printOnFile){
 			printInConfiPath(result, "Saving the result of the experiment...", "Experiment_Result", ".txt");
 		}else{
@@ -151,51 +164,51 @@ public class EntryPoint {
 		}
 	}
 
-	private void cross(String[] args, List<String> input) throws Exception {
-		System.out.println("Crossvalidating...");
+	private void cross(List<String> input) throws Exception {
+		LOGGER.info("Crossvalidating...");
 		int fold = 10;
 		int seed = 1;
 		boolean printOnFile = false;
 
 		if(input.contains("-fold")){
 			try{
-				int index_fold = input.indexOf("-fold") + 1;
-				fold = Integer.parseInt(input.get(index_fold));
+				int indexFold = input.indexOf("-fold") + 1;
+				fold = Integer.parseInt(input.get(indexFold));
 				fold = Math.abs(fold);
 			}catch(Exception e){
 				fold = 10;
-				System.out.println("WARNING: the number of fold are not correct specified, the default number (10) will be used");
+				LOGGER.warning(" the number of fold are not correct specified [" + e + "], the default number (10) will be used");
 			}
 		}
 		if(input.contains("-seed")){
 			try{
-				int index_seed = input.indexOf("-seed") + 1;
-				seed = Integer.parseInt(input.get(index_seed));
+				int indexSeed = input.indexOf("-seed") + 1;
+				seed = Integer.parseInt(input.get(indexSeed));
 				seed = Math.abs(seed);
 			}catch(Exception e){
 				seed = 1;
-				System.out.println("WARNING: the number of seed are not correct specified, the default number (1) will be used");
+				LOGGER.warning("the number of seed are not correct specified [" + e + "], the default number (1) will be used");
 			}
 		}
-		if(configuration.getPath_for_result() != null){
+		if(configuration.getPathForResult() != null){
 			printOnFile = true;
 		}
 
 		this.crossValidation(fold, seed, printOnFile);
 	}
 
-	private void print_avaiable_flag() {
-		System.out.println("No valid operation selected, please use:");
-		System.out.println("-ser for serialize the classifier specified in the configuaration file");
-		System.out.println("-print for print the human-readable result of classification");
-		System.out.println("-save for save the human-readable result of classification");
-		System.out.println("-pred for predict the class of a new dataset");
-		System.out.println("-cross for using the cross validation for classify and evaluate");
-		System.out.println("-wekaExp for perorm a experiment (as intended by weka)");
-		System.out.println("\n For more information on how to use it please read the README.md");
+	private void printAvaiableFlag() {
+		LOGGER.severe("No valid operation selected, please use:\n"
+				+"-ser for serialize the classifier specified in the configuaration file\n"
+				+"-print for print the human-readable result of classification\n"
+				+"-save for save the human-readable result of classification\n"
+				+"-pred for predict the class of a new dataset\n"
+				+"-cross for using the cross validation for classify and evaluate\n"
+				+"-wekaExp for perorm a experiment (as intended by weka)\n"
+				+"\n For more information on how to use it please read the README.md\n");
 	}
 
-	private void ser_print_save(String[] args, List<String> input) throws Exception {
+	private void serPrintSave(List<String> input) throws Exception {
 		this.classify(); 
 
 
@@ -203,18 +216,18 @@ public class EntryPoint {
 			this.printClassifier();
 
 		if(input.contains("-save")){
-			System.out.println("Salving the human-readable description of the classifiers...");
+			LOGGER.info("Salving the human-readable description of the classifiers...");
 			this.saveClassifier();
 		}
 
 		if(input.contains("-ser")){
-			System.out.println("Serializing the classifiers...");
+			LOGGER.info("Serializing the classifiers...");
 			this.serialize();
 		}
 	}
 
 	private void pred(String[] args) throws Exception {
-		System.out.println("Predicting...");
+		LOGGER.info("Predicting...");
 		if(args.length == 2)
 			this.predict(args[args.length - 1]);
 		else
@@ -225,33 +238,33 @@ public class EntryPoint {
 		try {
 			configuration = new LoaderProperties();
 			classifiers = configuration.load(path);
-		} catch (Exception e1) {
-			System.out.println("ERROR : Invalid or not found property file, please check the path");
-			//System.exit(0);
+		} catch (Exception e) {
+			LOGGER.severe("Invalid or not found property file, please check the path! [" + e + "]");
 			throw new Exception();
 		}
 	}
 
 	public void classify(){
-		System.out.println("Classifing...");
+		LOGGER.info("Classifing...");
 		classifier = new DataClassifier(configuration.getDataset(), classifiers);
 	}
 
 	public void saveClassifier() throws Exception{
 		try{	
-			classifier.getSummary(configuration.getPath_for_result());
+			classifier.getSummary(configuration.getPathForResult());
 		}catch(Exception e){
 			try {
-				System.out.println("WARNING: Path not specified or incorrect");
+				LOGGER.warning("Path not specified or incorrect [" + e + "]");
 				String path = new java.io.File("").getAbsolutePath();
-				
+
 				if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
-					classifier.getSummary(path.substring(0, path.lastIndexOf("\\"))+"\\result");
+					classifier.getSummary(path.substring(0, path.lastIndexOf('\\'))+"\\result");
 				}else{
 					classifier.getSummary(path + "\\result");
 				}
-				
+
 			} catch (Exception e1) {
+				LOGGER.severe("Unsable to save the human-readable description of the classifiers:" + e1);
 				throw new Exception();
 			}
 		}
@@ -268,23 +281,24 @@ public class EntryPoint {
 		for(Classifier c: classifiers){
 			String name = classifier.generateNameForFile(c, i);
 			try{	
-				serializer.serialize(configuration.getPath_for_result() + "\\" + name + ".model", c);
-				pathToPrint = configuration.getPath_for_result();
+				serializer.serialize(configuration.getPathForResult() + "\\" + name + ".model", c);
+				pathToPrint = configuration.getPathForResult();
 			}catch(Exception e){
 				try {
 					String path = new java.io.File("").getAbsolutePath();
 
 					if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
-						serializer.serialize(path.substring(0, path.lastIndexOf("\\"))+"\\result" + "\\" + name + ".model", c);
-						pathToPrint = path.substring(0, path.lastIndexOf("\\")) + "\\result";
+						serializer.serialize(path.substring(0, path.lastIndexOf('\\'))+"\\result" + "\\" + name + ".model", c);
+						pathToPrint = path.substring(0, path.lastIndexOf('\\')) + "\\result";
 					}else{ 
 						serializer.serialize(path+"\\result" + "\\" + name + ".model", c);
 						pathToPrint = path + "\\result";
 					}
 
 				} catch (Exception e1) {
-					System.out.println("ERROR : "+e1.getMessage());
-					throw new Exception();
+
+					LOGGER.severe("Unable to serialize the classifiers:" + e1);
+					throw e1;
 				}
 			}
 			i++;
@@ -295,56 +309,56 @@ public class EntryPoint {
 	public void predict(String path) throws Exception{
 		configuration = new LoaderProperties();
 		ArrayList<String> paths =  configuration.loadForPred(path);
-		String	path_dataset =  paths.get(0);
+		String	pathDataset =  paths.get(0);
 		paths.remove(0);
 
 		for(String s: paths){
-			predWithOneClassifier(path_dataset, s);
+			predWithOneClassifier(pathDataset, s);
 		}
 	}
 
-	private void predWithOneClassifier(String path_dataset, String path_serialized) throws Exception{
+	private void predWithOneClassifier(String pathDataset, String pathSerialized) throws Exception{
 		Classifier c = null;
 		try {
-			c = serializer.read(path_serialized);
+			c = serializer.read(pathSerialized);
 		}catch(Exception e){
 			printErrorPred();
 		}
 
-		predictAndPrint(path_dataset, c);
+		predictAndPrint(pathDataset, c);
 	}
 
-	public void predict(String path_1, String path_2) throws Exception{
-		String path_dataset = path_1;
-		String path_serialized = path_2;
+	public void predict(String path1, String path2) throws Exception{
+		String pathDataset = path1;
+		String pathSerialized = path2;
 		Classifier c = null;
 		try{
-			c = serializer.read(path_serialized);
+			c = serializer.read(pathSerialized);
 		}catch(Exception e1){
-			String temp = path_dataset;
-			path_dataset = path_serialized;
-			path_serialized = temp;
+			String temp = pathDataset;
+			pathDataset = pathSerialized;
+			pathSerialized = temp;
 			try {
-				c = serializer.read(path_serialized);
+				c = serializer.read(pathSerialized);
 			} catch(Exception e){
 				printErrorPred();
 			} 
 		}
 
-		predictAndPrint(path_dataset, c);
+		predictAndPrint(pathDataset, c);
 	}
 
-	private void predictAndPrint(String path_dataset, Classifier c) throws Exception {
+	private void predictAndPrint(String pathDataset, Classifier c) throws Exception {
 		//predict
-		DatasetHandler dataset = new DatasetHandler(path_dataset);
-		predictor = new Predictor(dataset.getDataset());
+		DatasetHandler dataset = new DatasetHandler(pathDataset);
+		Predictor predictor = new Predictor(dataset.getDataset());
 		DatasetHandler datasetPredicted = predictor.makePredicitions(c, false);
 
 		//print
-		String directory = path_dataset.substring(0, path_dataset.lastIndexOf("/")+1);
-		String name = path_dataset.substring(path_dataset.lastIndexOf("/") + 1);
+		String directory = pathDataset.substring(0, pathDataset.lastIndexOf('/')+1);
+		String name = pathDataset.substring(pathDataset.lastIndexOf('/') + 1);
 		String nameClassifier = c.getClass().getName();
-		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf(".")).replace(".", "");
+		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf('.')).replace(".", "");
 
 		String path = directory + "Predicted_" + nameClassifier + "_" + name;
 
@@ -354,49 +368,52 @@ public class EntryPoint {
 	}
 
 	private void printErrorPred() throws Exception {
-		System.out.println("------------------------------------------------------------------");
-		System.out.println("ERROR : the serialized file is incorrect, please check the path ");
-		System.out.println("	and make sure that the file is a .model"); 
-		System.out.println("------------------------------------------------------------------");
-		//System.exit(0);
+		LOGGER.severe("------------------------------------------------------------------\n"
+		+"ERROR : the serialized file is incorrect, please check the path \n"
+		+"	and make sure that the file is a .model\n" 
+		+"------------------------------------------------------------------");
 		throw new Exception();
 	}
 
 	public void crossValidation(int fold, int seed, boolean printOnFile) throws Exception{
-		String message = "";
-		evaluator = new DataEvaluator(configuration.getDataset());
+		DataEvaluator evaluator = new DataEvaluator(configuration.getDataset());
+		StringBuilder message = new StringBuilder();
 		for(Classifier c: classifiers){
-			message +=  "_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(c, fold, seed)+"\n";
+			message.append("_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(c, fold, seed)+"\n");
 		}
 		if(printOnFile){
-			printInConfiPath(message, "Saving the result of the cross validation...", "CrossValidation_Result", ".txt");
+			printInConfiPath(message.toString(), "Saving the result of the cross validation...", "CrossValidation_Result", ".txt");
 		}else{
-			System.out.println(message);
+			System.out.println(message.toString());
 		}
 	}
 
 	private void printInConfiPath(String textToPrint, String messageToShow, String nameOfTheFile, String extensionWithPoint) throws Exception {
 		System.out.println(messageToShow);
 		try{
-			PrintWriter writer;
-			String path = configuration.getPath_for_result();
-			
+			//PrintWriter writer = null;
+			String path = configuration.getPathForResult();
+
 			String name = "\\" + nameOfTheFile + extensionWithPoint;
 			File f = new File(path + name);
 			int i = 0;
-			
+
 			while(f.exists()) { 
 				name = "\\" + nameOfTheFile + "_" + i + extensionWithPoint;
 				f = new File(path + name);
 				i++;
 			}
-			
-			writer = new PrintWriter(path + name, "UTF-8");
-			writer.println(textToPrint);
-			writer.close();
+
+			try(PrintWriter writer = new PrintWriter(path + name, "UTF-8")){
+				writer.println(textToPrint);
+			}catch(Exception e){
+				LOGGER.severe("Unable to save the result:" + e.getMessage());
+				throw e;
+			}
+
 			System.out.println("The result of the cross validation were saved in "+path + name);
 		}catch(Exception e){
-			System.out.println("ERROR: Unable to save the result on the specified path");
+			LOGGER.severe("Unable to save the result on the specified path");
 			throw e;
 		}
 	}

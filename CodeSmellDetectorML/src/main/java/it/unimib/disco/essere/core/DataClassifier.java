@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.logging.Logger;
 
 import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
@@ -12,6 +13,8 @@ import weka.classifiers.SingleClassifierEnhancer;
 
 
 public class DataClassifier {
+	
+	private static final Logger LOGGER = Logger.getLogger(DataClassifier.class.getName());
 	
 	private Instances dataset;
 	private List<Classifier> classifiers;
@@ -43,43 +46,43 @@ public class DataClassifier {
 		try {
 			c.buildClassifier(dataset);
 		} catch (Exception e) {
-			System.out.println("Unable to apply " + c.getClass().getName() + ": " + e.getMessage());
+			LOGGER.warning("Unable to apply " + c.getClass().getName() + ": " + e);
 		}
 	}
 	
 	public String getSummary(){
-		String summary = "";
+		StringBuilder summary = new StringBuilder();
 		for(Classifier c: classifiers){
-			summary += c.toString() + "\n\n";
+			summary.append(c.toString() + "\n\n");
 		}	
-		return summary;
+		return summary.toString();
 	}
 	
 	public void getSummary(String _path) throws Exception{
 		Path path = Paths.get(_path); 
-		int index_for_file = 1;
+		int indexForFile = 1;
 		for(Classifier c: classifiers){
-			String name = this.generateNameForFile(c, index_for_file);
+			String name = this.generateNameForFile(c, indexForFile);
 			PrintWriter writer;
 			writer = new PrintWriter(path + "\\" + name +".txt", "UTF-8");
 			writer.println(c.toString()+"\n\n");
 			writer.close();
-			index_for_file++;
+			indexForFile++;
 		}
 		
 		System.out.println("The files were saved in: "+_path);
 		
 	}
 	
-	public String generateNameForFile(Classifier c, int index_for_file){
+	public String generateNameForFile(Classifier c, int indexForFile){
 		String nameClassifier = c.getClass().getName();
-		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf(".")).replace(".", "");
-		String name =  index_for_file + "_" + dataset.classAttribute().name() + "_" + nameClassifier;
+		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf('.')).replace(".", "");
+		String name =  indexForFile + "_" + dataset.classAttribute().name() + "_" + nameClassifier;
 		
 		try{
-			SingleClassifierEnhancer c_ens = (SingleClassifierEnhancer) c;
-			String nameClassIfEns = c_ens.getClassifier().getClass().getName();
-			String nameClassIfEns2  = nameClassIfEns.substring(nameClassIfEns.lastIndexOf(".")).replace(".", "");
+			SingleClassifierEnhancer ens = (SingleClassifierEnhancer) c;
+			String nameClassIfEns = ens.getClassifier().getClass().getName();
+			String nameClassIfEns2  = nameClassIfEns.substring(nameClassIfEns.lastIndexOf('.')).replace(".", "");
 			name += "_" + nameClassIfEns2;
 		}catch(ClassCastException e){
 			// QUI SI ENTRA SE IL CLASSIFICATORE NON PUO' ESSERE CASTATO A SingleClassifierEnhancer

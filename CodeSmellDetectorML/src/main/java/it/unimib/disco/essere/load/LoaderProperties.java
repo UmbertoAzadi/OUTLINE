@@ -18,37 +18,36 @@ public class LoaderProperties extends Loader{
 		super();
 	}
 	 
-	private Properties readProperties(String path_properties) throws Exception{
+	private Properties readProperties(String pathProperties) throws Exception{
 		Properties properties = new Properties();
 
 		BufferedReader in;
-		in = new BufferedReader(new FileReader(path_properties));
+		in = new BufferedReader(new FileReader(pathProperties));
 		properties.load(in);
 		
 		return properties;
 	}
 	
+	@Override
 	public ArrayList<Classifier> load(String path_properties) throws Exception{
 		ArrayList<Classifier> classifiers = new ArrayList<Classifier>();
-		Properties properties = null;
-
-		properties = this.readProperties(path_properties);
+		Properties properties = this.readProperties(path_properties);
 
 		// CARICO IL DATASET
-		PathDataset = properties.getProperty("dataset");
+		pathDataset = properties.getProperty("dataset");
 		
-		dataset = new DatasetHandler(PathDataset);
+		dataset = new DatasetHandler(pathDataset);
 		properties.remove("dataset");
 		
-		path_for_result = properties.getProperty("path");
+		pathForResult = properties.getProperty("path");
 		
-		if(path_for_result != null){
-			char last_elem = path_for_result.charAt(path_for_result.length() - 1);
+		if(pathForResult != null){
+			char lastElem = pathForResult.charAt(pathForResult.length() - 1);
 			properties.remove("path");
 	
-			while(last_elem == ' '){
-				path_for_result = path_for_result.substring(0, path_for_result.length() - 1);
-				last_elem = path_for_result.charAt(path_for_result.length() - 1);
+			while(lastElem == ' '){
+				pathForResult = pathForResult.substring(0, pathForResult.length() - 1);
+				lastElem = pathForResult.charAt(pathForResult.length() - 1);
 			}
 		}
 		
@@ -64,19 +63,18 @@ public class LoaderProperties extends Loader{
 		return classifiers;
 	}
 	
-	public Classifier extractClassifier(String key, String element) throws Exception{
+	public Classifier extractClassifier(String key, String elem) throws Exception{
 		
-		OptionHandler oh = null;
-		
+		String element = elem;
 		String classifier = key;
 		
 		// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
-		oh = this.findClass(classifier);
+		OptionHandler oh = this.findClass(classifier);
 		
 		if(oh == null){
 			element = element + " ";
 			classifier = element.split(" ")[0];
-			element = element.substring(element.indexOf(" "));
+			element = element.substring(element.indexOf(' '));
 			
 			// CONTROLLO CHE IL CLASSIFICATORE SIA VALIDO
 			oh = this.findClass(classifier);
@@ -85,7 +83,7 @@ public class LoaderProperties extends Loader{
 
 		this.checkNotNull(oh, "Classifier", classifier);
 		
-	    if(!element.equals("")){
+	    if(!"".equals(element)){
 	    	String[] option = element.split(" ");
 	    	this.addOptions(oh, option);
 	    }
@@ -95,11 +93,10 @@ public class LoaderProperties extends Loader{
 
 	@Override
 	public ArrayList<String> loadForPred(String path) throws Exception {
-		Properties properties = new Properties();
-		properties = this.readProperties(path);
+		Properties properties = this.readProperties(path);
 		ArrayList<String> result = new ArrayList<String>();
 		
-		String PathDataset = properties.getProperty("dataset");
+		String pathDataset = properties.getProperty("dataset");
 		properties.remove("dataset");
 		
 		// ESTRAGGO E ITERO SULLE PROPERIETA'
@@ -110,7 +107,7 @@ public class LoaderProperties extends Loader{
 			result.add(classifier);
 		}
 		
-		result.add(0, PathDataset);
+		result.add(0, pathDataset);
 		
 		return result; 
 	}

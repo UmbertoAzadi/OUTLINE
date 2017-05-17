@@ -4,10 +4,14 @@ import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
 import java.util.Random;
+import java.util.logging.Logger;
 
 public class DataEvaluator {
 	//private DataClassifier DC;
 	//private Instances testing_dataset;
+	
+	private static final Logger LOGGER = Logger.getLogger(DataEvaluator.class.getName());
+	
 	private Instances dataset;
 	//private ArrayList<Evaluation> evaluators = new ArrayList<Evaluation>();
 	
@@ -44,11 +48,11 @@ public class DataEvaluator {
 					 +"Area Under ROC                         " + eval.areaUnderROC(0) 
 					 +"\nFmeasure                               "+ eval.fMeasure(0) + "\n";
 		} catch (Exception e) {
-			System.out.println("-------------------------------------------------------------------------");
-			System.out.println("ERROR: UNABLE TO PERFORM THE CROSSVALIDATION");
-			System.out.println(e.getMessage());
-			System.out.println("-------------------------------------------------------------------------");
-			throw new Exception();
+			LOGGER.severe("-------------------------------------------------------------------------\n"
+			+"ERROR: UNABLE TO PERFORM THE CROSSVALIDATION\n"
+			+ e + "\n"
+			+"-------------------------------------------------------------------------");
+			throw e;
 		}
 		return result; 
 	}

@@ -1,0 +1,55 @@
+@relation InstanceResultListener
+
+@attribute Key_Dataset {cpu}
+@attribute Key_Run {1,2,3,4,5,6,7,8}
+@attribute Key_Scheme {weka.classifiers.trees.M5P}
+@attribute Key_Scheme_options {'-M 2.8','-U -M 4.5'}
+@attribute Key_Scheme_version_ID {-6118439039768244417}
+@attribute Date_time numeric
+@attribute Number_of_training_instances numeric
+@attribute Number_of_testing_instances numeric
+@attribute Mean_absolute_error numeric
+@attribute Root_mean_squared_error numeric
+@attribute Relative_absolute_error numeric
+@attribute Root_relative_squared_error numeric
+@attribute Correlation_coefficient numeric
+@attribute Number_unclassified numeric
+@attribute Percent_unclassified numeric
+@attribute SF_prior_entropy numeric
+@attribute SF_scheme_entropy numeric
+@attribute SF_entropy_gain numeric
+@attribute SF_mean_prior_entropy numeric
+@attribute SF_mean_scheme_entropy numeric
+@attribute SF_mean_entropy_gain numeric
+@attribute Elapsed_Time_training numeric
+@attribute Elapsed_Time_testing numeric
+@attribute UserCPU_Time_training numeric
+@attribute UserCPU_Time_testing numeric
+@attribute UserCPU_Time_millis_training numeric
+@attribute UserCPU_Time_millis_testing numeric
+@attribute Serialized_Model_Size numeric
+@attribute Serialized_Train_Set_Size numeric
+@attribute Serialized_Test_Set_Size numeric
+@attribute Coverage_of_Test_Cases_By_Regions numeric
+@attribute Size_of_Predicted_Regions numeric
+@attribute Summary string
+@attribute measureNumRules numeric
+
+@data
+
+cpu,1,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.007,0,0,0,0,0,9360,13504,6449,?,?,?,2
+cpu,2,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,3,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,4,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.009,0,0,0,0,0,9360,13504,6449,?,?,?,2
+cpu,5,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.012,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,6,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,7,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.011,0.001,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,8,weka.classifiers.trees.M5P,'-M 2.8',-6118439039768244417,20170517.1535,146,63,59.016444,130.585635,50.995972,61.899353,0.767001,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,1,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,2,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.011,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,3,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.008,0,0,0,0,0,9360,13504,6449,?,?,?,2
+cpu,4,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.007,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,5,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.008,0,0,0,0,0,9360,13504,6449,?,?,?,2
+cpu,6,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.006,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2
+cpu,7,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.007,0,0,0,0,0,9360,13504,6449,?,?,?,2
+cpu,8,weka.classifiers.trees.M5P,'-U -M 4.5',-6118439039768244417,20170517.1535,146,63,65.694628,139.450841,56.766575,66.10158,0.733242,0,0,?,?,?,?,?,?,0.007,0,0.015625,0,15.625,0,9360,13504,6449,?,?,?,2

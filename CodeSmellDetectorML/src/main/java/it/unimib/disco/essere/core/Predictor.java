@@ -1,5 +1,6 @@
 package it.unimib.disco.essere.core;
 
+import java.util.logging.Logger;
 
 import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
@@ -9,17 +10,21 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Add;
 
 public class Predictor {
+	
+	private static final Logger LOGGER = Logger.getLogger(Predictor.class.getName());
+	
 	Instances dataset;
 	
-	public Predictor(Instances dataset_to_be_predict) {
-		this.dataset = dataset_to_be_predict;
+	
+	public Predictor(Instances datasetToBePredict) {
+		this.dataset = datasetToBePredict;
 	}
 
-	public Predictor(LoaderProperties dataset_to_be_predict) {
-		this(dataset_to_be_predict.getDataset());
+	public Predictor(LoaderProperties datasetToBePredict) {
+		this(datasetToBePredict.getDataset());
 	}
 
-	public DatasetHandler makePredicitions(Classifier c, boolean print_comparison){
+	public DatasetHandler makePredicitions(Classifier c, boolean printComparison) throws Exception{
 		
 		addClassAttribute();
 		
@@ -28,7 +33,7 @@ public class Predictor {
 			newInst.setClassMissing();
 			
 			String actual = "";
-			if(print_comparison){
+			if(printComparison){
 				double actualClass = dataset.instance(i).classValue();
 				actual = dataset.classAttribute().value((int) actualClass);
 			}
@@ -37,23 +42,21 @@ public class Predictor {
 			try {
 				predicted = c.classifyInstance(newInst);
 			} catch (Exception e) {
-				System.out.println("WARNING : Unable to classify the following instances: ");
-				System.out.println(newInst.toString());
+				LOGGER.warning("Unable to classify the following instances [" + e + "]: \n" + newInst.toString());
 			}
 
 			newInst.setClassValue(predicted);
 
-			if(print_comparison){
+			if(printComparison){
 				String predClass = dataset.classAttribute().value((int) predicted);
 				System.out.println(dataset.instance(i).value(0)+"  :  "+actual + ", " + predClass);
 			}
 		}
 
-		DatasetHandler result = new DatasetHandler(dataset);
-		return result;
+		return new DatasetHandler(dataset);
 	}
 
-	private void addClassAttribute() {
+	private void addClassAttribute() throws Exception {
 		Add _class = new Add();
 		_class.setAttributeIndex("last");
 		_class.setNominalLabels("false,true");
@@ -61,8 +64,9 @@ public class Predictor {
 		try {
 			_class.setInputFormat(dataset);
 			dataset = Filter.useFilter(dataset, _class);
-		} catch (Exception e1) {
-			e1.printStackTrace();
+		} catch (Exception e) {
+			LOGGER.severe("Unable to add the classvalue: "+e.getMessage());
+			throw e;
 		}
 		
 		dataset.setClassIndex(dataset.numAttributes()-1);

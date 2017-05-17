@@ -2,6 +2,7 @@ package it.unimib.disco.essere.load;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 import it.unimib.disco.essere.core.DatasetHandler;
 import weka.classifiers.Classifier;
@@ -9,68 +10,74 @@ import weka.core.Instances;
 import weka.core.OptionHandler;
 
 public abstract class Loader {
-	
-	protected String path_for_result;
+
+	private static final Logger LOGGER = Logger.getLogger(Loader.class.getName());
+
+	protected String pathForResult;
 	protected DatasetHandler dataset;
-	protected String PathDataset;
-	
+	protected String pathDataset;
+
 	public Loader(){}
-	
+
 	public abstract ArrayList<Classifier> load(String path) throws Exception;
 	public abstract ArrayList<String> loadForPred(String path) throws Exception;
-	
-	public String getPath_for_result(){
-		return this.path_for_result;
+
+	public String getPathForResult(){
+		return this.pathForResult;
 	}
-	
+
 	public Instances getDataset(){
 		return dataset.getDataset();
 	}
-	
+
 	public String gatPathDataset(){
-		return PathDataset;
+		return pathDataset;
 	}
-	
+
 	protected void addOptions(OptionHandler o, String[] options) throws Exception{
 		String[] tmp = new String[options.length]; 
 		System.arraycopy(options, 0, tmp, 0, options.length);
-		if(options != null){
+		if(options.length != 0){
 			try {
 				o.setOptions(options);
 			} catch (Exception e) {
-				System.out.println("-------------------------------------------------------------------------------------------------");
-				System.out.println("ERROR : these options are incorrect: ");
-				System.out.println("\t"+Arrays.toString(tmp));
-				System.out.println("	plese check them in the weka documentation");
-				System.out.println(""); 
-				System.out.println("--------------------------------------------------------------------------------------------------");
-				//System.exit(0);
-				throw new Exception();
+				LOGGER.severe("------------------------------------------------------------------------------------------------- +\n"
+						+"ERROR : these options are incorrect: \n"
+						+"\t"+Arrays.toString(tmp)+"\n"
+						+"	plese check them in the weka documentation\n\n"
+						+"--------------------------------------------------------------------------------------------------");
+				throw e;
 			}
 		}
 	}
-	
-	protected OptionHandler findClass(String name){
+
+	protected OptionHandler findClass(String name) throws InstantiationException, IllegalAccessException{
 		OptionHandler o = null;
-		
-			try {
-				o = (OptionHandler) Class.forName(name).newInstance();
-			} catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {}
-		
+
+		try {
+			o = (OptionHandler) Class.forName(name).newInstance();
+		} catch (InstantiationException e) {
+			LOGGER.severe(e.getMessage());
+			throw e;
+		} catch (IllegalAccessException e) {
+			LOGGER.severe(e.getMessage());
+			throw e;
+		} catch (ClassNotFoundException e) {
+			/* THE ERROR MESSAGE WILL BE PRINT OUT LATER,
+			 * BECAUSE I DON'T WANT TO STOP THE EXECUTIONS
+			 * */
+		}
+
 		return o;
 	}
-	
+
 	protected void checkNotNull(Object o, String type, String name) throws Exception{
-		
-		 /* QUESTO METODO E' NECESSARIO POICHE' LA CHIAMATA A findClass ALLA RIGA 115 (LoaderProperties) E' DENTRO UN WHILE
-		    QUINDI IL CONTROLLO VA FATTO DOPO CHE IL CICLO SI E' CONCLUSO */
+
+		/* QUESTO METODO E' NECESSARIO POICHE' CI SONO DUE CHIAMATE A findClass ALLA RIGA 71 E 80 (LoaderProperties),
+		 * E L'ECCEZIONE DEVE ESSERE GENERATA SOLO DOPO CHE ENTRAMBE LE CHIAMATE SONO STATE FATTE  */
 
 		if(o == null){
-			if(!type.equals("")){
+			if(!"".equals(type)){
 				System.out.println("-------------------------------------------------------------------------------------");
 				System.out.println("ERROR : There isn't a " + type + " with the name \"" + name +"\",");
 				System.out.println("	check the configuration file and please insert the name of a valid ");
