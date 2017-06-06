@@ -15,7 +15,6 @@ public abstract class Loader {
 
 	protected String pathForResult;
 	protected DatasetHandler dataset;
-	protected String pathDataset;
 
 	public Loader(){}
 
@@ -26,12 +25,12 @@ public abstract class Loader {
 		return this.pathForResult;
 	}
 
+	public DatasetHandler getDatasetHandler(){
+		return dataset;
+	}
+	
 	public Instances getDataset(){
 		return dataset.getDataset();
-	}
-
-	public String gatPathDataset(){
-		return pathDataset;
 	}
 
 	protected void addOptions(OptionHandler o, String[] options) throws Exception{

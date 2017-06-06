@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 
+import it.unimib.disco.essere.experiment.DataExperimenter;
 import it.unimib.disco.essere.load.*;
 
 public class EntryPoint {
@@ -35,7 +36,6 @@ public class EntryPoint {
 
 	public static void main(String[] args) throws Exception{ 
 		EntryPoint workflow = new EntryPoint();
-
 		try {
 			workflow.start(args);
 		} catch (Exception e) {
@@ -46,6 +46,7 @@ public class EntryPoint {
 		String time = String.format("Total time in sec: %1$s", (endTime - startTime)/1000);
 		LOGGER.info(time);
 		//LOGGER.info(String.format("Total time in sec: %1$s", (endTime - startTime)/1000));
+		
 	}
 
 	public void start(String[] args) throws Exception{
@@ -72,48 +73,64 @@ public class EntryPoint {
 				something = true;
 				wekaExp(input);
 			}
+			if(input.contains("-customExp")){
+				this.load(args[args.length - 1]);
+				something = true;
+				wekaExp(input);
+			}
 		}
 
 		if(!something){
 			printAvaiableFlag();
 		}
 	}
+	
+	public void customExp(List<String> input) throws Exception{
+		String last = input.get(input.size() - 1);
+		input.remove(last);
+		
+		input.add("-exptype");
+		input.add("custom");
+		input.add("-splittype");
+		input.add("custom");
+		input.add(last);
+		
+		wekaExp(input);
+	}
 
 	public void wekaExp(List<String> input) throws Exception{
 
 		// create a list of dataset that contain just the one specify in the config file
 		DefaultListModel<File> model = new DefaultListModel<File>();
-		File file = new File(configuration.gatPathDataset());
+		File file = new File(configuration.getDatasetHandler().getPath());
 		model.addElement(file);
 
 		DataExperimenter experiment = new DataExperimenter(classifiers, model, configuration.getPathForResult());
-		String exptype = DataExperimenter.DEFAULT_EXPTYPE;
-		String splittype = DataExperimenter.DEFAULT_SPLITTYPE;
-		int folds = DataExperimenter.DEFAULT_FOLDS;
-		boolean randomized = DataExperimenter.DEFAULT_RANDOMIZED;
-		double percentage = DataExperimenter.DEFAULT_PERCENTAGE;
-		int runs = DataExperimenter.DEFAULT_RUNS;
+		String exptype = DataExperimenter.getDefaultExptype();
+		String splittype = DataExperimenter.getDefaultSplittype();
+		int folds = DataExperimenter.getDefaultFolds();
+		boolean randomized = DataExperimenter.isDefaultRandomized();
+		double percentage = DataExperimenter.getDefaultPercentage();
+		int runs = DataExperimenter.getDefaultRuns();
 		boolean printOnFile = false;
 
 		if(input.contains("-exptype")){
 			exptype = input.get(input.indexOf("-exptype") + 1);
 
 			if(!experiment.exptypeCheckValue(exptype)){
-				String warning = String.format("the exptype value wasn't valid, the default value will be used (%1$s) ", 
-						DataExperimenter.DEFAULT_EXPTYPE); 
+				String warning = "the exptype value wasn't valid, the default value will be used (" + DataExperimenter.getExptypeValues()[0] + ")"; 	 
 				LOGGER.warning(warning);
-				exptype = DataExperimenter.DEFAULT_EXPTYPE;
+				exptype = DataExperimenter.getDefaultExptype();
 			}
 		}
 
 		if(input.contains("-splittype")){
 			splittype = input.get(input.indexOf("-splittype") + 1);
 
-			if(!experiment.splittypeCheckValue(splittype)){
-				String warning = String.format("the splittype value wasn't valid, the default value will be used (%1$s) ", 
-						DataExperimenter.DEFAULT_SPLITTYPE); 
+			if(!experiment.splittypeCheckValue(splittype)){  
+				String warning = "the splittype value wasn't valid, the default value will be used (" + DataExperimenter.getDefaultSplittype() + ") ";
 				LOGGER.warning(warning);
-				splittype = DataExperimenter.DEFAULT_SPLITTYPE;
+				splittype = DataExperimenter.getDefaultSplittype();
 			}
 		}
 
@@ -123,8 +140,8 @@ public class EntryPoint {
 			}	
 		}catch(Exception e){
 			LOGGER.warning("the fold value wasn't valid [" + e + "], the default value will be used (" 
-					+ DataExperimenter.DEFAULT_FOLDS + ") ");
-			folds = DataExperimenter.DEFAULT_FOLDS;
+					+ DataExperimenter.getDefaultFolds()+ ") ");
+			folds = DataExperimenter.getDefaultFolds();
 		}
 
 		if(input.contains("-randomized")){
@@ -137,8 +154,8 @@ public class EntryPoint {
 			}
 		}catch(Exception e){
 			LOGGER.warning("the percentage value wasn't valid [" + e + "], the default value will be used (" 
-					+ DataExperimenter.DEFAULT_PERCENTAGE + ") ");
-			percentage = DataExperimenter.DEFAULT_PERCENTAGE;
+					+ DataExperimenter.getDefaultPercentage()+ ") ");
+			percentage = DataExperimenter.getDefaultPercentage();
 		}
 
 		try{
@@ -147,8 +164,8 @@ public class EntryPoint {
 			}
 		}catch(Exception e){
 			LOGGER.warning("the runs value wasn't valid [" + e + "], the default value will be used (" 
-					+ DataExperimenter.DEFAULT_RUNS + ")");
-			runs = DataExperimenter.DEFAULT_RUNS;
+					+ DataExperimenter.getDefaultRuns() + ")");
+			runs = DataExperimenter.getDefaultRuns();
 		}
 
 		if(configuration.getPathForResult() != null){
@@ -204,7 +221,8 @@ public class EntryPoint {
 				+"-save for save the human-readable result of classification\n"
 				+"-pred for predict the class of a new dataset\n"
 				+"-cross for using the cross validation for classify and evaluate\n"
-				+"-wekaExp for perorm a experiment (as intended by weka)\n"
+				+"-wekaExp for perform an experiment (as intended by weka)\n"
+				+"-customExp for perform an experiment (as intended by weka), but customized for make it faster\n"
 				+"\n For more information on how to use it please read the README.md\n");
 	}
 
@@ -376,10 +394,10 @@ public class EntryPoint {
 	}
 
 	public void crossValidation(int fold, int seed, boolean printOnFile) throws Exception{
-		DataEvaluator evaluator = new DataEvaluator(configuration.getDataset());
+		DataEvaluator evaluator = new DataEvaluator();
 		StringBuilder message = new StringBuilder();
 		for(Classifier c: classifiers){
-			message.append("_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(c, fold, seed)+"\n");
+			message.append("_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(configuration.getDataset(), c, fold, seed)+"\n");
 		}
 		if(printOnFile){
 			printInConfiPath(message.toString(), "Saving the result of the cross validation...", "CrossValidation_Result", ".txt");

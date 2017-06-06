@@ -14,6 +14,7 @@ public class DatasetHandler {
 	private static final Logger LOGGER = Logger.getLogger(DatasetHandler.class.getName());
 
 	private Instances dataset;
+	private String path;
 
 	public DatasetHandler(String path) throws Exception{
 		try{ 
@@ -30,6 +31,12 @@ public class DatasetHandler {
 					+"----------------------------------------------------------------------------------------------");
 			throw e;
 		}
+		
+		this.path = path;
+	}
+	
+	public String getPath(){
+		return path;
 	}
 
 	public DatasetHandler(Instances dataset){

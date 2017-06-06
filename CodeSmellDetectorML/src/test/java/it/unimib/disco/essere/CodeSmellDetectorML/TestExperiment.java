@@ -125,6 +125,22 @@ public class TestExperiment extends TestCase{
 		}
 		assertTrue(correct);
 	}
+	
+	@Test
+	public void testCustomExperiment(){
+		String[] args = {"-customExp",
+				"-runs", "2", 
+				"-folds", "8", 
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+
+		try{
+			workflow.start(args);
+		}catch(Exception e){
+			e.printStackTrace();
+			correct = false;
+		}
+		assertTrue(correct);
+	}
 
 	/*
     //!!!!!!! THIS TEST NEED 1h 35m TO BE RUN  (5745,768 s) !!!!!!!!!!!!

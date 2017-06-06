@@ -13,27 +13,30 @@ import weka.classifiers.SingleClassifierEnhancer;
 
 
 public class DataClassifier {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(DataClassifier.class.getName());
-	
+
 	private Instances dataset;
 	private List<Classifier> classifiers;
+
+	public DataClassifier(Instances data){
+		this.dataset = data;
+		this.classifiers = null;
+	}
 	
 	public DataClassifier(Instances data, List<Classifier> classifiers){
 		this.dataset = data;
 		this.classifiers = classifiers;
-		
-		
+
 		for(Classifier c: classifiers){
 			this.buildClassifier(c);
 		}
-	
 	}
 
 	public DataClassifier(LoaderProperties data, List<Classifier> classifiers){
 		this(data.getDataset(), classifiers);
 	}
-	
+
 	public Instances getDataset() {
 		return dataset;
 	}
@@ -49,7 +52,7 @@ public class DataClassifier {
 			LOGGER.warning("Unable to apply " + c.getClass().getName() + ": " + e);
 		}
 	}
-	
+
 	public String getSummary(){
 		StringBuilder summary = new StringBuilder();
 		for(Classifier c: classifiers){
@@ -57,7 +60,7 @@ public class DataClassifier {
 		}	
 		return summary.toString();
 	}
-	
+
 	public void getSummary(String _path) throws Exception{
 		Path path = Paths.get(_path); 
 		int indexForFile = 1;
@@ -69,16 +72,16 @@ public class DataClassifier {
 			writer.close();
 			indexForFile++;
 		}
-		
+
 		System.out.println("The files were saved in: "+_path);
-		
+
 	}
-	
+
 	public String generateNameForFile(Classifier c, int indexForFile){
 		String nameClassifier = c.getClass().getName();
 		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf('.')).replace(".", "");
 		String name =  indexForFile + "_" + dataset.classAttribute().name() + "_" + nameClassifier;
-		
+
 		try{
 			SingleClassifierEnhancer ens = (SingleClassifierEnhancer) c;
 			String nameClassIfEns = ens.getClassifier().getClass().getName();
@@ -89,7 +92,7 @@ public class DataClassifier {
 			// IN TAL CASO IL CLASSIFICATORE NON E' UN ENSEMBLE E QUINDI SI CONTINUA IGNORANDO QUESTA
 			// SEZIONE
 		}
-		
+
 		return name;
 	}
 }

@@ -60,7 +60,8 @@ public class Predictor {
 		Add _class = new Add();
 		_class.setAttributeIndex("last");
 		_class.setNominalLabels("false,true");
-		_class.setAttributeName("predicted_class");
+		//_class.setAttributeName("predicted_class");
+		_class.setAttributeName(dataset.relationName());
 		try {
 			_class.setInputFormat(dataset);
 			dataset = Filter.useFilter(dataset, _class);

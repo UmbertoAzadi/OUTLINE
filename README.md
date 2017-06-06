@@ -4,8 +4,9 @@ How to use:
 -----------
 
 So far the tool allows to learn a machine learning model, serialize the model learn, 
-predict the class of the instances contained in a new dataset, apply a cross validation 
-and allow to execute a weka experiment.
+predict the class of the instances contained in a new dataset, apply a cross validation,
+allow to execute a weka experiment and allow to execute a weka experiment customized to
+make it faster.
 
 For learning and serialization are avaiable these flags:
   * -ser `configuration file` for serialize the model learn
@@ -35,6 +36,14 @@ For weka experiment are avaiable these flags:
   
   N.B. if one of the flag are not specified or are incorrect the default values will be used, which are:
        exptype: classification, splittype: crossvalidation, runs: 10, fold: 10, percentage: 66.0, not randomized
+    
+For the customized implementation of the weka experiment is avaiable this flag:
+  * -customExp -runs `# of runs` -folds `# of cross-validation folds`
+   
+  N.B. This implementation allow to execute the weka experiment only with _classification_ as exptype and _crossvalidation_ as splittype.
+       The experiment is performed faster because the classification is executed concurrently, but for this reason if you use too few
+       classifier the execution will result slower (because of the synchronizaton points). So it is therefore advisable to use this flag
+       if there are specified _at least ten classifier_ in the configuration file.  
    
  ### Configuration file
  

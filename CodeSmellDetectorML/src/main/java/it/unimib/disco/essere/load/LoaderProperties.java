@@ -34,8 +34,7 @@ public class LoaderProperties extends Loader{
 		Properties properties = this.readProperties(path_properties);
 
 		// CARICO IL DATASET
-		pathDataset = properties.getProperty("dataset");
-		
+		String pathDataset = properties.getProperty("dataset");
 		dataset = new DatasetHandler(pathDataset);
 		properties.remove("dataset");
 		
