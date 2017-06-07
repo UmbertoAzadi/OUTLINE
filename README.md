@@ -44,7 +44,7 @@ For the customized implementation of the weka experiment is avaiable this flag:
        The experiment is performed faster because the classification is executed concurrently, but for this reason if you use too few
        classifier the execution will result slower (because of the synchronizaton points). So it is therefore advisable to use this flag
        if there are specified __at least ten classifier__ in the configuration file, plus it It is strongly recommended to have at least 2GB
-       of RAM. If you want to see how it work you can ![download the sequence diagram](https://github.com/UmbertoAzadi/CodeSmellDetectorML/tree/master/docs/CustomExperiment.pdf)   
+       of RAM. If you want to see how it work you can [download the sequence diagram](https://github.com/UmbertoAzadi/CodeSmellDetectorML/tree/master/docs/CustomExperiment.pdf)   
    
  ### Configuration file
  
