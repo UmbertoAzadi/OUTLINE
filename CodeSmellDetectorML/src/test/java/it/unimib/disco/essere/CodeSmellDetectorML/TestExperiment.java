@@ -141,6 +141,23 @@ public class TestExperiment extends TestCase{
 		}
 		assertTrue(correct);
 	}
+	
+	/*
+	 @Test
+	    public void testTryStressTest(){
+	    	String[] args = {"-customExp",
+	    					"-runs", "10", 
+	    					"-folds", "10",
+	    			"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties"};
+
+	    	try{
+	    		workflow.start(args);
+	    	}catch(Exception e){
+	    		correct = false;
+	    	}
+	    	assertTrue(correct);
+	    }
+	*/
 
 	/*
     //!!!!!!! THIS TEST NEED 1h 35m TO BE RUN  (5745,768 s) !!!!!!!!!!!!

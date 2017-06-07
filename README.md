@@ -43,7 +43,8 @@ For the customized implementation of the weka experiment is avaiable this flag:
   N.B. This implementation allow to execute the weka experiment only with _classification_ as exptype and _crossvalidation_ as splittype.
        The experiment is performed faster because the classification is executed concurrently, but for this reason if you use too few
        classifier the execution will result slower (because of the synchronizaton points). So it is therefore advisable to use this flag
-       if there are specified _at least ten classifier_ in the configuration file.  
+       if there are specified _at least ten classifier_ in the configuration file, plus it It is strongly recommended to have at least 2GB
+       of RAM.   
    
  ### Configuration file
  
@@ -106,3 +107,5 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
 	java -jar CSDML_v1.0.jar -wekaExp -exptype classification -splittype crossvalidation -runs 8 -folds 8  .\configuration\serialization_valid.properties
    
 	java -jar CSDML_v1.0.jar -wekaExp -exptype regression -splittype randomsplit -runs 6 -percentage 80.0 -randomized .\configuration\try_regression.properties
+  
+	java -jar CSDML_v1.0.jar -customExp -fold 10 -runs 10 .\configuration\serialization_valid.properties

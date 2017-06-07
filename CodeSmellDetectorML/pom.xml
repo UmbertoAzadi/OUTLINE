@@ -23,13 +23,8 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/weka-dev 
-		Already required for LibSVM
-		<dependency>
-			<groupId>nz.ac.waikato.cms.weka</groupId>
-			<artifactId>weka-dev</artifactId>
-			<version>3.7.5</version>
-		</dependency> 
-		-->
+			Already required for LibSVM <dependency> <groupId>nz.ac.waikato.cms.weka</groupId> 
+			<artifactId>weka-dev</artifactId> <version>3.7.5</version> </dependency> -->
 
 
 
@@ -38,6 +33,18 @@
 			<groupId>nz.ac.waikato.cms.weka</groupId>
 			<artifactId>LibSVM</artifactId>
 			<version>1.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.fracpete</groupId>
+			<artifactId>multisearch-weka-package</artifactId>
+			<version>2017.3.28</version>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>nz.ac.waikato.cms.weka</groupId>
+					<artifactId>weka-dev</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 	</dependencies>

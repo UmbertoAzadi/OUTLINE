@@ -19,6 +19,7 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 
 	/** for serialization */
 	private static final long serialVersionUID = 1L;
+	private final Object lock = new Object();
 
 	/**
 	 * Gets the results for a specified run number. Different run numbers
@@ -30,15 +31,11 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 	 */
 	@Override
 	public void doRun(int run) throws Exception {
-		
-		InstancesResultListener irl = (InstancesResultListener) this.m_ResultListener;
-		//irl.setOutputFile(new File("C:\\Users\\uazad\\Desktop\\arff.arff"));
 
 		ArrayList<Instances> trainingData = new ArrayList<Instances>();
 		ArrayList<Instances> testingData = new ArrayList<Instances>();
 		ArrayList<Object[]> allKey = new ArrayList<Object[]>(); 
 		CustomClassifierSplitEvaluator customSplitEvaluator = (CustomClassifierSplitEvaluator) this.m_SplitEvaluator;
-		//customSplitEvaluator.setClassifier();
 
 		if (getRawOutput()) {
 			if (m_ZipDest == null) {
@@ -57,6 +54,7 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 			runInstances.stratify(m_NumFolds);
 		}
 
+
 		for (int fold = 0; fold < m_NumFolds; fold++) {
 			// Add in some fields to the key like run and fold number, dataset name
 
@@ -66,10 +64,10 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 			key[1] = "" + run;
 			key[2] = "" + (fold + 1);
 			System.arraycopy(seKey, 0, key, 3, seKey.length);
-			
+
 			allKey.add(key);
-			
-			if (irl.isResultRequired(this, key)) {
+
+			if (m_ResultListener.isResultRequired(this, key)) {
 				Instances train = runInstances.trainCV(m_NumFolds, fold, random);
 				Instances test = runInstances.testCV(m_NumFolds, fold);
 				trainingData.add(train);
@@ -77,37 +75,58 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 			}
 		}
 
-		try{
-			List<Object[]> allResults = customSplitEvaluator.getResult(trainingData, testingData);
+		customSplitEvaluator.getResult(trainingData, testingData);
+		int fold = 0;
 
-			for(int fold = 0; fold < m_NumFolds; fold++){
-				Object[] key = allKey.get(fold);
-				Object[] seResults = allResults.get(fold);
-				Object[] results = new Object[seResults.length + 1];
-				results[0] = getTimestamp();
-				System.arraycopy(seResults, 0, results, 1, seResults.length);
-				
-				if (m_debugOutput) {
-		            String resultName = ("" + run + "." + (fold + 1) + "."
-		              + Utils.backQuoteChars(runInstances.relationName()) + "." + m_SplitEvaluator
-		              .toString()).replace(' ', '_');
-		            resultName = Utils.removeSubstring(resultName, "weka.classifiers.");
-		            resultName = Utils.removeSubstring(resultName, "weka.filters.");
-		            resultName = Utils.removeSubstring(resultName,
-		              "weka.attributeSelection.");
-		            m_ZipDest.zipit(m_SplitEvaluator.getRawResultOutput(), resultName);
-		          }
-				
-				irl.acceptResult(this, key, results);
+		while(!customSplitEvaluator.getQueue().isEmpty() || !customSplitEvaluator.getThreads().isEmpty()){
+			if(customSplitEvaluator.getQueue().isEmpty()){
+				synchronized(lock){
+					try {
+						lock.wait(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 			}
-		} catch (Exception ex) {
-			// Save the train and test datasets for debugging purposes?
-			throw ex;
+			else{
+				getNextResult(run, allKey, customSplitEvaluator, runInstances, fold);
+				fold++;
+			}
 		}
 
 	}
-	
+
+	private void getNextResult(int run, ArrayList<Object[]> allKey, CustomClassifierSplitEvaluator customSplitEvaluator,
+			Instances runInstances, int currentFold) {
+
+		Object[] seResults = customSplitEvaluator.getQueue().removeFirst();
+
+		try {
+			Object[] key = allKey.get(currentFold);
+			Object[] results = new Object[seResults.length + 1];
+			results[0] = getTimestamp();
+			System.arraycopy(seResults, 0, results, 1, seResults.length);
+
+			if (m_debugOutput) {
+				String resultName = ("" + run + "." + (currentFold + 1) + "."
+						+ Utils.backQuoteChars(runInstances.relationName()) + "." + m_SplitEvaluator
+						.toString()).replace(' ', '_');
+				resultName = Utils.removeSubstring(resultName, "weka.classifiers.");
+				resultName = Utils.removeSubstring(resultName, "weka.filters.");
+				resultName = Utils.removeSubstring(resultName,
+						"weka.attributeSelection.");
+				m_ZipDest.zipit(m_SplitEvaluator.getRawResultOutput(), resultName);
+			}
+
+			m_ResultListener.acceptResult(this, key, results);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void main(String[] args){
+
+		long startTime = System.currentTimeMillis();
 
 		LoaderProperties lp = new LoaderProperties();
 		ArrayList<Classifier> a = null;
@@ -120,20 +139,21 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		DefaultListModel<File> model = new DefaultListModel<File>();
 		File file = new File(lp.getDatasetHandler().getPath());
 		model.addElement(file);
-		
+
 		DataExperimenter de = new DataExperimenter(a, model);
 		try {
-			String result = de.experiment("cross", "cross", 10, false, 0.0, 1);
+			String result = de.experiment("custom", "custom", 10, false, 0.0, 10);
 			System.out.println(result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
+		System.out.println("it took: " + (System.currentTimeMillis() - startTime));
+
 	}
 
 }

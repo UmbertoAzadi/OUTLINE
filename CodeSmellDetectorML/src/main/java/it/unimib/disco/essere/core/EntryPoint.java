@@ -76,7 +76,7 @@ public class EntryPoint {
 			if(input.contains("-customExp")){
 				this.load(args[args.length - 1]);
 				something = true;
-				wekaExp(input);
+				customExp(args);
 			}
 		}
 
@@ -85,17 +85,14 @@ public class EntryPoint {
 		}
 	}
 	
-	public void customExp(List<String> input) throws Exception{
-		String last = input.get(input.size() - 1);
-		input.remove(last);
-		
-		input.add("-exptype");
-		input.add("custom");
-		input.add("-splittype");
-		input.add("custom");
-		input.add(last);
-		
-		wekaExp(input);
+	public void customExp(String[] args) throws Exception{
+
+		String[] custom = {"-exptype", "custom", "-splittype", "custom", args[args.length - 1]};
+		String[] newArgs = new String[args.length + custom.length - 1];
+		System.arraycopy(args, 0, newArgs, 0, args.length);
+		System.arraycopy(custom, 0, newArgs, args.length - 1, custom.length);
+
+		wekaExp(Arrays.asList(newArgs));
 	}
 
 	public void wekaExp(List<String> input) throws Exception{

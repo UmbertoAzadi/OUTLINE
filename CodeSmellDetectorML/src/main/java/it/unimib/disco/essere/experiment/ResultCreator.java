@@ -171,9 +171,8 @@ public class ResultCreator extends Thread {
 			CPUStartTime = thMonitor.getThreadUserTime(thID);
 		}
 		
-		//System.out.println("The "+ this.getId() + "is building " + m_Classifier.getClass().getName());
-		
 		m_Classifier.buildClassifier(train);
+		
 		if (canMeasureCPUTime) {
 			trainCPUTimeElapsed = thMonitor.getThreadUserTime(thID) - CPUStartTime;
 		}
@@ -192,8 +191,6 @@ public class ResultCreator extends Thread {
 		thMonitor = null;
 
 		m_result = eval.toSummaryString();
-		
-		//System.out.println("The "+ this.getId() + "have evaluate, those are the result: " + m_result);
 		
 		// The results stored are all per instance -- can be multiplied by the
 		// number of instances to get absolute numbers
