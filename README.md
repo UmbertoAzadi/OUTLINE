@@ -40,11 +40,11 @@ For weka experiment are avaiable these flags:
 For the customized implementation of the weka experiment is avaiable this flag:
   * -customExp -runs `# of runs` -folds `# of cross-validation folds`
    
-  N.B. This implementation allow to execute the weka experiment only with _classification_ as exptype and _crossvalidation_ as splittype.
+  N.B. This implementation allow to execute the weka experiment only with __classification__ as exptype and __crossvalidation__ as splittype.
        The experiment is performed faster because the classification is executed concurrently, but for this reason if you use too few
        classifier the execution will result slower (because of the synchronizaton points). So it is therefore advisable to use this flag
-       if there are specified _at least ten classifier_ in the configuration file, plus it It is strongly recommended to have at least 2GB
-       of RAM.   
+       if there are specified __at least ten classifier__ in the configuration file, plus it It is strongly recommended to have at least 2GB
+       of RAM. If you want to see how it work you can ![download the sequence diagram](https://github.com/UmbertoAzadi/CodeSmellDetectorML/tree/master/docs/CustomExperiment.pdf)   
    
  ### Configuration file
  
