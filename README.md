@@ -1,4 +1,4 @@
-# CodeSmellDetectorML
+# OUTLINE (tOol for aUtomating daTa anaLysis IN wEka)
 
 How to use: 
 -----------
