@@ -311,7 +311,8 @@ public class DataExperimenter {
 		CustomPrintPairedTTester tester = new CustomPrintPairedTTester();
 		Instances result;
 
-		try(FileReader file = new FileReader(irl.getOutputFile())){
+		try{
+			FileReader file = new FileReader(irl.getOutputFile());
 			result = new Instances(new BufferedReader(file));
 		} catch (Exception e) {
 			LOGGER.severe("Unable to use the ResultExperiment.arff file");

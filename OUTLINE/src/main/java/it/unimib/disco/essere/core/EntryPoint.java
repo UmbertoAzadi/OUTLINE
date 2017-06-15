@@ -503,8 +503,10 @@ public class EntryPoint {
 				i++;
 			}
 
-			try(PrintWriter writer = new PrintWriter(path + name, "UTF-8")){
+			try{
+				PrintWriter writer = new PrintWriter(path + name, "UTF-8");
 				writer.println(textToPrint);
+				writer.close();
 			}catch(Exception e){
 				LOGGER.severe("Unable to save the result:" + e.getMessage());
 				throw e;
