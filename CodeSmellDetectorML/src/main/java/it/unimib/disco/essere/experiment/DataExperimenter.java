@@ -24,6 +24,9 @@ import weka.experiment.PropertyNode;
 import weka.experiment.RandomSplitResultProducer;
 import weka.experiment.RegressionSplitEvaluator;
 import weka.experiment.ResultMatrix;
+import weka.experiment.ResultMatrixCSV;
+import weka.experiment.ResultMatrixHTML;
+import weka.experiment.ResultMatrixLatex;
 import weka.experiment.ResultMatrixPlainText;
 import weka.experiment.SplitEvaluator;
 
@@ -305,7 +308,7 @@ public class DataExperimenter {
 	}
 
 	private ResultMatrix ttest(String splittype, boolean classification, InstancesResultListener irl) throws Exception {
-		PairedTTester tester = new PairedCorrectedTTester();
+		CustomPrintPairedTTester tester = new CustomPrintPairedTTester();
 		Instances result;
 
 		try(FileReader file = new FileReader(irl.getOutputFile())){
@@ -327,24 +330,39 @@ public class DataExperimenter {
 				new Range(Integer.toString(result.attribute("Key_Dataset").index() + 1)));
 		tester.setDatasetKeyColumns(
 				new Range(
-						(result.attribute("Key_Scheme").index() + 1)
-						+ ","
+						result.attribute("Key_Scheme").index() + 1
+						+ ", "
 						+ (result.attribute("Key_Scheme_options").index() + 1)
-						+ ","
+						+ ", "
 						+ (result.attribute("Key_Scheme_version_ID").index() + 1)));
+		
 		tester.setResultMatrix(new ResultMatrixPlainText());
 		tester.setDisplayedResultsets(null);       
 		tester.setSignificanceLevel(0.05);
+		//tester.getResultMatrix().setRemoveFilterName(true);
+		tester.getResultMatrix().setPrintColNames(true);
+		tester.getResultMatrix().setPrintRowNames(true);
 		tester.setShowStdDevs(true);
+	
+		
 
 		// fill result matrix (but discarding the output)
-		if (classification)
+
+		if (classification){
 			tester.multiResultsetFull(0, result.attribute("Percent_correct").index());
+		}
 		else
 			tester.multiResultsetFull(0, result.attribute("Correlation_coefficient").index());
-
+		
 		// output results for reach dataset
 		return tester.getResultMatrix();
+	}
+
+	private String parse(int i) {
+		
+		
+		
+		return "";
 	}
 
 }

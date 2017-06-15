@@ -83,8 +83,8 @@ public class LoaderProperties extends Loader{
 		this.checkNotNull(oh, "Classifier", classifier);
 		
 	    if(!"".equals(element)){
-	    	String[] option = element.split(" ");
-	    	this.addOptions(oh, option);
+	    	//String[] option = element.split(" ");
+	    	this.addOptions(oh, element);
 	    }
 	    
 	    return (Classifier) oh;

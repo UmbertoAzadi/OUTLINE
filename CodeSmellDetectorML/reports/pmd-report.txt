@@ -1,0 +1,1457 @@
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:4:	Avoid unused imports such as 'weka.core.SetupGenerator'
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:5:	Avoid unused imports such as 'weka.core.setupgenerator.AbstractParameter'
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:16:	Avoid unused imports such as 'weka.classifiers.meta.GridSearch'
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:17:	Avoid unused imports such as 'weka.classifiers.meta.MultiSearch'
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:20:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:22:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:24:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:25:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:27:	Parameter 'data' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:27:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:29:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:32:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:32:	Parameter 'classifiers' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:32:	Parameter 'data' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:32:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:36:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:41:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:41:	Parameter 'classifiers' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:41:	Parameter 'data' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:41:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:45:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:49:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:53:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:53:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:53:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:56:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:57:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:57:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:57:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:58:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:62:	Found 'UR'-anomaly for variable 'c' (lines '62'-'65').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:62:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:63:	Local variable 'summary' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:64:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:65:	Avoid concatenating nonliterals in a StringBuffer/StringBuilder constructor or append().
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:70:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:70:	Found 'UR'-anomaly for variable 'c' (lines '70'-'74').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:70:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), '_path' is not final.
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:70:	Parameter '_path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:70:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:71:	Found 'DU'-anomaly for variable 'path' (lines '71'-'84').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:71:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:72:	Found 'DU'-anomaly for variable 'indexForFile' (lines '72'-'84').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:73:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:74:	Local variable 'name' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:76:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:79:	Found 'DU'-anomaly for variable 'indexForFile' (lines '79'-'84').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:82:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:86:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:86:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:86:	Parameter 'indexForFile' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:86:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:87:	Found 'DD'-anomaly for variable 'nameClassifier' (lines '87'-'88').
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:88:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:88:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:88:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:89:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:92:	Local variable 'ens' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:93:	Local variable 'nameClassIfEns' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:93:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:93:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:94:	Local variable 'nameClassIfEns2' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:94:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:94:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:94:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:95:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:96:	Avoid empty catch blocks
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:96:	Avoid empty catch blocks
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:97:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/DataClassifier.java:98:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:9:	Each class should declare at least one constructor
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:9:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:13:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:18:	Comment is too large: Too many lines
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:38:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:38:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:38:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:38:	Parameter 'dataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:38:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	Parameter 'dataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	Parameter 'folds' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	Parameter 'seed' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:42:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:43:	Found 'DD'-anomaly for variable 'result' (lines '43'-'48').
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:45:	Local variable 'eval' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:46:	Local variable 'rand' could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:47:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:48:	Found 'DU'-anomaly for variable 'result' (lines '48'-'59').
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:48:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:51:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:52:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:61:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:61:	Parameter 'classifier' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:61:	Parameter 'testingDataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:61:	Parameter 'trainingDataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:61:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:62:	Found 'DD'-anomaly for variable 'evaluator' (lines '62'-'64').
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:66:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:67:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:74:	Comment is too large: Too many lines
+src/main/java/it/unimib/disco/essere/core/DataEvaluator.java:80:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:12:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:14:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:16:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:17:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:19:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:19:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:19:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:21:	Local variable 'source' could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:25:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:26:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:38:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:42:	Parameter 'dataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:42:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:46:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:51:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:55:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:55:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:56:	Local variable 'saver' could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:59:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:63:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:68:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:68:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:69:	Local variable 'saver' could be declared final
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:72:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/DatasetHandler.java:76:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:1:	Possible God class (WMC=67, ATFD=48, TCC=0.05847953216374269)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:5:	Avoid unused imports such as 'weka.classifiers.meta.AdaBoostM1'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:6:	Avoid unused imports such as 'weka.classifiers.meta.CVParameterSelection'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:7:	Avoid unused imports such as 'weka.classifiers.meta.MultiSearch'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:8:	Avoid unused imports such as 'weka.classifiers.meta.multisearch.DefaultEvaluationMetrics'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:9:	Avoid unused imports such as 'weka.classifiers.trees.J48'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:10:	Avoid unused imports such as 'weka.core.SelectedTag'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:11:	Avoid unused imports such as 'weka.core.SetupGenerator'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:12:	Avoid unused imports such as 'weka.core.Utils'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:13:	Avoid unused imports such as 'weka.core.setupgenerator.AbstractParameter'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:14:	Avoid unused imports such as 'weka.core.setupgenerator.MathParameter'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:18:	Avoid unused imports such as 'java.io.Serializable'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:21:	Avoid unused imports such as 'java.util.Enumeration'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:30:	The class 'EntryPoint' has a Cyclomatic Complexity of 3 (Highest = 14).
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:30:	The class 'EntryPoint' has a Modified Cyclomatic Complexity of 3 (Highest = 14).
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:30:	The class 'EntryPoint' has a Standard Cyclomatic Complexity of 3 (Highest = 14).
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:30:	This class has too many methods, consider refactoring it.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:30:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:32:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:34:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:34:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:34:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:35:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:35:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:36:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:36:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:37:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:37:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:43:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:45:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:45:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:49:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:49:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:49:	Parameter 'args' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:49:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:50:	Comment is too large: Too many lines
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:71:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:80:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:82:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:117:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:118:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:119:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:122:	Local variable 'workflow' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:125:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:126:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:130:	Local variable 'endTime' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:131:	Local variable 'time' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:133:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:136:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:136:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:136:	Parameter 'args' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:136:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:137:	Local variable 'input' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:138:	Found 'DD'-anomaly for variable 'something' (lines '138'-'141').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:138:	Found 'DD'-anomaly for variable 'something' (lines '138'-'147').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:138:	Found 'DD'-anomaly for variable 'something' (lines '138'-'152').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:138:	Found 'DD'-anomaly for variable 'something' (lines '138'-'157').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:138:	Found 'DD'-anomaly for variable 'something' (lines '138'-'162').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:145:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:145:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:145:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:147:	Found 'DD'-anomaly for variable 'something' (lines '147'-'152').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:147:	Found 'DD'-anomaly for variable 'something' (lines '147'-'157').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:147:	Found 'DD'-anomaly for variable 'something' (lines '147'-'162').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:150:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:152:	Found 'DD'-anomaly for variable 'something' (lines '152'-'157').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:152:	Found 'DD'-anomaly for variable 'something' (lines '152'-'162').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:155:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:157:	Found 'DD'-anomaly for variable 'something' (lines '157'-'162').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:160:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:172:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:172:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:172:	Parameter 'args' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:172:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:174:	Local variable 'custom' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:175:	Local variable 'newArgs' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	Parameter 'input' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	The method 'wekaExp' has a Cyclomatic Complexity of 14.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	The method 'wekaExp' has a Modified Cyclomatic Complexity of 14.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	The method 'wekaExp' has a Standard Cyclomatic Complexity of 14.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	The method wekaExp() has an NPath complexity of 1944
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:182:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:185:	Local variable 'model' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:186:	Local variable 'file' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:186:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:187:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:189:	Local variable 'experiment' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:190:	Found 'DD'-anomaly for variable 'exptype' (lines '190'-'199').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:191:	Found 'DD'-anomaly for variable 'splittype' (lines '191'-'209').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:192:	Found 'DD'-anomaly for variable 'folds' (lines '192'-'220').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:192:	Found 'DD'-anomaly for variable 'folds' (lines '192'-'225').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:193:	Found 'DD'-anomaly for variable 'randomized' (lines '193'-'229').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:194:	Found 'DD'-anomaly for variable 'percentage' (lines '194'-'234').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:194:	Found 'DD'-anomaly for variable 'percentage' (lines '194'-'239').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:195:	Found 'DD'-anomaly for variable 'runs' (lines '195'-'244').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:195:	Found 'DD'-anomaly for variable 'runs' (lines '195'-'249').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:196:	Found 'DD'-anomaly for variable 'printOnFile' (lines '196'-'253').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:201:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:202:	Local variable 'warning' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:202:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:211:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:212:	Local variable 'warning' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:220:	Found 'DD'-anomaly for variable 'folds' (lines '220'-'225').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:222:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:223:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:234:	Found 'DD'-anomaly for variable 'percentage' (lines '234'-'239').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:236:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:237:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:244:	Found 'DD'-anomaly for variable 'runs' (lines '244'-'249').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:246:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:247:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:256:	Local variable 'result' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:256:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:261:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:265:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:265:	Parameter 'input' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:267:	Found 'DD'-anomaly for variable 'fold' (lines '267'-'274').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:268:	Found 'DD'-anomaly for variable 'seed' (lines '268'-'284').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:269:	Found 'DD'-anomaly for variable 'printOnFile' (lines '269'-'292').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:273:	Local variable 'indexFold' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:274:	Found 'DD'-anomaly for variable 'fold' (lines '274'-'275').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:276:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:278:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:283:	Local variable 'indexSeed' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:284:	Found 'DD'-anomaly for variable 'seed' (lines '284'-'285').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:286:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:288:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:299:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:310:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:310:	Parameter 'input' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:314:	Avoid using if statements without curly braces
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:328:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:328:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:328:	Parameter 'args' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:330:	Avoid using Literals in Conditional Statements
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:331:	Avoid using if...else statements without curly braces
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:333:	Avoid using if...else statements without curly braces
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:336:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:336:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:336:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:340:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:341:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:346:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:346:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:351:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:351:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:354:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:354:	Avoid using exceptions as flow control.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:356:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:357:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:357:	Unnecessary use of fully qualified name 'java.io.File' due to existing import 'java.io.File'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:360:	The String literal "\\result" appears 6 times in this file; the first occurrence is on line 360
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:365:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:365:	Avoid using exceptions as flow control.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:366:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:367:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:367:	New exception is thrown in catch block, original stack trace may be lost
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:367:	New exception is thrown in catch block, original stack trace may be lost
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:372:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:373:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:376:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:376:	Found 'UR'-anomaly for variable 'c' (lines '376'-'381').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:376:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:378:	Avoid variables with short names like i
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:378:	Found 'DU'-anomaly for variable 'i' (lines '378'-'406').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:379:	Found 'DD'-anomaly for variable 'pathToPrint' (lines '379'-'384').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:380:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:381:	Local variable 'name' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:384:	Found 'DD'-anomaly for variable 'pathToPrint' (lines '384'-'391').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:384:	Found 'DD'-anomaly for variable 'pathToPrint' (lines '384'-'394').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:385:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:387:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:387:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:387:	Unnecessary use of fully qualified name 'java.io.File' due to existing import 'java.io.File'
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:389:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:390:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:390:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:391:	Found 'DU'-anomaly for variable 'pathToPrint' (lines '391'-'406').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:391:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:391:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:394:	Found 'DU'-anomaly for variable 'pathToPrint' (lines '394'-'406').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:397:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:399:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:405:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:408:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:408:	Found 'UR'-anomaly for variable 's' (lines '408'-'415').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:408:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:408:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:410:	Local variable 'paths' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:411:	Found 'DU'-anomaly for variable 'pathDataset' (lines '411'-'417').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:411:	Local variable 'pathDataset' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:411:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:412:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:414:	Local variable 's' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:419:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:419:	Parameter 'pathDataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:419:	Parameter 'pathSerialized' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:420:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:420:	Found 'DD'-anomaly for variable 'c' (lines '420'-'422').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:423:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:430:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:430:	Parameter 'path1' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:430:	Parameter 'path2' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:430:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:433:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:433:	Found 'DD'-anomaly for variable 'c' (lines '433'-'435').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:435:	Found 'DD'-anomaly for variable 'c' (lines '435'-'441').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:436:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:437:	Local variable 'temp' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:442:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:450:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:450:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:450:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:450:	Parameter 'pathDataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:452:	Local variable 'dataset' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:453:	Local variable 'predictor' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:453:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:454:	Local variable 'datasetPredicted' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:454:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:457:	Local variable 'directory' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:458:	Local variable 'name' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:459:	Found 'DD'-anomaly for variable 'nameClassifier' (lines '459'-'460').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:459:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:460:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:460:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:460:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:462:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:465:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:466:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:469:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:470:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:474:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	Found 'UR'-anomaly for variable 'c' (lines '477'-'481').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	Parameter 'fold' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	Parameter 'printOnFile' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	Parameter 'seed' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:477:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:478:	Found 'DU'-anomaly for variable 'evaluator' (lines '478'-'488').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:478:	Local variable 'evaluator' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:479:	Local variable 'message' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:480:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:481:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:486:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Avoid excessively long variable names like extensionWithPoint
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Found 'UR'-anomaly for variable 'name' (lines '490'-'490').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Found 'UR'-anomaly for variable 'path' (lines '490'-'490').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Parameter 'extensionWithPoint' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Parameter 'messageToShow' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Parameter 'nameOfTheFile' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Parameter 'textToPrint' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:490:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:491:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:494:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:497:	Avoid variables with short names like f
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:498:	Avoid variables with short names like i
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:498:	Found 'DU'-anomaly for variable 'i' (lines '498'-'518').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:502:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:503:	Found 'DU'-anomaly for variable 'i' (lines '503'-'518').
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:508:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:509:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:513:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/EntryPoint.java:514:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/Predictor.java:12:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:14:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/core/Predictor.java:16:	Use explicit scoping instead of the default package private level
+src/main/java/it/unimib/disco/essere/core/Predictor.java:16:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:19:	Avoid excessively long variable names like datasetToBePredict
+src/main/java/it/unimib/disco/essere/core/Predictor.java:19:	Parameter 'datasetToBePredict' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:19:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:23:	Avoid excessively long variable names like datasetToBePredict
+src/main/java/it/unimib/disco/essere/core/Predictor.java:23:	Parameter 'datasetToBePredict' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:23:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:27:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/Predictor.java:27:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/Predictor.java:27:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:27:	Parameter 'printComparison' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:27:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Predictor.java:32:	Local variable 'newInst' could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:33:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:35:	Found 'DD'-anomaly for variable 'actual' (lines '35'-'35').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:35:	Found 'DD'-anomaly for variable 'actual' (lines '35'-'38').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:35:	Found 'DU'-anomaly for variable 'actual' (lines '35'-'57').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:37:	Local variable 'actualClass' could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:37:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:38:	Found 'DD'-anomaly for variable 'actual' (lines '38'-'35').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:38:	Found 'DU'-anomaly for variable 'actual' (lines '38'-'57').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:41:	Found 'DD'-anomaly for variable 'predicted' (lines '41'-'43').
+src/main/java/it/unimib/disco/essere/core/Predictor.java:44:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/Predictor.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:45:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/Predictor.java:48:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:51:	Local variable 'predClass' could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:51:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:52:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:52:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:52:	System.out.println is used
+src/main/java/it/unimib/disco/essere/core/Predictor.java:59:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/Predictor.java:60:	Local variable '_class' could be declared final
+src/main/java/it/unimib/disco/essere/core/Predictor.java:60:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), '_class' is not final.
+src/main/java/it/unimib/disco/essere/core/Predictor.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:64:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:66:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:68:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/core/Predictor.java:69:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/core/Predictor.java:69:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/core/Serializer.java:5:	Each class should declare at least one constructor
+src/main/java/it/unimib/disco/essere/core/Serializer.java:5:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Serializer.java:7:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/Serializer.java:7:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/core/Serializer.java:7:	Parameter 'c' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Serializer.java:7:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Serializer.java:7:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Serializer.java:8:	Potential violation of Law of Demeter (static property access)
+src/main/java/it/unimib/disco/essere/core/Serializer.java:11:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/core/Serializer.java:11:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/core/Serializer.java:11:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/core/Serializer.java:12:	Potential violation of Law of Demeter (static property access)
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:5:	Avoid unused imports such as 'java.util.List'
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:10:	Each class should declare at least one constructor
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:10:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:12:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:12:	Use explicit scoping instead of the default package private level
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:12:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:13:	Avoid using implementation types like 'LinkedList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:13:	Private field 'queue' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:13:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:14:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:20:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:20:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:20:	Parameter 'testDatasets' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:20:	Parameter 'trainDatasets' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:20:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:22:	Avoid unused local variables such as 'result'.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:22:	Found 'DU'-anomaly for variable 'result' (lines '22'-'43').
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:22:	Local variable 'result' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:25:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:25:	Avoid variables with short names like rc
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:25:	Local variable 'rc' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:33:	Local variable 'ready' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:34:	Avoid if (x != y) ..; else ..;
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:46:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:46:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:50:	Avoid using implementation types like 'LinkedList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:50:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:59:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:65:	Found 'UR'-anomaly for variable 'thread' (lines '65'-'67').
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:66:	Local variable 'thread' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomClassifierSplitEvaluator.java:68:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:5:	Avoid unused imports such as 'java.util.List'
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:16:	Avoid unused imports such as 'weka.experiment.InstancesResultListener'
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:18:	The class 'CustomCrossValidationResultProducer' has a Cyclomatic Complexity of 6 (Highest = 11).
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:18:	The class 'CustomCrossValidationResultProducer' has a Modified Cyclomatic Complexity of 6 (Highest = 10).
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:18:	The class 'CustomCrossValidationResultProducer' has a Standard Cyclomatic Complexity of 6 (Highest = 10).
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:18:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:22:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:33:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:33:	Parameter 'run' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:33:	The method 'doRun' has a Cyclomatic Complexity of 11.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:33:	The method 'doRun' has a Modified Cyclomatic Complexity of 10.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:33:	The method 'doRun' has a Standard Cyclomatic Complexity of 10.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:35:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:35:	Found 'DU'-anomaly for variable 'trainingData' (lines '35'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:35:	Local variable 'trainingData' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:36:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:36:	Found 'DU'-anomaly for variable 'testingData' (lines '36'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:36:	Local variable 'testingData' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:37:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:37:	Found 'DU'-anomaly for variable 'allKey' (lines '37'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:37:	Local variable 'allKey' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:38:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:38:	Avoid excessively long variable names like customSplitEvaluator
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:38:	Found 'DU'-anomaly for variable 'customSplitEvaluator' (lines '38'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:38:	Local variable 'customSplitEvaluator' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:41:	These nested if statements could be combined
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:47:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:50:	Local variable 'runInstances' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:51:	Local variable 'random' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:52:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:53:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:53:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:61:	Local variable 'seKey' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:62:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:62:	Found 'DD'-anomaly for variable 'key' (lines '62'-'63').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:63:	Found 'DD'-anomaly for variable 'key' (lines '63'-'64').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:64:	Do not add empty strings
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:64:	Found 'DD'-anomaly for variable 'key' (lines '64'-'65').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:65:	Do not add empty strings
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:71:	Local variable 'train' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:72:	Local variable 'test' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:72:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:73:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:74:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:78:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:79:	Found 'DU'-anomaly for variable 'fold' (lines '79'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:82:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:82:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:87:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:87:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:93:	Found 'DU'-anomaly for variable 'fold' (lines '93'-'97').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:99:	Avoid excessively long variable names like customSplitEvaluator
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:99:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:99:	Parameter 'allKey' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:99:	Parameter 'customSplitEvaluator' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:99:	Parameter 'run' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:100:	Parameter 'currentFold' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:100:	Parameter 'runInstances' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:102:	Local variable 'seResults' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:102:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:105:	Local variable 'key' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:106:	Found 'DD'-anomaly for variable 'results' (lines '106'-'107').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:111:	Do not add empty strings
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:111:	Found 'DD'-anomaly for variable 'resultName' (lines '111'-'114').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:111:	Useless parentheses.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:111:	Useless parentheses.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:122:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:123:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:123:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:127:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:127:	Parameter 'args' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:127:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:129:	Local variable 'startTime' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:131:	Avoid variables with short names like lp
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:131:	Local variable 'lp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:132:	Avoid variables with short names like a
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:132:	Found 'DD'-anomaly for variable 'a' (lines '132'-'137').
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:134:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:136:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:139:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:140:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:143:	Local variable 'model' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:144:	Local variable 'file' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:144:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:144:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:147:	Avoid variables with short names like de
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:147:	Local variable 'de' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:149:	Local variable 'result' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:150:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:151:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:152:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:152:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomCrossValidationResultProducer.java:155:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:7:	Each class should declare at least one constructor
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:7:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:19:	Found 'UR'-anomaly for variable 'm_DatasetKeyColumn' (lines '19'-'23').
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:19:	Parameter 'template' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:22:	Avoid excessively long variable names like m_DatasetKeyColumn
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:22:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:22:	Local variable 'm_DatasetKeyColumn' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:22:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_DatasetKeyColumn' is not final.
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:23:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:26:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:28:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:29:	Local variable 'names' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:31:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:31:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:32:	Local variable 'index' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:33:	Local variable 'tmp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:34:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:34:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:34:	String.indexOf(char) is faster than String.indexOf(String).
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:36:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:39:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:40:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:40:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/CustomPrintPairedTTester.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:21:	Avoid unused imports such as 'weka.experiment.PairedCorrectedTTester'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:22:	Avoid unused imports such as 'weka.experiment.PairedTTester'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:27:	Avoid unused imports such as 'weka.experiment.ResultMatrixCSV'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:28:	Avoid unused imports such as 'weka.experiment.ResultMatrixHTML'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:29:	Avoid unused imports such as 'weka.experiment.ResultMatrixLatex'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:33:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:35:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:36:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:37:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:38:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:39:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:40:	Avoid excessively long variable names like DEFAULT_RANDOMIZED
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:40:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:41:	Avoid excessively long variable names like DEFAULT_PERCENTAGE
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:41:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:42:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:43:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:45:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:47:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:47:	Private field 'classifiers' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:47:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:48:	Avoid using redundant field initializer for 'pathForResult'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:48:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:48:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:49:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:49:	Private field 'model' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:49:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:52:	Parameter 'classifiers' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:52:	Parameter 'datasets' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:52:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:57:	Parameter 'classifiers' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:57:	Parameter 'datasets' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:57:	Parameter 'pathForResult' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:57:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:63:	Parameter 'classifiers' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:63:	Parameter 'dataset' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:63:	Parameter 'pathForResult' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:63:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:67:	Local variable 'model' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:68:	Local variable 'file' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:75:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:76:	Returning 'EXPTYPE_VALUES' may expose an internal array.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:79:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:80:	Returning 'SPLITTYPE_VALUES' may expose an internal array.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:83:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:87:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:91:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:95:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:99:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:103:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:107:	Found 'UR'-anomaly for variable 'value' (lines '107'-'109').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:107:	Parameter 'exptype' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:107:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:108:	Local variable 'value' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:109:	Avoid using if statements without curly braces
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:110:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:115:	Found 'UR'-anomaly for variable 'value' (lines '115'-'117').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:115:	Parameter 'splittype' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:115:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:116:	Local variable 'value' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:117:	Avoid using if statements without curly braces
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:118:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:123:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:127:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:127:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'exptype' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'folds' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'percentage' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'randomized' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'runs' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	Parameter 'splittype' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:136:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:139:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:140:	Local variable 'exp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:141:	Avoid variables with short names like a
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:141:	Local variable 'a' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:142:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:143:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:146:	Avoid variables with short names like se
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:146:	Found 'DD'-anomaly for variable 'se' (lines '146'-'153').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:146:	Found 'DD'-anomaly for variable 'se' (lines '146'-'158').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:146:	Found 'DD'-anomaly for variable 'se' (lines '146'-'161').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:146:	Found 'DU'-anomaly for variable 'se' (lines '146'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:147:	Found 'DD'-anomaly for variable 'sec' (lines '147'-'154').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:147:	Found 'DD'-anomaly for variable 'sec' (lines '147'-'159').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:147:	Found 'DD'-anomaly for variable 'sec' (lines '147'-'162').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:147:	Found 'DU'-anomaly for variable 'sec' (lines '147'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:148:	Found 'DD'-anomaly for variable 'classification' (lines '148'-'152').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:148:	Found 'DD'-anomaly for variable 'classification' (lines '148'-'157').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:148:	Found 'DU'-anomaly for variable 'classification' (lines '148'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:152:	Found 'DU'-anomaly for variable 'classification' (lines '152'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:154:	Found 'DU'-anomaly for variable 'sec' (lines '154'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:154:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:156:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:156:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:157:	Found 'DU'-anomaly for variable 'classification' (lines '157'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:159:	Found 'DU'-anomaly for variable 'sec' (lines '159'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:159:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:160:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:160:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:162:	Found 'DU'-anomaly for variable 'sec' (lines '162'-'225').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:162:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:168:	Local variable 'ccvrp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:178:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:178:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:179:	Local variable 'cvrp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:184:	Local variable 'rsrp' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:187:	Avoid using if...else statements without curly braces
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:189:	Avoid using if...else statements without curly braces
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:196:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:197:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:200:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:203:	Local variable 'irl' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:204:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:208:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:209:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:210:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:211:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:212:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:213:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:214:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:215:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:215:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:220:	System.out.println is used
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:221:	Local variable 'matrix' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:223:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:224:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:227:	Avoid variables with short names like se
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:227:	Parameter 'exp' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:227:	Parameter 'rsrp' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:227:	Parameter 'se' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:227:	Parameter 'sec' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:230:	Found 'DD'-anomaly for variable 'propertyPath' (lines '230'-'232').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:232:	Found 'DD'-anomaly for variable 'propertyPath' (lines '232'-'237').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:237:	Found 'DU'-anomaly for variable 'propertyPath' (lines '237'-'250').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:244:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:252:	Avoid variables with short names like se
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:252:	Parameter 'exp' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:252:	Parameter 'se' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:252:	Parameter 'sec' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:253:	Parameter 'cvrp' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:260:	Found 'DD'-anomaly for variable 'propertyPath' (lines '260'-'262').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:262:	Found 'DD'-anomaly for variable 'propertyPath' (lines '262'-'267').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:267:	Found 'DU'-anomaly for variable 'propertyPath' (lines '267'-'280').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:274:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:283:	Local variable 'irl' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:284:	Local variable 'statisticFileName' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:286:	Avoid if (x != y) ..; else ..;
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:287:	The String literal ".arff" appears 4 times in this file; the first occurrence is on line 287
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:289:	Avoid variables with short names like i
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:289:	Found 'DU'-anomaly for variable 'i' (lines '289'-'308').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:293:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:294:	Found 'DU'-anomaly for variable 'i' (lines '294'-'308').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:299:	Local variable 'path' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:299:	Unnecessary use of fully qualified name 'java.io.File' due to existing import 'java.io.File'
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:310:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:310:	Parameter 'classification' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:310:	Parameter 'irl' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:310:	Parameter 'splittype' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:311:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:311:	Found 'DU'-anomaly for variable 'tester' (lines '311'-'359').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:311:	Local variable 'tester' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:315:	Found 'DU'-anomaly for variable 'result' (lines '315'-'359').
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:316:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:323:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:323:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:327:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:327:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:330:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:330:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:333:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:335:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:337:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:343:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:344:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:352:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:352:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:355:	Avoid using if...else statements without curly braces
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:355:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:355:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:361:	Avoid unused method parameters such as 'i'.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:361:	Avoid unused private methods such as 'parse(int)'.
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:361:	Avoid variables with short names like i
+src/main/java/it/unimib/disco/essere/experiment/DataExperimenter.java:361:	Parameter 'i' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:1:	Possible God class (WMC=48, ATFD=21, TCC=0.2)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	The class 'ResultCreator' has a Cyclomatic Complexity of 8 (Highest = 40).
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	The class 'ResultCreator' has a Modified Cyclomatic Complexity of 8 (Highest = 39).
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	The class 'ResultCreator' has a Standard Cyclomatic Complexity of 8 (Highest = 39).
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	To be compliant to J2EE, a webapp should not use any thread.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	Too many fields
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:21:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:23:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:26:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_Template' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:28:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_Classifier' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:30:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_Evaluation' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:32:	Avoid excessively long variable names like m_AdditionalMeasures
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:32:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_AdditionalMeasures' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:38:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_doesProduce' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:44:	Avoid excessively long variable names like m_numberAdditionalMeasures
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:44:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:44:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_numberAdditionalMeasures' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:46:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:46:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_result' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:48:	Avoid excessively long variable names like m_ClassifierOptions
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:48:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:48:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_ClassifierOptions' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:50:	Avoid excessively long variable names like m_ClassifierVersion
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:50:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:50:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_ClassifierVersion' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:52:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:52:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_IRclass' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:54:	Avoid excessively long variable names like m_predTargetColumn
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:54:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:54:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_predTargetColumn' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:56:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:56:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_attID' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:58:	Avoid excessively long variable names like m_NoSizeDetermination
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:58:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:58:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_NoSizeDetermination' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:59:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:59:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_pluginMetrics' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:59:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:60:	Avoid excessively long variable names like m_numPluginStatistics
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:60:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:60:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_numPluginStatistics' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:60:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:69:	Avoid excessively long variable names like NUM_WEIGHTED_IR_STATISTICS
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:72:	Avoid excessively long variable names like NUM_UNWEIGHTED_IR_STATISTICS
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:74:	Avoid using redundant field initializer for 'finish'
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:74:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:74:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:75:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:75:	Private field 'train' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:75:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:76:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:76:	Private field 'test' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:76:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Avoid excessively long variable names like m_AdditionalMeasures
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Avoid long parameter lists.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	It is a good practice to call super() in a constructor
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_AdditionalMeasures' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_Template' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_doesProduce' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Parameter 'm_AdditionalMeasures' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Parameter 'm_Template' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	Parameter 'm_doesProduce' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:79:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid excessively long variable names like m_ClassifierOptions
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid excessively long variable names like m_ClassifierVersion
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid excessively long variable names like m_numberAdditionalMeasures
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_ClassifierOptions' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_ClassifierVersion' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_numberAdditionalMeasures' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Parameter 'm_ClassifierOptions' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Parameter 'm_ClassifierVersion' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:80:	Parameter 'm_numberAdditionalMeasures' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Avoid excessively long variable names like m_predTargetColumn
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_IRclass' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_attID' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_pluginMetrics' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_predTargetColumn' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Parameter 'm_IRclass' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Parameter 'm_attID' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Parameter 'm_pluginMetrics' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:81:	Parameter 'm_predTargetColumn' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Avoid excessively long variable names like m_numPluginStatistics
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Avoid naming non-fields with the prefix m_
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'm_numPluginStatistics' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Parameter 'm_numPluginStatistics' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Parameter 'test' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:82:	Parameter 'train' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:85:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:86:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:91:	Avoid instantiating String objects; this is usually unnecessary.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:92:	Avoid instantiating String objects; this is usually unnecessary.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:102:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:104:	System.err.println is used
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:105:	Avoid throwing null pointer exceptions.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:107:	Returning 'result' may expose an internal array.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:110:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:114:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:114:	Parameter 'classifier' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:115:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:115:	Found 'DD'-anomaly for variable 'c' (lines '115'-'122').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:116:	Local variable 'nameClassifier' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:116:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:117:	Local variable 'optionsClassifier' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:120:	Local variable 'tmpClassifier' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:120:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:121:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:122:	Found 'DU'-anomaly for variable 'c' (lines '122'-'129').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:123:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:124:	System.err.println is used
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	Avoid really long methods.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	Found 'UR'-anomaly for variable 'm' (lines '131'-'398').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	Found 'UR'-anomaly for variable 's' (lines '131'-'401').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	The method 'getResult' has a Cyclomatic Complexity of 40.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	The method 'getResult' has a Modified Cyclomatic Complexity of 39.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	The method 'getResult' has a Standard Cyclomatic Complexity of 39.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	The method getResult() has an NCSS line count of 190
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	The method getResult() has an NPath complexity of 262656000
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:131:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:133:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:134:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:137:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:140:	Avoid if (x != y) ..; else ..;
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:140:	Local variable 'addm' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:141:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'overall_length' is not final.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:155:	Local variable 'canMeasureCPUTime' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:155:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:156:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:157:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:162:	Local variable 'eval' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:165:	Local variable 'thID' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:165:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Avoid excessively long variable names like testCPUTimeElapsed
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Avoid excessively long variable names like trainCPUTimeElapsed
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'CPUStartTime' (lines '166'-'171').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'testCPUTimeElapsed' (lines '166'-'188').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'testTimeElapsed' (lines '166'-'190').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'testTimeStart' (lines '166'-'182').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'trainCPUTimeElapsed' (lines '166'-'177').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'trainTimeElapsed' (lines '166'-'179').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Found 'DD'-anomaly for variable 'trainTimeStart' (lines '166'-'169').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Use one line for each declaration, it enhances code readability.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:166:	Variables should start with a lowercase character, 'CPUStartTime' starts with uppercase character.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:171:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:177:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:184:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:186:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:188:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:191:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:191:	Found 'DU'-anomaly for variable 'thMonitor' (lines '191'-'413').
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:193:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:199:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:200:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:201:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:202:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:203:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:204:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:205:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:206:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:208:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:209:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:210:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:211:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:213:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:214:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:215:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:216:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:217:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:218:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:221:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:222:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:223:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:226:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:227:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:228:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:229:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:230:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:231:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:232:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:233:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:234:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:235:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:236:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:238:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:239:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:240:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:243:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:244:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:245:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:246:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:247:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:248:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:249:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:250:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:251:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:252:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:255:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:256:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:284:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:285:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:288:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:289:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:292:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:293:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:298:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:299:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:304:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:306:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:306:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:309:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:309:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:313:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:313:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:316:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:316:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:323:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:327:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:327:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:329:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:329:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:337:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:339:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:347:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:347:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:349:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:350:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:358:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:358:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:358:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:361:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:362:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:362:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:370:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:372:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:378:	Avoid variables with short names like dv
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:378:	Local variable 'dv' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:378:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:378:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:380:	Avoid if (x != y) ..; else ..;
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:381:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:381:	Local variable 'value' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:384:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:386:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:387:	System.err.println is used
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:390:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:395:	Local variable 'metrics' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:395:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:397:	Local variable 'm' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:398:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:399:	Local variable 'statNames' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:399:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:400:	Local variable 's' could be declared final
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:401:	Avoid instantiating new objects inside loops
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:401:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:408:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:415:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:418:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/experiment/ResultCreator.java:419:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/it/unimib/disco/essere/load/Loader.java:10:	Avoid unused imports such as 'weka.classifiers.functions.Logistic'
+src/main/java/it/unimib/disco/essere/load/Loader.java:13:	Avoid unused imports such as 'weka.core.ListOptions'
+src/main/java/it/unimib/disco/essere/load/Loader.java:17:	Abstract classes should be named AbstractXXX
+src/main/java/it/unimib/disco/essere/load/Loader.java:17:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:19:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/load/Loader.java:21:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/it/unimib/disco/essere/load/Loader.java:22:	fieldCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:24:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/it/unimib/disco/essere/load/Loader.java:24:	Document empty constructor
+src/main/java/it/unimib/disco/essere/load/Loader.java:24:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:26:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/Loader.java:26:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/load/Loader.java:26:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:27:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/Loader.java:27:	Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/it/unimib/disco/essere/load/Loader.java:27:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:29:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:33:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:37:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:41:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/Loader.java:41:	Avoid variables with short names like oh
+src/main/java/it/unimib/disco/essere/load/Loader.java:41:	Parameter 'oh' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:41:	Parameter 'options' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:41:	protectedMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:45:	Local variable 'opt' could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:47:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/main/java/it/unimib/disco/essere/load/Loader.java:48:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:48:	There is log block not surrounded by if
+src/main/java/it/unimib/disco/essere/load/Loader.java:51:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	Avoid variables with short names like oh
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	Found 'UR'-anomaly for variable 's' (lines '60'-'68').
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	Parameter 'oh' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	Parameter 'options' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:60:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:61:	Found 'DD'-anomaly for variable 'opt' (lines '61'-'63').
+src/main/java/it/unimib/disco/essere/load/Loader.java:64:	Local variable 'selectedOpt' could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:67:	Local variable 's' could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:67:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:72:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:72:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:72:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:78:	Local variable 'temp' could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:79:	Local variable 'index' could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:79:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:80:	Found 'DD'-anomaly for variable 'opt' (lines '80'-'81').
+src/main/java/it/unimib/disco/essere/load/Loader.java:86:	Parameter 'name' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:86:	protectedMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:87:	Avoid variables with short names like o
+src/main/java/it/unimib/disco/essere/load/Loader.java:87:	Found 'DD'-anomaly for variable 'o' (lines '87'-'90').
+src/main/java/it/unimib/disco/essere/load/Loader.java:90:	Found 'DU'-anomaly for variable 'o' (lines '90'-'104').
+src/main/java/it/unimib/disco/essere/load/Loader.java:90:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/Loader.java:92:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:95:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/Loader.java:97:	Avoid empty catch blocks
+src/main/java/it/unimib/disco/essere/load/Loader.java:97:	Avoid empty catch blocks
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	Avoid variables with short names like o
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	Parameter 'name' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	Parameter 'o' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	Parameter 'type' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/Loader.java:106:	protectedMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/Loader.java:108:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/load/Loader.java:109:	Comment is too large: Line too long
+src/main/java/it/unimib/disco/essere/load/Loader.java:112:	Avoid if (x != y) ..; else ..;
+src/main/java/it/unimib/disco/essere/load/Loader.java:112:	Avoid using Literals in Conditional Statements
+src/main/java/it/unimib/disco/essere/load/Loader.java:113:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:113:	The String literal "-------------------------------------------------------------------------------------" appears 4 times in this file; the first occurrence is on line 113
+src/main/java/it/unimib/disco/essere/load/Loader.java:114:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:115:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:116:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:117:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:119:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:120:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:121:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:122:	System.out.println is used
+src/main/java/it/unimib/disco/essere/load/Loader.java:125:	Avoid throwing raw exception types.
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:15:	headerCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:17:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:17:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:21:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:21:	Parameter 'pathProperties' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:22:	Local variable 'properties' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:24:	Avoid variables with short names like in
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:32:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:32:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'path_properties' is not final.
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:32:	Parameter 'path_properties' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:32:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:33:	Local variable 'classifiers' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:34:	Local variable 'properties' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:37:	Local variable 'pathDataset' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:37:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:37:	The String literal "dataset" appears 4 times in this file; the first occurrence is on line 37
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:39:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:54:	Avoid variables with short names like e
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:54:	Local variable 'e' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:56:	Local variable 'key' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:56:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:57:	Local variable 'elem' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:57:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:58:	Avoid variables with short names like c
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:58:	Local variable 'c' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:59:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:65:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:65:	Parameter 'elem' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:65:	Parameter 'key' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:65:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:67:	Found 'DD'-anomaly for variable 'element' (lines '67'-'74').
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:71:	Avoid variables with short names like oh
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:74:	Prefer StringBuffer over += for concatenating strings
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:75:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:85:	Avoid using Literals in Conditional Statements
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:94:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:94:	Parameter 'path' is not assigned and could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:94:	publicMethodCommentRequirement Required
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:95:	Local variable 'properties' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:96:	Local variable 'result' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:98:	Local variable 'pathDataset' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:99:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:102:	Avoid variables with short names like e
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:102:	Local variable 'e' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:102:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:103:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:104:	Local variable 'key' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:105:	Local variable 'classifier' could be declared final
+src/main/java/it/unimib/disco/essere/load/LoaderProperties.java:105:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:1:	Package name contains upper case characters
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:8:	Each class should declare at least one constructor
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:8:	headerCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:10:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:10:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:11:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:11:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:14:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:17:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:18:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:19:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:19:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:20:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:23:	JUnit 4 tests that execute tests should use the @Test annotation
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:23:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:24:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:24:	The String literal "-wekaExp" appears 4 times in this file; the first occurrence is on line 24
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:25:	The String literal "-exptype" appears 4 times in this file; the first occurrence is on line 25
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:25:	The String literal "classification" appears 4 times in this file; the first occurrence is on line 25
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:26:	The String literal "-splittype" appears 4 times in this file; the first occurrence is on line 26
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:26:	The String literal "crossvalidation" appears 4 times in this file; the first occurrence is on line 26
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:27:	The String literal "-runs" appears 4 times in this file; the first occurrence is on line 27
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:28:	The String literal "-folds" appears 4 times in this file; the first occurrence is on line 28
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:29:	The String literal "C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\codesmells" appears 4 times in this file; the first occurrence is on line 29
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:34:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:35:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:38:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:41:	JUnit 4 tests that execute tests should use the @Test annotation
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:41:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:42:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:52:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:53:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:53:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:56:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:59:	JUnit 4 tests that execute tests should use the @Test annotation
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:59:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:60:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:70:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:71:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:74:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:77:	JUnit 4 tests that execute tests should use the @Test annotation
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:77:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:78:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:88:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:89:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:89:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCodesmells.java:92:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:1:	Package name contains upper case characters
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:9:	Each class should declare at least one constructor
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:9:	headerCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:10:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:10:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:11:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:11:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:14:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:17:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:18:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:19:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:19:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:20:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:24:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:25:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:29:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:32:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:36:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:37:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:44:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestCrossValidation.java:47:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:1:	Package name contains upper case characters
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:9:	Each class should declare at least one constructor
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:9:	headerCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:10:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:10:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:11:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:11:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:14:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:17:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:18:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:19:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:19:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:20:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:24:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:25:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:25:	The String literal "-wekaExp" appears 6 times in this file; the first occurrence is on line 25
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:26:	The String literal "-exptype" appears 6 times in this file; the first occurrence is on line 26
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:27:	The String literal "-splittype" appears 6 times in this file; the first occurrence is on line 27
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:28:	The String literal "-runs" appears 7 times in this file; the first occurrence is on line 28
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:29:	The String literal "-folds" appears 4 times in this file; the first occurrence is on line 29
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:30:	The String literal "C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties" appears 4 times in this file; the first occurrence is on line 30
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:34:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:35:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:38:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:42:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:43:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:52:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:55:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:59:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:60:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:70:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:73:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:77:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:78:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:87:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:90:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:94:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:95:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:96:	The String literal "NULL" appears 4 times in this file; the first occurrence is on line 96
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:104:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:107:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:111:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:112:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:122:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:123:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:123:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:126:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:130:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:131:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:138:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:139:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:139:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:142:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:145:	Comment is too large: Too many lines
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:151:	Comment is too large: Line too long
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:162:	Comment is too large: Too many lines
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestExperiment.java:171:	Comment is too large: Line too long
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:1:	Package name contains upper case characters
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:9:	Each class should declare at least one constructor
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:9:	headerCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:11:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:11:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:12:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:12:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:15:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:18:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:19:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:20:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:20:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:21:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:25:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:26:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:26:	The String literal "-pred" appears 5 times in this file; the first occurrence is on line 26
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:32:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:35:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:39:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:40:	Local variable 'argsDS' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:47:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:50:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:54:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:55:	Local variable 'argsSD' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:62:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:65:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:69:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:70:	Local variable 'argsSD' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:77:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:80:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:84:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:85:	Local variable 'argsSD' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:92:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestPrediction.java:95:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:1:	Package name contains upper case characters
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:8:	Each class should declare at least one constructor
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:8:	headerCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:10:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:10:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:11:	Use explicit scoping instead of the default package private level
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:11:	fieldCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:14:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:17:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:18:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:19:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:19:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:20:	System.out.println is used
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:24:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:25:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:25:	The String literal "-ser" appears 7 times in this file; the first occurrence is on line 25
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:26:	The String literal "-save" appears 7 times in this file; the first occurrence is on line 26
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:30:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:33:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:37:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:38:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:40:	The String literal "C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing" appears 6 times in this file; the first occurrence is on line 40
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:46:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:49:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:53:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:54:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:62:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:65:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:69:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:70:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:78:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:81:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:85:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:86:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:94:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:97:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:101:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:102:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:110:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:113:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:117:	publicMethodCommentRequirement Required
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:118:	Local variable 'args' could be declared final
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:126:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:129:	JUnit assertions should include a message
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:132:	Comment is too large: Too many lines
+src/test/java/it/unimib/disco/essere/CodeSmellDetectorML/TestSerialization.java:137:	Comment is too large: Line too long

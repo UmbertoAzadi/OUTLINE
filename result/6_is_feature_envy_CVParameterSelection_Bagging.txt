@@ -1,0 +1,9 @@
+Cross-validated Parameter selection.
+Classifier: weka.classifiers.meta.Bagging
+Classifier Options: -P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+
+Bagging with 10 iterations and base learner
+
+weka.classifiers.trees.J48 -C 0.25 -M 2
+
+

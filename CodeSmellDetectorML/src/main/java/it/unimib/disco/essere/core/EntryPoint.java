@@ -2,11 +2,23 @@ package it.unimib.disco.essere.core;
 
 
 import weka.classifiers.Classifier;
+import weka.classifiers.meta.AdaBoostM1;
+import weka.classifiers.meta.CVParameterSelection;
+import weka.classifiers.meta.MultiSearch;
+import weka.classifiers.meta.multisearch.DefaultEvaluationMetrics;
+import weka.classifiers.trees.J48;
+import weka.core.SelectedTag;
+import weka.core.SetupGenerator;
+import weka.core.Utils;
+import weka.core.setupgenerator.AbstractParameter;
+import weka.core.setupgenerator.MathParameter;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -35,18 +47,90 @@ public class EntryPoint {
 	}
 
 	public static void main(String[] args) throws Exception{ 
+		/*
+		// configure classifier we want to generate setups for
+	    J48 j48 = new J48();
+
+	    // configure generator
+	    MathParameter conf = new MathParameter();
+	    conf.setProperty("confidenceFactor");
+	    conf.setBase(10);
+	    conf.setMin(0.05);
+	    conf.setMax(0.75);
+	    conf.setStep(0.05);
+	    conf.setExpression("I");
+	    MultiSearch multi = new MultiSearch();
+	    multi.setClassifier(j48);
+	    SetupGenerator generator = new SetupGenerator();
+	    generator.setBaseObject(j48);
+	    generator.setParameters(new AbstractParameter[]{
+	      conf
+	    });
+	    
+	    // output configuration
+	    System.out.println("\nSetupgenerator commandline:\n" + Utils.toCommandLine(generator));
+
+	    // output commandlines
+	    System.out.println("\nCommandlines:\n");
+	    Enumeration<Serializable> enm = generator.setups();
+	    while (enm.hasMoreElements())
+	      System.out.println(Utils.toCommandLine(enm.nextElement()));
+
+	    
+	    //multi.buildClassifier(new DatasetHandler("C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv").getDataset());
+		 
+		 __________________________________________________________________________________________________________________
+		
+		J48 j48 = new J48();
+		AdaBoostM1 a = new AdaBoostM1();
+		 
+
+		CVParameterSelection c = new CVParameterSelection();
+		
+		System.out.println(c.CVParametersTipText());
+		
+		    // configure multisearch
+		    MathParameter conf = new MathParameter();
+		    System.out.println( conf.propertyTipText());
+		    //conf.setProperty("confidenceFactor");
+		   conf.setProperty("weightThreshold");
+		    conf.setBase(10);
+		    conf.setMin(0.05);
+		    conf.setMax(0.75);
+		    conf.setStep(0.1);
+		    conf.setExpression("P");
+		    MultiSearch multi = new MultiSearch();
+		    multi.setClassifier(a);
+		    multi.setSearchParameters(new AbstractParameter[]{
+		      conf
+		    });
+		    SelectedTag tag = new SelectedTag(
+		      DefaultEvaluationMetrics.EVALUATION_ACC,
+		      new DefaultEvaluationMetrics().getTags());
+		    multi.setEvaluation(tag);
+
+		    // output configuration
+		    System.out.println("\nMultiSearch commandline:\n" + Utils.toCommandLine(multi));
+
+		    // optimize
+		    System.out.println("\nOptimizing...\n");
+		    multi.buildClassifier(new DatasetHandler("C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv").getDataset());
+		    System.out.println("Best setup:\n" + Utils.toCommandLine(multi.getBestClassifier()));
+		    System.out.println("Best parameter: " + multi.getGenerator().evaluate(multi.getBestValues()));
+		*/
+		
 		EntryPoint workflow = new EntryPoint();
 		try {
 			workflow.start(args);
 		} catch (Exception e) {
 			LOGGER.severe("Program fail because: " + e);
+			//e.printStackTrace();
 			// do nothing, the error message are already print out
 		}
 		long endTime = System.currentTimeMillis();
 		String time = String.format("Total time in sec: %1$s", (endTime - startTime)/1000);
 		LOGGER.info(time);
 		//LOGGER.info(String.format("Total time in sec: %1$s", (endTime - startTime)/1000));
-		
 	}
 
 	public void start(String[] args) throws Exception{
@@ -255,11 +339,11 @@ public class EntryPoint {
 			classifiers = configuration.load(path);
 		} catch (Exception e) {
 			LOGGER.severe("Invalid or not found property file, please check the path! [" + e + "]");
-			throw new Exception();
+			throw e;
 		}
 	}
 
-	public void classify(){
+	public void classify() throws Exception{
 		LOGGER.info("Classifing...");
 		classifier = new DataClassifier(configuration.getDataset(), classifiers);
 	}

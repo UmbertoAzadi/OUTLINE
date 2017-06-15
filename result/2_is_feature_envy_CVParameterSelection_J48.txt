@@ -1,0 +1,16 @@
+Cross-validated Parameter selection.
+Classifier: weka.classifiers.trees.J48
+Classifier Options: -R -N 3 -Q 1 -M 2
+
+J48 pruned tree
+------------------
+
+ATFD_method <= 4: false (182.0/3.0)
+ATFD_method > 4: true (98.0/8.0)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+
+

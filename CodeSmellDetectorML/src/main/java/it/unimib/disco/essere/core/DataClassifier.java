@@ -1,6 +1,9 @@
 package it.unimib.disco.essere.core;
 
 import weka.core.Instances;
+import weka.core.SetupGenerator;
+import weka.core.setupgenerator.AbstractParameter;
+
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,6 +13,8 @@ import java.util.logging.Logger;
 import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
 import weka.classifiers.SingleClassifierEnhancer;
+import weka.classifiers.meta.GridSearch;
+import weka.classifiers.meta.MultiSearch;
 
 
 public class DataClassifier {
@@ -24,7 +29,7 @@ public class DataClassifier {
 		this.classifiers = null;
 	}
 	
-	public DataClassifier(Instances data, List<Classifier> classifiers){
+	public DataClassifier(Instances data, List<Classifier> classifiers) throws Exception{
 		this.dataset = data;
 		this.classifiers = classifiers;
 
@@ -33,7 +38,7 @@ public class DataClassifier {
 		}
 	}
 
-	public DataClassifier(LoaderProperties data, List<Classifier> classifiers){
+	public DataClassifier(LoaderProperties data, List<Classifier> classifiers) throws Exception{
 		this(data.getDataset(), classifiers);
 	}
 
@@ -49,7 +54,8 @@ public class DataClassifier {
 		try {
 			c.buildClassifier(dataset);
 		} catch (Exception e) {
-			LOGGER.warning("Unable to apply " + c.getClass().getName() + ": " + e);
+			LOGGER.severe("Unable to apply " + c.getClass().getName() + ": " + e);
+			e.printStackTrace();
 		}
 	}
 

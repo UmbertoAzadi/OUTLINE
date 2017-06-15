@@ -1,0 +1,147 @@
+Cross-validated Parameter selection.
+Classifier: weka.classifiers.meta.AdaBoostM1
+Classifier Options: -P 100 -S 1 -I 10 -W weka.classifiers.rules.JRip -- -F 3 -N 2.0 -O 2 -S 1
+
+AdaBoostM1: Base classifiers and their weights: 
+
+JRIP rules:
+===========
+
+(ATFD_method >= 5) and (LAA_method <= 0.3125) => is_feature_envy=true (116.0/3.0)
+(ATFD_method >= 8) => is_feature_envy=true (21.0/2.0)
+(ATFD_method >= 3) and (NOLV_method >= 19) and (NOAV_method <= 34) => is_feature_envy=true (7.0/0.0)
+ => is_feature_envy=false (276.0/1.0)
+
+Number of Rules : 4
+
+
+Weight: 4.23
+
+JRIP rules:
+===========
+
+(NOLV_method >= 10) and (LAA_method <= 0.578947) and (ATFD_method >= 4) => is_feature_envy=true (84.71014492753619/0.5072463768115942)
+(CDISP_method >= 0.333333) and (ATFD_type >= 6) and (ATFD_method >= 8) => is_feature_envy=true (11.159420289855067/0.0)
+(NIM_type <= 10) and (ATFD_method >= 3) and (LAA_method <= 0.4) => is_feature_envy=true (6.086956521739129/0.5072463768115942)
+ => is_feature_envy=false (318.0434782608723/4.565217391304348)
+
+Number of Rules : 4
+
+
+Weight: 4.31
+
+JRIP rules:
+===========
+
+(WOC_type >= 0.85) and (ATFD_type <= 28) => is_feature_envy=false (121.2050739957716/10.281517747857983)
+(NMO_type >= 11) => is_feature_envy=false (37.013463892288776/0.0)
+(number_not_final_static_methods >= 1) and (NOAV_method <= 18) => is_feature_envy=false (25.18971848225206/0.5140758873928994)
+(ATFD_method <= 4) => is_feature_envy=false (24.4186046511627/0.2570379436964497)
+ => is_feature_envy=true (212.1731389785259/0.2570379436964497)
+
+Number of Rules : 5
+
+
+Weight: 3.59
+
+JRIP rules:
+===========
+
+(LAA_method >= 0.428571) and (num_not_final_not_static_attributes <= 14) => is_feature_envy=false (54.204974271012176/5.565180102915957)
+(NIM_type >= 11) and (FANOUT_type >= 8) and (LOC_method <= 54) => is_feature_envy=false (28.132075471698013/0.2641509433962255)
+(LOC_method <= 16) => is_feature_envy=false (26.072898799313936/0.2641509433962255)
+(ATFD_method <= 2) => is_feature_envy=false (2.905660377358482/0.0)
+ => is_feature_envy=true (308.6843910806181/0.6603773584905638)
+
+Number of Rules : 5
+
+
+Weight: 4.11
+
+JRIP rules:
+===========
+
+(LAA_method >= 0.619048) => is_feature_envy=false (44.98223287571671/5.052081063412507)
+(FANOUT_method <= 1) and (LOC_package <= 4694) and (CDISP_method <= 0.25) => is_feature_envy=false (24.61059054260169/7.410329047722795)
+(MAXNESTING_method <= 1) and (ATFD_type <= 6) => is_feature_envy=false (14.658967095227602/0.0)
+ => is_feature_envy=true (335.74820948644907/2.21486162562647)
+
+Number of Rules : 4
+
+
+Weight: 3.32
+
+JRIP rules:
+===========
+
+(ATFD_method <= 4) => is_feature_envy=false (53.95664729989354/5.026381351658484)
+(NMO_type >= 11) => is_feature_envy=false (8.193230466647085/0.0)
+(NOLV_method >= 37) and (NOAV_method <= 60) => is_feature_envy=false (4.779972753069009/0.06954741492860762)
+(WOC_type <= 0.222222) and (FANOUT_method <= 1) => is_feature_envy=false (3.655981152951584/0.0)
+(project = /mnt/qualitas/qualitas_corpus_compile/heritrix-1.14.4) => is_feature_envy=false (2.399385815036963/0.0)
+ => is_feature_envy=true (347.0147825123959/0.9950730215361966)
+
+Number of Rules : 6
+
+
+Weight: 4.22
+
+JRIP rules:
+===========
+
+(LOC_project <= 26472) and (LAA_method >= 0.454545) => is_feature_envy=false (40.67255830681335/0.0)
+(ATFD_method <= 2) => is_feature_envy=false (16.259934835297372/0.0)
+(NOLV_method <= 12) and (CFNAMM_type >= 23) and (WOC_type <= 0.888889) => is_feature_envy=false (5.7537370063389695/0.6728290017858503)
+(LOC_package <= 3724) and (MAXNESTING_method >= 7) and (NOCS_package >= 14) => is_feature_envy=false (3.5197935222197145/0.017642715183895874)
+(LOC_type <= 184) and (CINT_method <= 2) => is_feature_envy=false (4.44035063514691/1.275087142836117)
+ => is_feature_envy=true (349.35362569417845/0.0705708607355835)
+
+Number of Rules : 6
+
+
+Weight: 5.32
+
+JRIP rules:
+===========
+
+(LAA_method >= 0.428571) and (number_private_visibility_attributes <= 10) and (CDISP_method >= 0.5) => is_feature_envy=false (27.287366557370063/0.0)
+(ATFD_method <= 2) => is_feature_envy=false (7.626797995863393/0.0)
+ => is_feature_envy=true (385.08583544676054/6.871990089656478)
+
+Number of Rules : 3
+
+
+Weight: 4.1
+
+JRIP rules:
+===========
+
+(FANOUT_type <= 7) and (CYCLO_method >= 5) => is_feature_envy=true (118.79889547414169/2.6953699610030366)
+(WOC_type <= 0.555556) and (WMC_type >= 220) and (LAA_method <= 0.666667) => is_feature_envy=true (54.93607771279533/0.12443319488064647)
+(CINT_method >= 23) => is_feature_envy=true (14.561395168456153/0.0)
+ => is_feature_envy=false (231.70363164460147/6.775970624019854)
+
+Number of Rules : 4
+
+
+Weight: 3.76
+
+JRIP rules:
+===========
+
+(LAA_method >= 0.444444) and (NOII_type <= 1) and (FANOUT_method <= 12) => is_feature_envy=false (118.19143038712768/6.134518202161433)
+(LAA_method <= 0.1) and (NOAV_method <= 23) and (TCC_type >= 0.222222) => is_feature_envy=false (42.22659132154122/3.8439346460587216)
+(ATFD_method <= 2) => is_feature_envy=false (9.065884100447107/0.0)
+(ATFD_type <= 5) and (MAXNESTING_method <= 1) => is_feature_envy=false (14.572805495560857/0.0)
+(project = /mnt/qualitas/qualitas_corpus_compile/oscache-2.4.1) => is_feature_envy=false (2.7231749647601906/0.0)
+ => is_feature_envy=true (233.22011373055952/0.0023056219601565522)
+
+Number of Rules : 6
+
+
+Weight: 3.72
+
+Number of performed Iterations: 10
+
+
+

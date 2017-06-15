@@ -1,0 +1,1132 @@
+Naive Bayes Classifier
+
+                                                                                   Class
+Attribute                                                                          false       true
+                                                                                  (0.67)     (0.33)
+====================================================================================================
+IDType
+  mean                                                                         15134.9734 15747.5627
+  std. dev.                                                                    15055.3137 13240.8959
+  weight sum                                                                          280        140
+  precision                                                                      140.5943   140.5943
+
+project
+  /mnt/qualitas/qualitas_corpus_compile/fitjava-1.1                                  23.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jasml-0.10                                    7.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jFin_DateMath-R1.0.1                          3.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/nekohtml-1.9.14                               7.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/trove-2.1.0                                   3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/oscache-2.4.1                                 6.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/quilt-0.6-a-5                                 5.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/squirrel_sql-3.1.2                            3.0        5.0
+  /mnt/qualitas/qualitas_corpus_compile/jparse-0.96                                   5.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jmoney-0.4.4                                  6.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/javacc-5.0                                    3.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/jsXe-04_beta                                  6.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/junit-4.10                                    2.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/displaytag-1.2                                4.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/webmail-0.7.10                                3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/xmojo-5.0.0                                   3.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/quickserver-1.4.7                             4.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/jpf-1.0.2                                     4.0        7.0
+  /mnt/qualitas/qualitas_corpus_compile/picocontainer-2.10.2                          3.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/freecs-1.3.20100406                           4.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jag-6.1                                       6.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/sunflow-0.07.2                                3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/marauroa-3.8.1                                5.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/jgrapht-0.8.1                                 3.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/emma-2.0.5312                                 4.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/log4j-1.2.16                                  5.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/axion-1.0-M2                                  4.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jgraphpad-5.10.0.2                            5.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/jext-5.0                                      4.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/cobertura-1.9.4.1                             2.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/quartz-1.8.3                                  6.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/drawswf-1.2.9                                 3.0        5.0
+  /mnt/qualitas/qualitas_corpus_compile/velocity-1.6.4                                2.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jspwiki-2.8.4                                 4.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/jgraph-5.13.0.0                               4.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/openjms-0.7.7-beta-1                          3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/fitlibraryforfitnesse-20100806                2.0        8.0
+  /mnt/qualitas/qualitas_corpus_compile/colt-1.2.0                                    5.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jung-2.0.1                                    3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/pooka-3.0-080505                              5.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/galleon-2.3.0                                 5.0        9.0
+  /mnt/qualitas/qualitas_corpus_compile/wct-1.5.2                                     3.0        9.0
+  /mnt/qualitas/qualitas_corpus_compile/proguard-4.5.1                                3.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/roller-4.0.1                                  2.0        8.0
+  /mnt/qualitas/qualitas_corpus_compile/mvnforum-1.2.2-ga                             5.0        6.0
+  /mnt/qualitas/qualitas_corpus_compile/heritrix-1.14.4                               2.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/ganttproject-2.0.9                            3.0        5.0
+  /mnt/qualitas/qualitas_corpus_compile/freemind-0.9.0                                2.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/pmd-4.2.5                                     2.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/itext-5.0.3                                  12.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/jedit-4.3.2                                   6.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/columba-1.0                                   5.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jhotdraw-7.5.1                                5.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/aoi-2.8.1                                     8.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/hsqldb-2.0.0                                 15.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/jmeter-2.5.1                                  3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/xerces-2.10.0                                13.0        6.0
+  /mnt/qualitas/qualitas_corpus_compile/jena-2.6.3                                    2.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/jgroups-2.10.0                                6.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/freecol-0.10.3                                9.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/drjava-stable-20100913-r5387                  6.0        4.0
+  /mnt/qualitas/qualitas_corpus_compile/xalan-2.7.1                                   9.0        5.0
+  /mnt/qualitas/qualitas_corpus_compile/findbugs-1.3.9                                7.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/castor-1.3.1                                  4.0        6.0
+  /mnt/qualitas/qualitas_corpus_compile/exoportal-v1.0.2                              3.0       12.0
+  /mnt/qualitas/qualitas_corpus_compile/jfreechart-1.0.13                             2.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/lucene-3.5.0                                  4.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/tomcat-7.0.2                                  3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/megamek-0.35.18                               5.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/jasperreports-3.7.3                           3.0        3.0
+  /mnt/qualitas/qualitas_corpus_compile/weka-3.7.5                                    3.0        2.0
+  /mnt/qualitas/qualitas_corpus_compile/argouml-0.34                                  4.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/jruby-1.5.2                                   4.0        1.0
+  /mnt/qualitas/qualitas_corpus_compile/poi-3.6                                       4.0        1.0
+  [total]                                                                           354.0      214.0
+
+package
+  fat                                                                                15.0        1.0
+  fit                                                                                 9.0        1.0
+  com.jasml.compiler                                                                  6.0        1.0
+  com.jasml.classes                                                                   2.0        1.0
+  org.jfin.date.holiday.defaultimpl                                                   3.0        1.0
+  org.jfin.date.web.example                                                           1.0        3.0
+  org.cyberneko.html.parsers                                                          4.0        1.0
+  org.cyberneko.html                                                                  4.0        2.0
+  gnu.trove.benchmark                                                                 3.0        2.0
+  com.opensymphony.oscache.plugins.clustersupport                                     4.0        1.0
+  com.opensymphony.oscache.base.algorithm                                             2.0        1.0
+  com.opensymphony.oscache.extra                                                      1.0        2.0
+  com.opensymphony.oscache.base.events                                                2.0        1.0
+  org.quilt.reg                                                                       4.0        1.0
+  org.quilt.reports                                                                   1.0        2.0
+  org.quilt.cl                                                                        2.0        1.0
+  net.sourceforge.squirrel_sql.plugins.graph.xmlbeans                                 3.0        5.0
+  jparse.expr                                                                         4.0        1.0
+  jparse                                                                              2.0        1.0
+  net.sf.jmoney.io                                                                    5.0        1.0
+  net.sf.jmoney.gui                                                                   2.0        1.0
+  org.javacc                                                                          2.0        1.0
+  org.javacc.parser                                                                   2.0        4.0
+  net.sourceforge.jsxe.gui                                                            5.0        1.0
+  net.sourceforge.jsxe                                                                2.0        1.0
+  net.sourceforge.jsxe.dom                                                            1.0        2.0
+  org.junit.internal.builders                                                         2.0        1.0
+  org.displaytag.decorator                                                            3.0        2.0
+  org.displaytag.util                                                                 2.0        1.0
+  net.wastl.webmail.storage.simple                                                    3.0        1.0
+  net.wastl.webmail.misc                                                              1.0        2.0
+  com.adventnet.jmx                                                                   2.0        1.0
+  javax.management.monitor                                                            2.0        2.0
+  javax.management.loading                                                            1.0        2.0
+  org.quickserver.util.io                                                             3.0        1.0
+  org.quickserver.net.server                                                          2.0        2.0
+  org.quickserver.util.xmlreader                                                      1.0        2.0
+  org.quickserver.net.qsadmin                                                         1.0        2.0
+  org.java.plugin.tools                                                               3.0        1.0
+  org.java.plugin.boot                                                                1.0        2.0
+  org.java.plugin.registry.xml                                                        2.0        6.0
+  org.picocontainer.security                                                          3.0        1.0
+  freecs.auth.sqlConnectionPool                                                       3.0        1.0
+  freecs                                                                              2.0        1.0
+  com.finalist.jag.uml                                                                3.0        1.0
+  com.finalist.jaggenerator                                                           3.0        1.0
+  com.finalist.jaggenerator.modules                                                   2.0        1.0
+  org.sunflow.core.camera                                                             3.0        1.0
+  org.sunflow.core                                                                    1.0        2.0
+  marauroa.server.game.db                                                             3.0        2.0
+  marauroa.common.game                                                                2.0        1.0
+  marauroa.server.net.nio                                                             2.0        1.0
+  org.jgrapht.experimental.permutation                                                3.0        1.0
+  com.vladium.jcd.cls.attribute                                                       3.0        1.0
+  com.vladium.util.args                                                               1.0        2.0
+  com.vladium.emma.instr                                                              2.0        1.0
+  org.apache.log4j.pattern                                                            3.0        1.0
+  org.apache.log4j.lf5.viewer                                                         3.0        1.0
+  org.apache.log4j.chainsaw                                                           1.0        2.0
+  org.axiondb.jdbc                                                                    3.0        1.0
+  org.axiondb.engine.commands                                                         2.0        1.0
+  org.jgraph.plugins.layouts                                                          5.0        2.0
+  org.jgraph.plugins.codecs                                                           1.0        2.0
+  org.jext.textarea                                                                   3.0        1.0
+  org.jext.event                                                                      1.0        2.0
+  org.jext.print                                                                      1.0        3.0
+  org.jext                                                                            2.0        1.0
+  net.sourceforge.cobertura.check                                                     1.0        2.0
+  net.sourceforge.cobertura.javancss                                                  2.0        1.0
+  org.quartz.xml                                                                      3.0        1.0
+  org.quartz.impl.jdbcjobstore                                                        2.0        2.0
+  org.quartz                                                                          2.0        1.0
+  org.quartz.impl                                                                     2.0        1.0
+  com.anotherbigidea.flash.sound                                                      2.0        1.0
+  com.anotherbigidea.flash.movie                                                      1.0        5.0
+  org.apache.batik.ext.awt                                                            2.0        1.0
+  org.apache.velocity.convert                                                         2.0        1.0
+  com.ecyrd.management                                                                2.0        1.0
+  com.ecyrd.jspwiki.htmltowiki                                                        1.0        2.0
+  com.ecyrd.jspwiki.filters                                                           2.0        2.0
+  com.ecyrd.jspwiki.parser                                                            2.0        1.0
+  com.ecyrd.jspwiki.rss                                                               1.0        2.0
+  com.jgraph.layout.hierarchical                                                      2.0        1.0
+  com.jgraph.example.panelexample                                                     1.0        2.0
+  org.jgraph.graph                                                                    3.0        1.0
+  com.jgraph.layout.organic                                                           1.0        2.0
+  org.exolab.jms.tranlog                                                              3.0        1.0
+  org.exolab.jms.authentication                                                       1.0        2.0
+  fitlibrary.specify.entityParser                                                     2.0        1.0
+  fitlibrary.specify.domain                                                           1.0        3.0
+  fitlibrary.specify                                                                  1.0        3.0
+  fitlibraryGeneric.eg.rentEz                                                         1.0        4.0
+  cern.jet.math                                                                       3.0        1.0
+  cern.clhep                                                                          3.0        1.0
+  edu.uci.ics.jung.visualization3d.decorators                                         2.0        1.0
+  edu.uci.ics.jung.io.graphml.parser                                                  2.0        1.0
+  edu.uci.ics.jung.visualization                                                      1.0        2.0
+  net.suberic.pooka.resource                                                          2.0        1.0
+  net.suberic.pooka.event                                                             1.0        2.0
+  net.suberic.pooka.cache                                                             2.0        1.0
+  net.suberic.pooka.gui                                                               1.0        2.0
+  net.suberic.util.gui.propedit                                                       1.0        2.0
+  net.suberic.pooka                                                                   3.0        1.0
+  org.lnicholls.galleon.apps.desktop                                                  1.0        2.0
+  org.lnicholls.galleon.apps.email                                                    1.0        2.0
+  org.lnicholls.galleon.apps.weather                                                  1.0        2.0
+  org.lnicholls.galleon.widget                                                        1.0        2.0
+  org.lnicholls.galleon.util                                                          2.0        2.0
+  org.lnicholls.galleon.apps.traffic                                                  1.0        3.0
+  org.lnicholls.galleon.apps.upcoming                                                 1.0        2.0
+  org.lnicholls.galleon.server                                                        2.0        1.0
+  org.lnicholls.galleon.apps.videocasting                                             2.0        1.0
+  org.lnicholls.galleon.apps.podcasting                                               2.0        1.0
+  org.webcurator.ui.site                                                              1.0        2.0
+  org.webcurator.domain.model.report                                                  1.0        2.0
+  org.webcurator.domain.model.audit                                                   1.0        2.0
+  org.webcurator.ui.groups.command                                                    1.0        6.0
+  org.webcurator.core.targets                                                         2.0        1.0
+  org.webcurator.core.harvester.coordinator                                           2.0        1.0
+  proguard.optimize.evaluation                                                        3.0        1.0
+  org.apache.roller.planet.util                                                       2.0        2.0
+  org.apache.roller.weblogger.pojos                                                   1.0        3.0
+  org.apache.roller.weblogger.business.referrers                                      1.0        2.0
+  org.apache.roller.weblogger.ui.struts2.core                                         1.0        2.0
+  org.apache.roller.weblogger.ui.core.util.menu                                       1.0        2.0
+  org.apache.roller.weblogger.ui.rendering.util                                       1.0        2.0
+  com.mvnforum.user                                                                   3.0        1.0
+  com.mvnforum.auth                                                                   1.0        3.0
+  com.mvnforum                                                                        3.0        1.0
+  com.mvnforum.db                                                                     1.0        4.0
+  org.archive.crawler.extractor                                                       1.0        2.0
+  org.archive.crawler.frontier                                                        2.0        1.0
+  net.sourceforge.ganttproject.gui                                                    2.0        1.0
+  net.sourceforge.ganttproject.action.project                                         1.0        2.0
+  net.sourceforge.ganttproject.resource                                               1.0        2.0
+  net.sourceforge.ganttproject.task                                                   1.0        2.0
+  net.sourceforge.ganttproject.parser                                                 1.0        2.0
+  net.sourceforge.ganttproject.chart                                                  2.0        1.0
+  freemind.modes.browsemode                                                           2.0        1.0
+  freemind.controller                                                                 1.0        2.0
+  net.sourceforge.pmd.util                                                            1.0        2.0
+  net.sourceforge.pmd.dcd.asm                                                         2.0        1.0
+  net.sourceforge.pmd.util.viewer.model                                               1.0        2.0
+  net.sourceforge.pmd.stat                                                            1.0        2.0
+  com.itextpdf.text.pdf.collection                                                    3.0        1.0
+  com.itextpdf.text.pdf.qrcode                                                        1.0        2.0
+  com.itextpdf.text.pdf.richmedia                                                     3.0        1.0
+  com.itextpdf.text                                                                   2.0        1.0
+  com.itextpdf.text.xml.xmp                                                           2.0        1.0
+  com.itextpdf.text.pdf.parser                                                        1.0        2.0
+  com.itextpdf.text.pdf                                                               6.0        1.0
+  org.gjt.sp.jedit.io                                                                 2.0        1.0
+  org.gjt.sp.jedit.browser                                                            2.0        1.0
+  org.gjt.sp.jedit                                                                    2.0        1.0
+  org.gjt.sp.jedit.buffer                                                             2.0        1.0
+  org.gjt.sp.jedit.syntax                                                             2.0        1.0
+  org.columba.mail.config                                                             4.0        1.0
+  org.columba.mail.folder.imap                                                        2.0        1.0
+  org.jhotdraw.samples.odg.io                                                         2.0        1.0
+  org.jhotdraw.geom                                                                   1.0        3.0
+  org.jhotdraw.samples.svg.io                                                         2.0        1.0
+  org.jhotdraw.samples.svg                                                            2.0        1.0
+  org.jhotdraw.samples.odg                                                            2.0        1.0
+  artofillusion.object                                                                3.0        1.0
+  artofillusion.raytracer                                                             3.0        1.0
+  artofillusion.translators                                                           1.0        2.0
+  artofillusion.keystroke                                                             1.0        2.0
+  artofillusion.spmanager                                                             2.0        1.0
+  artofillusion.raster                                                                2.0        1.0
+  artofillusion                                                                       2.0        1.0
+  org.hsqldb.cmdline.sqltool                                                          2.0        1.0
+  org.hsqldb.types                                                                    2.0        1.0
+  org.hsqldb                                                                         11.0        2.0
+  org.hsqldb.dbinfo                                                                   2.0        1.0
+  org.hsqldb.index                                                                    2.0        1.0
+  org.apache.jmeter.gui.action                                                        2.0        1.0
+  org.apache.jmeter.protocol.http.sampler                                             2.0        1.0
+  org.apache.jmeter.save                                                              1.0        2.0
+  org.apache.xerces.impl                                                              5.0        1.0
+  org.apache.xerces.impl.dtd                                                          3.0        1.0
+  org.apache.xerces.dom                                                               2.0        4.0
+  org.apache.xerces.xni.parser                                                        1.0        2.0
+  org.apache.xerces.impl.xs.traversers                                                3.0        1.0
+  org.apache.xerces.util                                                              1.0        2.0
+  org.apache.xml.serialize                                                            2.0        1.0
+  org.apache.xerces.impl.xs.models                                                    2.0        1.0
+  org.apache.xerces.impl.xs                                                           2.0        1.0
+  jena                                                                                2.0        1.0
+  com.hp.hpl.jena.rdf.arp.impl                                                        1.0        2.0
+  org.jgroups.demos.wb                                                                2.0        1.0
+  org.jgroups.blocks                                                                  2.0        1.0
+  org.jgroups.protocols                                                               3.0        1.0
+  org.jgroups.stack                                                                   2.0        1.0
+  net.sf.freecol.client.gui                                                           2.0        1.0
+  net.sf.freecol.server.generator                                                     2.0        1.0
+  net.sf.freecol.common.model                                                         4.0        1.0
+  net.sf.freecol.server.ai                                                            3.0        1.0
+  net.sf.freecol.client.gui.panel                                                     2.0        1.0
+  edu.rice.cs.drjava.model.repl                                                       3.0        2.0
+  edu.rice.cs.drjava.model.definitions.reducedmodel                                   1.0        2.0
+  edu.rice.cs.drjava.model.definitions                                                2.0        1.0
+  edu.rice.cs.drjava.ui                                                               2.0        2.0
+  edu.rice.cs.drjava.ui.config                                                        2.0        1.0
+  org.apache.xpath                                                                    2.0        1.0
+  org.apache.xalan.trace                                                              3.0        1.0
+  org.apache.xalan.xsltc.compiler                                                     2.0        1.0
+  org.apache.xalan.xsltc.dom                                                          1.0        2.0
+  org.apache.xml.serializer.dom3                                                      1.0        3.0
+  org.apache.xml.serializer                                                           2.0        1.0
+  org.apache.xalan.lib.sql                                                            2.0        1.0
+  org.apache.xml.dtm.ref.dom2dtm                                                      2.0        1.0
+  org.apache.xml.utils                                                                1.0        2.0
+  org.apache.xalan.transformer                                                        2.0        1.0
+  edu.umd.cs.findbugs.jaif                                                            2.0        1.0
+  edu.umd.cs.findbugs.ba.jsr305                                                       1.0        2.0
+  edu.umd.cs.findbugs.props                                                           2.0        1.0
+  edu.umd.cs.findbugs.detect                                                          5.0        1.0
+  org.exolab.castor.builder.appInfo.generated.simple                                  2.0        1.0
+  org.castor.cpa.persistence.sql.query.expression                                     2.0        1.0
+  org.castor.transactionmanager                                                       1.0        5.0
+  org.castor.persist                                                                  2.0        1.0
+  org.exolab.castor.xml                                                               1.0        2.0
+  org.exoplatform.test.web.condition                                                  2.0        1.0
+  org.exoplatform.faces.core.renderer.html                                            2.0        1.0
+  org.exoplatform.commons.xhtml                                                       1.0        2.0
+  org.exoplatform.services.organization.ldap                                          1.0        5.0
+  org.exoplatform.services.portletcontainer.pci                                       1.0        2.0
+  org.exoplatform.container.monitor                                                   1.0        2.0
+  org.exoplatform.services.communication.message.impl                                 1.0        3.0
+  org.exoplatform.services.resources.impl                                             1.0        2.0
+  org.exoplatform.services.portal.community                                           1.0        2.0
+  org.jfree.chart.plot                                                                2.0        1.0
+  org.apache.lucene.search.highlight                                                  3.0        2.0
+  org.apache.lucene.index                                                             2.0        1.0
+  org.apache.catalina.valves                                                          3.0        1.0
+  org.apache.catalina.ha.authenticator                                                1.0        2.0
+  megamek.client.bot.ui.AWT                                                           2.0        1.0
+  megamek.common.weapons                                                              2.0        1.0
+  megamek.common                                                                      3.0        2.0
+  net.sf.jasperreports.engine.xml                                                     3.0        1.0
+  net.sf.jasperreports.charts.fill                                                    1.0        2.0
+  net.sf.jasperreports.engine.fonts                                                   1.0        2.0
+  weka.classifiers                                                                    2.0        1.0
+  weka.gui.beans                                                                      2.0        2.0
+  org.argouml.uml.ui.foundation.extension_mechanisms                                  2.0        1.0
+  org.argouml.cognitive.ui                                                            2.0        1.0
+  org.argouml.language.cpp.reveng                                                     2.0        1.0
+  org.jruby.java.invokers                                                             2.0        1.0
+  org.jruby.compiler.ir.targets                                                       2.0        1.0
+  org.jruby.parser                                                                    2.0        1.0
+  org.apache.poi.hslf.exceptions                                                      3.0        1.0
+  org.apache.poi.hslf.usermodel                                                       2.0        1.0
+  [total]                                                                           532.0      392.0
+
+complextype
+  DocumentParseFixture                                                                2.0        1.0
+  Frameworks                                                                          2.0        1.0
+  TableParseFixture                                                                   2.0        1.0
+  Divide                                                                              2.0        1.0
+  FixtureNameFixture                                                                  2.0        1.0
+  Table                                                                               2.0        1.0
+  StandardAnnotationFixture                                                           2.0        1.0
+  Money                                                                               2.0        1.0
+  FixtureLoadFixture                                                                  2.0        1.0
+  Color                                                                               2.0        1.0
+  HtmlToTextFixture                                                                   2.0        1.0
+  Equals                                                                              2.0        1.0
+  AnnotationFixture                                                                   2.0        1.0
+  TextToHtmlFixture                                                                   2.0        1.0
+  Summary                                                                             2.0        1.0
+  FileRunner                                                                          2.0        1.0
+  ColumnFixture                                                                       2.0        1.0
+  ScientificDouble                                                                    2.0        1.0
+  ActionFixture                                                                       2.0        1.0
+  TypeAdapter                                                                         2.0        1.0
+  Fixture.RunTime                                                                     2.0        1.0
+  TypeAdapter.ClassByteAdapter                                                        2.0        1.0
+  GrammerException                                                                    2.0        1.0
+  ParsingException                                                                    2.0        1.0
+  SourceCodeParser                                                                    2.0        1.0
+  JavaClassDumpper                                                                    2.0        1.0
+  SourceCodeParser.OpcodeWrapper                                                      2.0        1.0
+  Attribute_Code                                                                      2.0        1.0
+  WeekendHolidayCalendar                                                              2.0        1.0
+  HolidayCalendarFactoryImpl                                                          2.0        1.0
+  PlainSwap                                                                           1.0        2.0
+  FloatPeriod                                                                         1.0        2.0
+  DOMParser                                                                           2.0        1.0
+  DOMFragmentParser                                                                   2.0        1.0
+  SAXParser                                                                           2.0        1.0
+  HTMLTagBalancer                                                                     2.0        1.0
+  HTMLScanner                                                                         2.0        1.0
+  HTMLScanner.ContentScanner                                                          2.0        1.0
+  HTMLScanner.LocationItem                                                            1.0        2.0
+  MemoryUsage                                                                         2.0        1.0
+  MemoryUsage.MemoryComparator                                                        2.0        1.0
+  Result                                                                              1.0        2.0
+  JMSBroadcastingListener                                                             2.0        1.0
+  com.opensymphony.oscache.plugins.clustersupport.JMSBroadcastingListener$1           2.0        1.0
+  JavaGroupsBroadcastingListener                                                      2.0        1.0
+  AbstractConcurrentReadCache                                                         2.0        1.0
+  CacheEntryEventListenerImpl                                                         1.0        2.0
+  CacheEntryEventType                                                                 2.0        1.0
+  Registry                                                                            2.0        1.0
+  Registry.CmpArrays                                                                  2.0        1.0
+  QuiltRegistry                                                                       2.0        1.0
+  FmtSelector                                                                         1.0        2.0
+  GraphTransformer                                                                    2.0        1.0
+  GraphXmlSerializer                                                                  2.0        1.0
+  net.sourceforge.squirrel_sql.plugins.graph.xmlbeans.GraphXmlSerializer$1            2.0        1.0
+  PrintXmlBean                                                                        1.0        2.0
+  TableFrameXmlBean                                                                   1.0        2.0
+  ZoomerXmlBean                                                                       1.0        2.0
+  TableFrameControllerXmlBean                                                         1.0        2.0
+  BooleanLiteralAST                                                                   2.0        1.0
+  ParenthesizedAST                                                                    2.0        1.0
+  FloatLiteralAST                                                                     2.0        1.0
+  JavaLexer                                                                           2.0        1.0
+  MT940                                                                               2.0        1.0
+  MT940.CanceledException                                                             2.0        1.0
+  MT940.MT940FileFilter                                                               2.0        1.0
+  QIF                                                                                 2.0        1.0
+  MainFrame                                                                           2.0        1.0
+  Version                                                                             2.0        1.0
+  CharacterRange                                                                      1.0        2.0
+  ParseEngine                                                                         2.0        1.0
+  NonTerminal                                                                         1.0        2.0
+  TokenProduction                                                                     1.0        2.0
+  OptionsDialog                                                                       2.0        1.0
+  OptionsDialog.PaneNameRenderer                                                      2.0        1.0
+  EnhancedDialog                                                                      2.0        1.0
+  ActivityLogDialog                                                                   2.0        1.0
+  jsXe                                                                                2.0        1.0
+  DOMOutput                                                                           1.0        2.0
+  IgnoredBuilder                                                                      2.0        1.0
+  CheckboxTableDecorator                                                              2.0        1.0
+  MultilevelTotalTableDecorator                                                       2.0        1.0
+  MultilevelTotalTableDecorator.GroupTotals                                           1.0        2.0
+  TagConstants                                                                        2.0        1.0
+  SimpleStorage                                                                       2.0        1.0
+  net.wastl.webmail.storage.simple.SimpleStorage$1                                    2.0        1.0
+  ByteStore                                                                           1.0        2.0
+  ObjectInputStreamSupport                                                            2.0        1.0
+  MonitorNotification                                                                 1.0        2.0
+  Monitor                                                                             2.0        1.0
+  SimpleMLet                                                                          1.0        2.0
+  ByteBufferOutputStream                                                              2.0        1.0
+  JarFileList                                                                         2.0        1.0
+  QuickServer                                                                         2.0        1.0
+  TheClient                                                                           1.0        2.0
+  PoolConfig                                                                          1.0        2.0
+  Data                                                                                1.0        2.0
+  PluginArchiver                                                                      2.0        1.0
+  org.java.plugin.tools.PluginArchiver$1                                              2.0        1.0
+  SimpleSplashHandler                                                                 1.0        2.0
+  PluginRegistryImpl                                                                  2.0        1.0
+  ModelPluginFragment                                                                 1.0        2.0
+  ModelAttribute                                                                      1.0        2.0
+  ModelExtensionPoint                                                                 1.0        2.0
+  ModelParameterDef                                                                   1.0        2.0
+  ModelExtension                                                                      1.0        2.0
+  CustomPermissionsURLClassLoader                                                     2.0        1.0
+  org.picocontainer.security.CustomPermissionsURLClassLoader$1                        2.0        1.0
+  PoolElement                                                                         2.0        1.0
+  ConnectionPool                                                                      2.0        1.0
+  Server                                                                              3.0        1.0
+  UML2JagGenerator                                                                    2.0        1.0
+  Jag2UMLGenerator                                                                    2.0        1.0
+  ProgressDialog                                                                      2.0        1.0
+  JagGenerator                                                                        2.0        1.0
+  Field                                                                               2.0        1.0
+  SphericalLens                                                                       2.0        1.0
+  PinholeLens                                                                         2.0        1.0
+  LightSample                                                                         1.0        2.0
+  RPObjectDAO                                                                         2.0        1.0
+  BanListDAO                                                                          2.0        1.0
+  LoginEventDAO.LoginEvent                                                            1.0        2.0
+  RPObject                                                                            2.0        1.0
+  ChangeRequest                                                                       2.0        1.0
+  CollectionPermutationIter                                                           2.0        1.0
+  IntegerPermutationIter                                                              2.0        1.0
+  DeclaredExceptionTable                                                              2.0        1.0
+  Attribute_info                                                                      2.0        1.0
+  OptsParser.OptDef                                                                   1.0        2.0
+  InstrVisitor                                                                        2.0        1.0
+  BridgePatternParser                                                                 2.0        1.0
+  ThreadPatternConverter                                                              2.0        1.0
+  LogBrokerMonitor                                                                    2.0        1.0
+  LogTable                                                                            2.0        1.0
+  EventDetails                                                                        1.0        2.0
+  ConnectionFactory                                                                   2.0        1.0
+  AbstractAxionBlob                                                                   2.0        1.0
+  SelectCommand                                                                       2.0        1.0
+  AnnealingLayoutSettings                                                             2.0        1.0
+  MoenLayoutAlgorithm                                                                 2.0        1.0
+  AnnealingLayoutAlgorithm                                                            2.0        1.0
+  SugiyamaLayoutAlgorithm.CellWrapper                                                 1.0        2.0
+  GEMLayoutAlgorithm                                                                  2.0        1.0
+  JGraphJGX.DelayedAttributeID                                                        1.0        2.0
+  CsWord                                                                              2.0        1.0
+  ScrollUp                                                                            2.0        1.0
+  JextEvent                                                                           1.0        2.0
+  PrintingOptions                                                                     1.0        2.0
+  PrintText.PrintableText                                                             1.0        2.0
+  Jext                                                                                2.0        1.0
+  PackageCoverage                                                                     1.0        2.0
+  PackageMetric                                                                       2.0        1.0
+  XMLSchedulingDataProcessor                                                          2.0        1.0
+  org.quartz.xml.XMLSchedulingDataProcessor$1                                         2.0        1.0
+  SchedulerStateRecord                                                                1.0        2.0
+  JobStoreSupport                                                                     2.0        1.0
+  CronExpression                                                                      2.0        1.0
+  StdSchedulerFactory                                                                 2.0        1.0
+  MP3Frame                                                                            2.0        1.0
+  MorphShape                                                                          1.0        2.0
+  Font.Chars                                                                          1.0        2.0
+  FontDefinition.Glyph                                                                1.0        2.0
+  FontDefinition.KerningPair                                                          1.0        2.0
+  RenderingHintsKeyExt                                                                2.0        1.0
+  WebMacro                                                                            2.0        1.0
+  SimpleMBean                                                                         2.0        1.0
+  XHtmlToWikiConfig                                                                   1.0        2.0
+  SpamFilter                                                                          2.0        1.0
+  SpamFilter.Host                                                                     1.0        2.0
+  JSPWikiMarkupParser                                                                 2.0        1.0
+  Entry                                                                               1.0        2.0
+  JGraphCoordinateAssignment                                                          2.0        1.0
+  BusinessObjectWrapper2                                                              1.0        2.0
+  EdgeRenderer                                                                        2.0        1.0
+  GraphLayoutCache                                                                    2.0        1.0
+  JGraphOrganicLayout.CellWrapper                                                     1.0        2.0
+  DataTransactionLogEntry                                                             2.0        1.0
+  SerializationHelper                                                                 2.0        1.0
+  User                                                                                1.0        2.0
+  UserAdapter                                                                         2.0        1.0
+  Primitives                                                                          1.0        2.0
+  BadConstructorsInNestedObjects.Employee                                             1.0        2.0
+  AggregateDomainObject.Book                                                          1.0        2.0
+  AggregateDomainObject.Author                                                        1.0        2.0
+  Rental                                                                              1.0        2.0
+  RentalItem                                                                          1.0        2.0
+  RentalItemType                                                                      1.0        2.0
+  cern.jet.math.Functions$20                                                          2.0        1.0
+  cern.jet.math.Functions$40                                                          2.0        1.0
+  Units                                                                               2.0        1.0
+  PhysicalConstants                                                                   2.0        1.0
+  PickableVertexPaintTransformer                                                      2.0        1.0
+  GraphElementParser                                                                  2.0        1.0
+  GraphZoomScrollPane                                                                 1.0        2.0
+  JDBCResourceManager                                                                 2.0        1.0
+  MessageLoadedEvent                                                                  1.0        2.0
+  CachingFolderInfo                                                                   2.0        1.0
+  ResponseWrapper                                                                     1.0        2.0
+  PropertyValueVetoException                                                          1.0        2.0
+  FolderInfo                                                                          2.0        1.0
+  StoreInfo                                                                           2.0        1.0
+  DesktopConfiguration                                                                1.0        2.0
+  Email.EmailItem                                                                     1.0        2.0
+  WeatherData.Alert                                                                   1.0        2.0
+  DefaultApplication.ApplicationEvent                                                 1.0        2.0
+  SharedNameValue                                                                     1.0        2.0
+  IMDB                                                                                2.0        1.0
+  TrafficConfiguration.Location                                                       1.0        2.0
+  Traffic.Result                                                                      1.0        2.0
+  UpcomingConfiguration.Location                                                      1.0        2.0
+  Videocasting                                                                        2.0        1.0
+  Podcasting                                                                          2.0        1.0
+  SiteEditorContext                                                                   1.0        2.0
+  AbstractTargetScheduleView                                                          1.0        2.0
+  Audit                                                                               1.0        2.0
+  MembersCommand                                                                      1.0        2.0
+  AddMembersCommand                                                                   1.0        2.0
+  MoveTargetsCommand                                                                  1.0        2.0
+  MemberOfCommand                                                                     1.0        2.0
+  AddParentsCommand                                                                   1.0        2.0
+  TargetManagerImpl                                                                   2.0        1.0
+  HarvestCoordinatorImpl                                                              2.0        1.0
+  PartialEvaluator                                                                    2.0        1.0
+  EvaluationShrinker                                                                  2.0        1.0
+  Utilities                                                                           2.0        1.0
+  Technorati.Weblog                                                                   1.0        2.0
+  StaticThemeTemplate                                                                 1.0        2.0
+  StaticTemplate                                                                      1.0        2.0
+  IncomingReferrer                                                                    1.0        2.0
+  CreateWeblogBean                                                                    1.0        2.0
+  ParsedTabItem                                                                       1.0        2.0
+  WeblogTrackbackRequest                                                              1.0        2.0
+  WatchWebHandler                                                                     2.0        1.0
+  UserModuleProcessor                                                                 2.0        1.0
+  ForumPermission                                                                     1.0        2.0
+  CmsPermission                                                                       1.0        2.0
+  MVNForumConstant                                                                    2.0        1.0
+  MVNForumGlobal                                                                      2.0        1.0
+  RankBean                                                                            1.0        2.0
+  MessageBean                                                                         1.0        2.0
+  MessageStatisticsBean                                                               1.0        2.0
+  Link                                                                                1.0        2.0
+  WorkQueueFrontier                                                                   2.0        1.0
+  GanttDialogInfo                                                                     2.0        1.0
+  ProjectMenu                                                                         1.0        2.0
+  HumanResourceManager.CustomPropertyDefinitionImpl                                   1.0        2.0
+  CustomColumEvent                                                                    1.0        2.0
+  CustomPropertiesTagHandler.CustomPropertiesStructure                                1.0        2.0
+  TaskRendererImpl                                                                    2.0        1.0
+  BrowseHookFactory                                                                   2.0        1.0
+  StructuredMenuItemHolder                                                            1.0        2.0
+  Benchmark.BenchmarkResult                                                           1.0        2.0
+  PrintVisitor                                                                        2.0        1.0
+  ViewerModelEvent                                                                    1.0        2.0
+  Metric                                                                              1.0        2.0
+  PdfCollection                                                                       2.0        1.0
+  PdfTargetDictionary                                                                 2.0        1.0
+  QRCode                                                                              1.0        2.0
+  RichMediaActivation                                                                 2.0        1.0
+  RichMediaPresentation                                                               2.0        1.0
+  Image                                                                               2.0        1.0
+  XmpMMSchema                                                                         2.0        1.0
+  GraphicsState                                                                       1.0        2.0
+  ColumnText                                                                          2.0        1.0
+  PdfStamperImp                                                                       2.0        1.0
+  PdfDocument                                                                         2.0        1.0
+  TrueTypeFont                                                                        2.0        1.0
+  PdfReader                                                                           2.0        1.0
+  VFS                                                                                 2.0        1.0
+  VFSBrowser                                                                          2.0        1.0
+  Buffer                                                                              2.0        1.0
+  JEditBuffer                                                                         2.0        1.0
+  XModeHandler.TagDecl                                                                2.0        1.0
+  SpecialFoldersItem                                                                  2.0        1.0
+  IncomingItem                                                                        2.0        1.0
+  ComposerItem                                                                        2.0        1.0
+  IMAPFolder                                                                          2.0        1.0
+  ODGInputFormat                                                                      2.0        1.0
+  Insets2D.Float                                                                      1.0        2.0
+  Insets2D.Double                                                                     1.0        2.0
+  SVGInputFormat                                                                      2.0        1.0
+  SVGConstants                                                                        2.0        1.0
+  ODGConstants                                                                        2.0        1.0
+  Tube                                                                                2.0        1.0
+  SplineMesh                                                                          2.0        1.0
+  PhotonMap                                                                           2.0        1.0
+  Raytracer                                                                           2.0        1.0
+  TextureImageInfo                                                                    1.0        2.0
+  KeystrokeRecord                                                                     1.0        2.0
+  HttpSPMFileSystem                                                                   2.0        1.0
+  Raster                                                                              2.0        1.0
+  TriMeshBeveler                                                                      2.0        1.0
+  SqlFileScanner                                                                      2.0        1.0
+  DateTimeType                                                                        2.0        1.0
+  ParserDML                                                                           2.0        1.0
+  QuerySpecification                                                                  2.0        1.0
+  ExpressionLogical                                                                   2.0        1.0
+  FunctionCustom                                                                      2.0        1.0
+  ParserDDL                                                                           2.0        1.0
+  ColumnBase                                                                          1.0        2.0
+  Expression                                                                          3.0        1.0
+  StatementSchema                                                                     2.0        1.0
+  RowActionBase                                                                       2.0        1.0
+  StatementDML                                                                        2.0        1.0
+  Routine                                                                             2.0        1.0
+  DatabaseInformationFull                                                             2.0        1.0
+  IndexAVL                                                                            2.0        1.0
+  ActionNames                                                                         2.0        1.0
+  HTTPHC3Impl                                                                         2.0        1.0
+  ListenerResultWrapper                                                               1.0        2.0
+  XMLEntityManager                                                                    2.0        1.0
+  XMLEntityManager.EncodingInfo                                                       2.0        1.0
+  XMLDocumentFragmentScannerImpl                                                      2.0        1.0
+  XMLScanner                                                                          2.0        1.0
+  XMLDTDProcessor                                                                     2.0        1.0
+  XMLDTDValidator                                                                     2.0        1.0
+  DOMOutputImpl                                                                       1.0        3.0
+  DOMInputImpl                                                                        1.0        2.0
+  DocumentImpl                                                                        2.0        1.0
+  DOMLocatorImpl                                                                      1.0        3.0
+  XMLInputSource                                                                      1.0        2.0
+  XSDHandler                                                                          2.0        1.0
+  XSAttributeChecker                                                                  2.0        1.0
+  SAXInputSource                                                                      1.0        2.0
+  DOMSerializerImpl                                                                   2.0        1.0
+  XSDFACM                                                                             2.0        1.0
+  XMLSchemaValidator                                                                  2.0        1.0
+  sparql                                                                              2.0        1.0
+  Location                                                                            1.0        2.0
+  Node                                                                                2.0        1.0
+  ConnectionTableNIO                                                                  2.0        1.0
+  S3_PING.ListBucketResponse                                                          2.0        1.0
+  SFC                                                                                 2.0        1.0
+  Configurator                                                                        2.0        1.0
+  GUI                                                                                 2.0        1.0
+  TerrainGenerator                                                                    2.0        1.0
+  Specification                                                                       2.0        1.0
+  Specification.ModifierReader                                                        2.0        1.0
+  Player                                                                              2.0        1.0
+  ColonyPlan                                                                          2.0        1.0
+  AIColony                                                                            2.0        1.0
+  ColopediaPanel                                                                      2.0        1.0
+  InteractionsEditorKit                                                               2.0        1.0
+  edu.rice.cs.drjava.model.repl.InteractionsEditorKit$1                               2.0        1.0
+  InteractionsPaneOptions                                                             1.0        2.0
+  HighlightStatus                                                                     1.0        2.0
+  DefinitionsDocument                                                                 2.0        1.0
+  FindReplacePanel                                                                    2.0        1.0
+  KeyBindingManager.KeyStrokeData                                                     1.0        2.0
+  ConfigFrame                                                                         2.0        1.0
+  VariableStack                                                                       2.0        1.0
+  ExtensionEvent                                                                      2.0        1.0
+  SelectionEvent                                                                      2.0        1.0
+  FunctionCall                                                                        2.0        1.0
+  SortSettings                                                                        1.0        2.0
+  ToStream                                                                            2.0        1.0
+  SQLDocument                                                                         2.0        1.0
+  DOM2DTM                                                                             2.0        1.0
+  SerializableLocatorImpl                                                             1.0        2.0
+  TransformerIdentityImpl                                                             2.0        1.0
+  JAIFEnumConstant                                                                    2.0        1.0
+  SourceSinkInfo                                                                      1.0        2.0
+  GeneralWarningProperty                                                              2.0        1.0
+  RefComparisonWarningProperty                                                        2.0        1.0
+  InconsistentSyncWarningProperty                                                     2.0        1.0
+  NullDerefProperty                                                                   2.0        1.0
+  DeadLocalStoreProperty                                                              2.0        1.0
+  Father                                                                              2.0        1.0
+  WebSphere5TransactionManagerFactory                                                 1.0        2.0
+  TransactionManagerFactoryDummy                                                      1.0        2.0
+  WebSphereTransactionManagerFactory                                                  1.0        2.0
+  WebSphere51TransactionManagerFactory                                                1.0        2.0
+  AbstractTransactionContext                                                          2.0        1.0
+  XercesOutputFormat                                                                  1.0        2.0
+  HaveLinkWithURLCondition                                                            2.0        1.0
+  NodeMenuRenderer                                                                    2.0        1.0
+  Parameter                                                                           1.0        2.0
+  NewUserConfig.JoinGroup                                                             1.0        2.0
+  OrganizationConfig                                                                  1.0        2.0
+  OrganizationConfig.Group                                                            1.0        2.0
+  OrganizationConfig.User                                                             1.0        2.0
+  ActionOutput                                                                        1.0        2.0
+  ActionData                                                                          1.0        2.0
+  FolderImpl                                                                          1.0        2.0
+  AccountListenerConfig                                                               1.0        2.0
+  ResourceBundleDescriptionImpl                                                       1.0        2.0
+  CommunityPortal                                                                     1.0        2.0
+  SpiderWebPlot                                                                       2.0        1.0
+  QueryTermExtractor                                                                  2.0        1.0
+  SimpleFragmenter                                                                    2.0        1.0
+  WeightedTerm                                                                        1.0        2.0
+  SegmentInfos                                                                        2.0        1.0
+  RemoteAddrValve                                                                     2.0        1.0
+  JDBCAccessLogValve                                                                  2.0        1.0
+  SingleSignOnMessage                                                                 1.0        2.0
+  BotGUI                                                                              2.0        1.0
+  CLLRM13                                                                             2.0        1.0
+  UnitLocation                                                                        1.0        2.0
+  Tank                                                                                2.0        1.0
+  BattleArmor                                                                         2.0        1.0
+  JRGenericPrintElementParameterFactory                                               2.0        1.0
+  JRGenericPrintElementParameterFactory.Parameter                                     2.0        1.0
+  JRFillHighLowDataset.HighLowElement                                                 1.0        2.0
+  SimpleFontFamily                                                                    1.0        2.0
+  Evaluation                                                                          2.0        1.0
+  Classifier                                                                          2.0        1.0
+  BatchClustererEvent                                                                 1.0        2.0
+  UMLStereotypeTagDefinitionListModel                                                 2.0        1.0
+  WizStepManyTextFields                                                               2.0        1.0
+  CPPLexer                                                                            2.0        1.0
+  FieldMethodZero                                                                     2.0        1.0
+  JVM.MethodData                                                                      2.0        1.0
+  Ruby19Parser                                                                        2.0        1.0
+  CorruptPowerPointFileException                                                      2.0        1.0
+  HSLFException                                                                       2.0        1.0
+  SlideShow                                                                           2.0        1.0
+  [total]                                                                           696.0      556.0
+
+NOII_type
+  mean                                                                             0.8185     0.4583
+  std. dev.                                                                        1.2645     0.7939
+  weight sum                                                                          280        140
+  precision                                                                        1.8333     1.8333
+
+NOAM_type
+  mean                                                                             4.5587     9.1677
+  std. dev.                                                                       10.2475      6.508
+  weight sum                                                                          280        140
+  precision                                                                        2.3421     2.3421
+
+NOCS_type
+  mean                                                                              1.725     0.0493
+  std. dev.                                                                        5.2959     0.4319
+  weight sum                                                                          280        140
+  precision                                                                           2.3        2.3
+
+NOM_type
+  mean                                                                            26.9731    10.5451
+  std. dev.                                                                       40.1802     7.1107
+  weight sum                                                                          280        140
+  precision                                                                         4.747      4.747
+
+NMO_type
+  mean                                                                             1.5145      0.084
+  std. dev.                                                                        5.0449     0.5906
+  weight sum                                                                          261        140
+  precision                                                                        2.3529     2.3529
+
+ATFD_type
+  mean                                                                            22.6323     0.2964
+  std. dev.                                                                       40.7563     1.6925
+  weight sum                                                                          280        140
+  precision                                                                          4.15       4.15
+
+FANOUT_type
+  mean                                                                            12.3804     0.6039
+  std. dev.                                                                       15.7945     1.4749
+  weight sum                                                                          280        140
+  precision                                                                        1.5098     1.5098
+
+NOMNAMM_type
+  mean                                                                            22.4962     1.2267
+  std. dev.                                                                       34.5421     2.2486
+  weight sum                                                                          280        140
+  precision                                                                        5.0513     5.0513
+
+NOA_type
+  mean                                                                            18.0124     6.4555
+  std. dev.                                                                       26.0752     4.0458
+  weight sum                                                                          280        140
+  precision                                                                        2.3846     2.3846
+
+NIM_type
+  mean                                                                            55.3533     4.5432
+  std. dev.                                                                      140.2568    44.2598
+  weight sum                                                                          261        140
+  precision                                                                       10.0959    10.0959
+
+DIT_type
+  mean                                                                             2.1821     1.1857
+  std. dev.                                                                        1.5831      0.529
+  weight sum                                                                          280        140
+  precision                                                                             1          1
+
+LOC_type
+  mean                                                                            883.382    90.0116
+  std. dev.                                                                     1142.8462    68.4894
+  weight sum                                                                          280        140
+  precision                                                                       24.6607    24.6607
+
+LOCNAMM_type
+  mean                                                                           827.6771    40.6585
+  std. dev.                                                                      1089.987    50.0266
+  weight sum                                                                          280        140
+  precision                                                                        27.632     27.632
+
+CFNAMM_type
+  mean                                                                            29.3104     0.6058
+  std. dev.                                                                       41.2301     1.8348
+  weight sum                                                                          280        140
+  precision                                                                        2.4945     2.4945
+
+TCC_type
+  mean                                                                             0.5181     0.1563
+  std. dev.                                                                        0.3871     0.1543
+  weight sum                                                                          280        140
+  precision                                                                         0.006      0.006
+
+CBO_type
+  mean                                                                            19.4746     0.6687
+  std. dev.                                                                       51.1035     2.7161
+  weight sum                                                                          280        140
+  precision                                                                       11.7015    11.7015
+
+RFC_type
+  mean                                                                            95.2199    12.9673
+  std. dev.                                                                       146.008     8.6842
+  weight sum                                                                          280        140
+  precision                                                                        7.5959     7.5959
+
+NOC_type
+  mean                                                                             0.5048     0.0857
+  std. dev.                                                                        2.1378     0.6024
+  weight sum                                                                          271        140
+  precision                                                                           2.4        2.4
+
+WMC_type
+  mean                                                                           126.7567    11.1977
+  std. dev.                                                                      171.9157     7.7723
+  weight sum                                                                          280        140
+  precision                                                                        6.0064     6.0064
+
+LCOM5_type
+  mean                                                                             0.6592      0.893
+  std. dev.                                                                        0.4186     0.1069
+  weight sum                                                                          280        140
+  precision                                                                        0.0054     0.0054
+
+WOC_type
+  mean                                                                             0.6519     0.1357
+  std. dev.                                                                          0.34     0.1543
+  weight sum                                                                          252        140
+  precision                                                                        0.0084     0.0084
+
+WMCNAMM_type
+  mean                                                                           119.1283      1.548
+  std. dev.                                                                      164.1743     3.2207
+  weight sum                                                                          280        140
+  precision                                                                        6.3741     6.3741
+
+AMW_type
+  mean                                                                             4.2757     1.0957
+  std. dev.                                                                        5.4768     0.2938
+  weight sum                                                                          280        140
+  precision                                                                        0.2503     0.2503
+
+AMWNAMM_type
+  mean                                                                             4.6809     1.1516
+  std. dev.                                                                        6.4487     1.1763
+  weight sum                                                                          280        140
+  precision                                                                        0.3857     0.3857
+
+NOCS_package
+  mean                                                                            49.5895    38.5878
+  std. dev.                                                                       92.6756      97.61
+  weight sum                                                                          280        140
+  precision                                                                       11.4943    11.4943
+
+NOMNAMM_package
+  mean                                                                            401.726   239.5385
+  std. dev.                                                                      663.0896   452.2763
+  weight sum                                                                          280        140
+  precision                                                                       19.9615    19.9615
+
+NOI_package
+  mean                                                                             2.7346     2.8907
+  std. dev.                                                                        4.3311      5.357
+  weight sum                                                                          280        140
+  precision                                                                           1.9        1.9
+
+LOC_package
+  mean                                                                         10321.5199  5374.6647
+  std. dev.                                                                    18122.7998 10775.1168
+  weight sum                                                                          280        140
+  precision                                                                      344.2146   344.2146
+
+NOM_package
+  mean                                                                           490.3737   335.6837
+  std. dev.                                                                      845.9793   573.6535
+  weight sum                                                                          280        140
+  precision                                                                        25.051     25.051
+
+NOPK_project
+  mean                                                                            37.4628    74.1339
+  std. dev.                                                                       45.6372    96.1672
+  weight sum                                                                          280        140
+  precision                                                                        7.9167     7.9167
+
+NOCS_project
+  mean                                                                           661.2062   759.0549
+  std. dev.                                                                      626.2843   586.7265
+  weight sum                                                                          280        140
+  precision                                                                       32.5775    32.5775
+
+NOI_project
+  mean                                                                            52.9108    74.2718
+  std. dev.                                                                       53.5327    64.0945
+  weight sum                                                                          280        140
+  precision                                                                        5.1964     5.1964
+
+NOM_project
+  mean                                                                           5308.619  5722.8069
+  std. dev.                                                                     4744.1718  4080.3791
+  weight sum                                                                          280        140
+  precision                                                                      265.3836   265.3836
+
+NOMNAMM_project
+  mean                                                                          4396.8382  4440.2462
+  std. dev.                                                                     3900.1331  3228.3127
+  weight sum                                                                          280        140
+  precision                                                                      220.9863   220.9863
+
+LOC_project
+  mean                                                                          96395.774 90593.8253
+  std. dev.                                                                    90852.3099 77562.9573
+  weight sum                                                                          280        140
+  precision                                                                     5308.9726  5308.9726
+
+isStatic_type
+  mean                                                                             0.0321     0.1714
+  std. dev.                                                                        0.1764     0.3769
+  weight sum                                                                          280        140
+  precision                                                                             1          1
+
+NOPA_type
+  mean                                                                              5.408     1.0131
+  std. dev.                                                                        15.561     2.4865
+  weight sum                                                                          280        140
+  precision                                                                        4.1714     4.1714
+
+number_private_visibility_attributes
+  mean                                                                             7.3355      4.496
+  std. dev.                                                                        13.177     3.9175
+  weight sum                                                                          280        140
+  precision                                                                        1.9487     1.9487
+
+number_protected_visibility_attributes
+  mean                                                                             4.2138     0.6251
+  std. dev.                                                                       11.4154     1.8538
+  weight sum                                                                          280        140
+  precision                                                                        3.2414     3.2414
+
+number_package_visibility_attributes
+  mean                                                                             1.0929       0.45
+  std. dev.                                                                        3.9247     1.7262
+  weight sum                                                                          280        140
+  precision                                                                          2.25       2.25
+
+num_final_attributes
+  mean                                                                             7.6393     1.1031
+  std. dev.                                                                        16.258     2.5635
+  weight sum                                                                          280        140
+  precision                                                                        3.2857     3.2857
+
+num_static_attributes
+  mean                                                                             7.4281     0.9153
+  std. dev.                                                                       15.9426     2.3585
+  weight sum                                                                          280        140
+  precision                                                                        3.2857     3.2857
+
+num_final_static_attributes
+  mean                                                                             6.8384     0.7886
+  std. dev.                                                                       15.7788     2.3086
+  weight sum                                                                          280        140
+  precision                                                                          3.45       3.45
+
+num_not_final_not_static_attributes
+  mean                                                                               9.75     5.2743
+  std. dev.                                                                       16.4794     3.4736
+  weight sum                                                                          280        140
+  precision                                                                           2.6        2.6
+
+num_final_not_static_attributes
+  mean                                                                             0.7314     0.2895
+  std. dev.                                                                        3.0091     1.2546
+  weight sum                                                                          280        140
+  precision                                                                        2.1333     2.1333
+
+num_static_not_final_attributes
+  mean                                                                                0.5     0.0545
+  std. dev.                                                                         2.247     0.4242
+  weight sum                                                                          280        140
+  precision                                                                        2.5455     2.5455
+
+number_public_visibility_methods
+  mean                                                                             17.742     9.2987
+  std. dev.                                                                       34.7086     7.5737
+  weight sum                                                                          280        140
+  precision                                                                        6.1406     6.1406
+
+number_private_visibility_methods
+  mean                                                                             4.4571     0.0348
+  std. dev.                                                                        9.4828     0.4105
+  weight sum                                                                          280        140
+  precision                                                                        2.4375     2.4375
+
+number_protected_visibility_methods
+  mean                                                                             2.7422     0.0532
+  std. dev.                                                                        7.8071     0.6212
+  weight sum                                                                          280        140
+  precision                                                                        3.7273     3.7273
+
+number_package_visibility_methods
+  mean                                                                             2.0065     1.0143
+  std. dev.                                                                        8.0618     3.4304
+  weight sum                                                                          280        140
+  precision                                                                         3.087      3.087
+
+number_final_methods
+  mean                                                                             1.1918          0
+  std. dev.                                                                        6.9075      0.869
+  weight sum                                                                          280        140
+  precision                                                                        5.2143     5.2143
+
+number_abstract_methods
+  mean                                                                             0.0964          0
+  std. dev.                                                                        0.5867       0.25
+  weight sum                                                                          280        140
+  precision                                                                           1.5        1.5
+
+number_not_abstract_not_final_methods
+  mean                                                                            25.9219    10.6807
+  std. dev.                                                                        39.539     7.2687
+  weight sum                                                                          280        140
+  precision                                                                         4.747      4.747
+
+number_static_methods
+  mean                                                                             2.5461          0
+  std. dev.                                                                       24.0579     3.3947
+  weight sum                                                                          280        140
+  precision                                                                       20.3684    20.3684
+
+number_final_static_methods
+  mean                                                                             0.1888          0
+  std. dev.                                                                        0.9534     0.1875
+  weight sum                                                                          280        140
+  precision                                                                         1.125      1.125
+
+number_final_not_static_methods
+  mean                                                                             0.9643          0
+  std. dev.                                                                        6.2363     0.8333
+  weight sum                                                                          280        140
+  precision                                                                             5          5
+
+number_not_final_static_methods
+  mean                                                                             2.3944          0
+  std. dev.                                                                       23.7017      3.386
+  weight sum                                                                          280        140
+  precision                                                                       20.3158    20.3158
+
+number_not_final_not_static_methods
+  mean                                                                            23.1113    10.8312
+  std. dev.                                                                       31.7947     6.9179
+  weight sum                                                                          280        140
+  precision                                                                        2.4737     2.4737
+
+number_standard_design_methods
+  mean                                                                            21.4861     0.6611
+  std. dev.                                                                       34.1903     1.7783
+  weight sum                                                                          280        140
+  precision                                                                        5.4444     5.4444
+
+number_constructor_DefaultConstructor_methods
+  mean                                                                             0.1143     0.2357
+  std. dev.                                                                        0.3182     0.4244
+  weight sum                                                                          280        140
+  precision                                                                             1          1
+
+number_constructor_NotDefaultConstructor_methods
+  mean                                                                             1.4143     1.1143
+  std. dev.                                                                        1.3147      0.955
+  weight sum                                                                          280        140
+  precision                                                                           1.5        1.5
+
+
+
+

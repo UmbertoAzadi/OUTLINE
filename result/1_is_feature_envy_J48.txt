@@ -1,0 +1,22 @@
+J48 pruned tree
+------------------
+
+ATFD_method <= 4
+|   ATFD_method <= 2: false (254.0)
+|   ATFD_method > 2
+|   |   LAA_method <= 0.448276: true (5.0/1.0)
+|   |   LAA_method > 0.448276: false (13.0)
+ATFD_method > 4
+|   LAA_method <= 0.428571: true (129.0/4.0)
+|   LAA_method > 0.428571
+|   |   num_final_attributes <= 6
+|   |   |   NOCS_type <= 0: true (5.0/1.0)
+|   |   |   NOCS_type > 0: false (7.0)
+|   |   num_final_attributes > 6: true (7.0)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	13
+
+
+

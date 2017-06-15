@@ -1,0 +1,16 @@
+J48 pruned tree
+------------------
+
+NOAM_type <= 2: false (192.0)
+NOAM_type > 2
+|   WMCNAMM_type <= 21
+|   |   NIM_type <= 30: true (140.95/1.95)
+|   |   NIM_type > 30: false (8.05/1.0)
+|   WMCNAMM_type > 21: false (79.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+

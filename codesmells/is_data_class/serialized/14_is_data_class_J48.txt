@@ -1,0 +1,20 @@
+J48 unpruned tree
+------------------
+
+NOAM_type <= 2: false (192.0)
+NOAM_type > 2
+|   WMCNAMM_type <= 21
+|   |   NIM_type <= 30
+|   |   |   number_standard_design_methods <= 4: true (133.0)
+|   |   |   number_standard_design_methods > 4
+|   |   |   |   FANOUT_type <= 0: true (5.0)
+|   |   |   |   FANOUT_type > 0: false (2.95/1.0)
+|   |   NIM_type > 30: false (8.05/1.0)
+|   WMCNAMM_type > 21: false (79.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+

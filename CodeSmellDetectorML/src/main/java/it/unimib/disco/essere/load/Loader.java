@@ -2,12 +2,17 @@ package it.unimib.disco.essere.load;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 import it.unimib.disco.essere.core.DatasetHandler;
 import weka.classifiers.Classifier;
+import weka.classifiers.functions.Logistic;
+import weka.classifiers.meta.MultiSearch;
 import weka.core.Instances;
+import weka.core.ListOptions;
 import weka.core.OptionHandler;
+import weka.core.Utils;
 
 public abstract class Loader {
 
@@ -28,26 +33,54 @@ public abstract class Loader {
 	public DatasetHandler getDatasetHandler(){
 		return dataset;
 	}
-	
+
 	public Instances getDataset(){
 		return dataset.getDataset();
 	}
 
-	protected void addOptions(OptionHandler o, String[] options) throws Exception{
-		String[] tmp = new String[options.length]; 
-		System.arraycopy(options, 0, tmp, 0, options.length);
-		if(options.length != 0){
+	protected void addOptions(OptionHandler oh, String options) throws Exception{
+		//String tmp = options.substring(0);
+		if(options.length() != 0){
 			try {
-				o.setOptions(options);
+				String[] opt = parseOptions(options, oh);
+				oh.setOptions(opt);
 			} catch (Exception e) {
 				LOGGER.severe("------------------------------------------------------------------------------------------------- +\n"
 						+"ERROR : these options are incorrect: \n"
-						+"\t"+Arrays.toString(tmp)+"\n"
+						//+"\t"+Arrays.toString(tmp)+"\n"
+						+"\t" + oh.getClass().getName() + " " + options +"\n"
+						+"\t" + e + "\n"
 						+"	plese check them in the weka documentation\n\n"
 						+"--------------------------------------------------------------------------------------------------");
-				throw e;
+				throw e;	
 			}
 		}
+	}
+
+	public String[] parseOptions(String options, OptionHandler oh) throws Exception {
+		String[] opt = options.split(" ");
+		if(options.contains("\"")){
+			opt = options.split("\"");
+			ArrayList<String> selectedOpt = new ArrayList<String>();
+			for(int i=0; i < opt.length; i++){
+				if(i%2==0){
+					for(String s : Utils.splitOptions(opt[i])){
+						selectedOpt.add(Utils.backQuoteChars(s));
+					}
+				}
+				else{
+					selectedOpt.add(Utils.backQuoteChars(opt[i]));
+				}
+			}
+			opt = selectedOpt.toArray(opt);
+		}
+		if(options.contains("-algorithm") && oh instanceof MultiSearch){
+			List<String> temp = Arrays.asList(opt);
+			int index = temp.indexOf("-algorithm");
+			opt[index] = "";
+			opt[index + 1] = "";
+		}
+		return opt;
 	}
 
 	protected OptionHandler findClass(String name) throws InstantiationException, IllegalAccessException{
