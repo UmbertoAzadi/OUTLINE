@@ -298,7 +298,7 @@ public class DataExperimenter {
 		}else{
 			String path = new java.io.File("").getAbsolutePath();
 
-			if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+			if(path.contains("\\OUTLINE\\OUTLINE")){
 				irl.setOutputFile(new File(path.substring(0, path.lastIndexOf('\\'))+"\\result\\" + statisticFileName + ".arff"));
 			}else{
 				irl.setOutputFile(new File(path+"\\result\\" + statisticFileName + ".arff"));

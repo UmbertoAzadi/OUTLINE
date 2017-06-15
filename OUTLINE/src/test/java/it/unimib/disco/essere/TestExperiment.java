@@ -27,7 +27,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "crossvalidation",
 				"-runs", "2", 
 				"-folds", "8", 
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
 
 		try{
 			workflow.start(args);
@@ -45,7 +45,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "crossvalidation",
 				"-runs", "2", 
 				"-fold", "8",  
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/try_regression.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/try_regression.properties"};
 
 		try{
 			workflow.start(args);
@@ -63,7 +63,7 @@ public class TestExperiment extends TestCase{
 				"-runs", "2", 
 				"-percentage", "80",
 				"-randomized",
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
 
 		try{
 			workflow.start(args);
@@ -80,7 +80,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "randomsplit",
 				"-runs", "8", 
 				"-percentage", "70",  
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/try_regression.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/try_regression.properties"};
 
 		try{
 			workflow.start(args);
@@ -97,7 +97,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "NULL",
 				"-runs", "NULL", 
 				"-folds", "NULL",
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
 
 		try{
 			workflow.start(args);
@@ -114,7 +114,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "crossvalidation",
 				"-runs", "2", 
 				"-folds", "8", 
-				"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+				"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
 						+ "/serialization/serialization_valid_with_path.properties"};
 
 		try{
@@ -131,7 +131,7 @@ public class TestExperiment extends TestCase{
 		String[] args = {"-customExp",
 				"-runs", "2", 
 				"-folds", "8", 
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
 
 		try{
 			workflow.start(args);
@@ -148,7 +148,7 @@ public class TestExperiment extends TestCase{
 	    	String[] args = {"-customExp",
 	    					"-runs", "10", 
 	    					"-folds", "10",
-	    			"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties"};
+	    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/is_dataset_classification.properties"};
 
 	    	try{
 	    		workflow.start(args);
@@ -168,7 +168,7 @@ public class TestExperiment extends TestCase{
     					"-splittype", "crossvalidation",
     					"-runs", "10", 
     					"-folds", "10",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties"};
+    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/is_dataset_classification.properties"};
 
     	try{
     		workflow.start(args);

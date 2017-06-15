@@ -24,7 +24,7 @@ public class TestSerialization extends TestCase {
     public void testValid(){
     	String[] args = {"-ser", 
     					 "-save", 
-    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
     	try{
     		workflow.start(args);
     	}catch(Exception e){
@@ -37,7 +37,7 @@ public class TestSerialization extends TestCase {
     public void testBadClassifier(){
     	String[] args = {"-ser", 
     					 "-save", 
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_bad_classifier.properties"
     	}; // end declaration
     	
@@ -53,7 +53,7 @@ public class TestSerialization extends TestCase {
     public void testBadClassifierOption(){
     	String[] args = {"-ser", 
     					 "-save", 
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_bad_classifier_options.properties"
     	}; // end declaration
     	
@@ -69,7 +69,7 @@ public class TestSerialization extends TestCase {
     public void testBadDataset(){
     	String[] args = {"-ser", 
     					 "-save", 
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_bad_dataset_no_path.properties"
     	}; // end declaration
     	
@@ -85,7 +85,7 @@ public class TestSerialization extends TestCase {
     public void testBadEnsemble(){
     	String[] args = {"-ser", 
     					 "-save",  
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_bad_ensemble.properties"
     	}; // end declaration
     	
@@ -101,7 +101,7 @@ public class TestSerialization extends TestCase {
     public void testBadEnsembleOptions(){
     	String[] args = {"-ser", 
     					 "-save", 
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_bad_ensemble_options.properties"
     	}; // end declaration
     	
@@ -117,7 +117,7 @@ public class TestSerialization extends TestCase {
     public void testValidWithPath(){
     	String[] args = {"-ser", 
     					 "-save",  
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_valid_with_path.properties"
     	}; // end declaration
     	
@@ -134,7 +134,7 @@ public class TestSerialization extends TestCase {
     public void testBigProperties(){
     	String[] args = {"-ser",  
     					 "-save",  
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/is_dataset_classification.properties"
     	}; // end declaration
     	
     	try{

@@ -356,7 +356,7 @@ public class EntryPoint {
 				LOGGER.warning("Path not specified or incorrect [" + e + "]");
 				String path = new java.io.File("").getAbsolutePath();
 
-				if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+				if(path.contains("\\OUTLINE\\OUTLINE")){
 					classifier.getSummary(path.substring(0, path.lastIndexOf('\\'))+"\\result");
 				}else{
 					classifier.getSummary(path + "\\result");
@@ -386,7 +386,7 @@ public class EntryPoint {
 				try {
 					String path = new java.io.File("").getAbsolutePath();
 
-					if(path.contains("\\CodeSmellDetectorML\\CodeSmellDetectorML")){
+					if(path.contains("\\OUTLINE\\OUTLINE")){
 						serializer.serialize(path.substring(0, path.lastIndexOf('\\'))+"\\result" + "\\" + name + ".model", c);
 						pathToPrint = path.substring(0, path.lastIndexOf('\\')) + "\\result";
 					}else{ 

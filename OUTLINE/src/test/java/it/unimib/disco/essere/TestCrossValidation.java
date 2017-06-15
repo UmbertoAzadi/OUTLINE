@@ -23,7 +23,7 @@ public class TestCrossValidation extends TestCase{
     @Test
     public void testValid(){
     	String[] args = {"-cross", 
-    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/serialization_valid.properties"};
+    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
     	try{
     		workflow.start(args);
     	}catch(Exception e){
@@ -35,7 +35,7 @@ public class TestCrossValidation extends TestCase{
     @Test 
     public void testValidWithPath(){
     	String[] args = {"-cross",  
-    	"C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
+    	"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing"
     	+ "/serialization/serialization_valid_with_path.properties"
     	}; // end declaration
     	

@@ -28,7 +28,7 @@ public class TestCodesmells extends TestCase {
 				"-splittype", "crossvalidation",
 				"-runs", "10", 
 				"-folds", "10", 
-				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\codesmells"
+				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\OUTLINE\\codesmells"
 						+ "\\is_data_class\\is_data_class.properties"};
 
 		try{
@@ -49,7 +49,7 @@ public class TestCodesmells extends TestCase {
 				"-splittype", "crossvalidation",
 				"-runs", "10", 
 				"-folds", "10", 
-				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\codesmells"
+				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\OUTLINE\\codesmells"
 						+ "\\is_feature_envy\\is_feature_envy.properties"};
 
 		try{
@@ -67,7 +67,7 @@ public class TestCodesmells extends TestCase {
 				"-splittype", "crossvalidation",
 				"-runs", "10", 
 				"-folds", "10", 
-				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\codesmells"
+				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\OUTLINE\\codesmells"
 						+ "\\is_god_class\\is_god_class.properties"};
 
 		try{
@@ -85,7 +85,7 @@ public class TestCodesmells extends TestCase {
 				"-splittype", "crossvalidation",
 				"-runs", "10", 
 				"-folds", "10", 
-				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\codesmells"
+				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\OUTLINE\\codesmells"
 						+ "\\is_long_method\\is_long_method.properties"};
 
 		try{
