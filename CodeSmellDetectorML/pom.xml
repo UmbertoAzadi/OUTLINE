@@ -3,11 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>it.unimib.disco.essere</groupId>
-	<artifactId>CodeSmellDetectorML</artifactId>
+	<artifactId>OUTLINE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>CodeSmellDetectorML</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -59,4 +58,5 @@
 			<artifactId>weka-dev</artifactId> <version>3.7.5</version> </dependency> -->
 
 	</dependencies>
+	<name>OUTLINE</name>
 </project>

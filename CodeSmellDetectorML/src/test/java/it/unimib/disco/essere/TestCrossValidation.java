@@ -1,4 +1,4 @@
-package it.unimib.disco.essere.CodeSmellDetectorML;
+package it.unimib.disco.essere;
 
 import org.junit.Before;
 import org.junit.Test;
