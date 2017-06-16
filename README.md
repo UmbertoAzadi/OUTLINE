@@ -44,7 +44,7 @@ For the customized implementation of the weka experiment is avaiable this flag:
        The experiment is performed faster because the classification is executed concurrently, but for this reason if you use too few
        classifier the execution will result slower (because of the synchronizaton points). So it is therefore advisable to use this flag
        if there are specified __at least ten classifier__ in the configuration file, plus it It is strongly recommended to have at least 2GB
-       of RAM. If you want to see how it work you can [download the sequence diagram](https://github.com/UmbertoAzadi/CodeSmellDetectorML/blob/master/docs/CustomExperiment.pdf?raw=true)   
+       of RAM. If you want to see how it work you can [download the sequence diagram](https://github.com/UmbertoAzadi/OUTLINE/blob/master/docs/CustomExperiment.pdf?raw=true)   
    
  ### Configuration file
  
@@ -94,18 +94,18 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
   
   **Exemple of execution**
   
-	java -jar CSDML_v1.0.jar -ser -save -print .\configuration\serialization_valid.properties
+	java -jar OUTLINE_v1.0.jar -ser -save -print .\configuration\serialization_valid.properties
   
-	java -jar CSDML_v1.0.jar -pred .\configuration\try_classification.properties
+	java -jar OUTLINE_v1.0.jar -pred .\configuration\try_classification.properties
   
-	java -jar CSDML_v1.0.jar -pred ./result/5_is_feature_envy_J48.model ./dataset/feature-envy.csv
+	java -jar OUTLINE_v1.0.jar -pred ./result/5_is_feature_envy_J48.model ./dataset/feature-envy.csv
   
-	java -jar CSDML_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_J48.model
+	java -jar OUTLINE_v1.0.jar -pred ./dataset/feature-envy.csv ./result/5_is_feature_envy_J48.model
    
-	java -jar CSDML_v1.0.jar -cross -seed 2 -fold 8 .\configuration\serialization_valid.properties
+	java -jar OUTLINE_v1.0.jar -cross -seed 2 -fold 8 .\configuration\serialization_valid.properties
    
-	java -jar CSDML_v1.0.jar -wekaExp -exptype classification -splittype crossvalidation -runs 8 -folds 8  .\configuration\serialization_valid.properties
+	java -jar OUTLINE_v1.0.jar -wekaExp -exptype classification -splittype crossvalidation -runs 8 -folds 8  .\configuration\serialization_valid.properties
    
-	java -jar CSDML_v1.0.jar -wekaExp -exptype regression -splittype randomsplit -runs 6 -percentage 80.0 -randomized .\configuration\try_regression.properties
+	java -jar OUTLINE_v1.0.jar -wekaExp -exptype regression -splittype randomsplit -runs 6 -percentage 80.0 -randomized .\configuration\try_regression.properties
   
-	java -jar CSDML_v1.0.jar -customExp -fold 10 -runs 10 .\configuration\serialization_valid.properties
+	java -jar OUTLINE_v1.0.jar -customExp -fold 10 -runs 10 .\configuration\serialization_valid.properties

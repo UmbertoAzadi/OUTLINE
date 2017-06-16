@@ -360,11 +360,4 @@ public class DataExperimenter {
 		return tester.getResultMatrix();
 	}
 
-	private String parse(int i) {
-		
-		
-		
-		return "";
-	}
-
 }
