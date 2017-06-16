@@ -23,10 +23,8 @@ public class TestCodesmells extends TestCase {
 	}
 
 	public void testDataClass(){
-		String[] args = {"-wekaExp",
-				"-exptype", "classification", 
-				"-splittype", "crossvalidation",
-				"-runs", "10", 
+		String[] args = {"-customExp",
+				"-runs", "1", 
 				"-folds", "10", 
 				"C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\OUTLINE\\codesmells"
 						+ "\\is_data_class\\is_data_class.properties"};

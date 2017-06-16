@@ -175,7 +175,7 @@ public class EntryPoint {
 		String[] newArgs = new String[args.length + custom.length - 1];
 		System.arraycopy(args, 0, newArgs, 0, args.length);
 		System.arraycopy(custom, 0, newArgs, args.length - 1, custom.length);
-
+		
 		wekaExp(Arrays.asList(newArgs));
 	}
 

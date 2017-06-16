@@ -23,8 +23,6 @@ public class CustomPrintPairedTTester extends PairedTTester{
 			result += template.toString(m_DatasetKeyColumn) + ' ';
 		}
 		
-		System.out.println(result);
-		
 		if (result.contains("\'")) {
 			String[] names = result.split("\'");
 			result = names[0].substring(names[0].lastIndexOf('.') + 1);

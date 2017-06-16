@@ -32,15 +32,16 @@ import weka.experiment.SplitEvaluator;
 
 public class DataExperimenter {
 
-	private static final String[] EXPTYPE_VALUES = {"classification", "regression"};
-	private static final String[] SPLITTYPE_VALUES = {"crossvalidation", "randomsplit"};
+	protected static final String CUSTOM_EXPERIMENT = "custom";
+	private static final String[] EXPTYPE_VALUES = {"classification", "regression", CUSTOM_EXPERIMENT};
+	private static final String[] SPLITTYPE_VALUES = {"crossvalidation", "randomsplit", CUSTOM_EXPERIMENT};
 	protected static final String DEFAULT_EXPTYPE = "classification";
 	protected static final String DEFAULT_SPLITTYPE = "crossvalidation";
 	protected static final int DEFAULT_FOLDS = 10;
 	protected static final boolean DEFAULT_RANDOMIZED = false;
 	protected static final double DEFAULT_PERCENTAGE = 66.0;
 	protected static final int DEFAULT_RUNS = 10;
-	protected static final String CUSTOM_EXPERIMENT = "custom";
+	
 
 	private static final Logger LOGGER = Logger.getLogger(DataExperimenter.class.getName());
 
