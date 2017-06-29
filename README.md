@@ -52,21 +52,21 @@ For the customized implementation of the weka experiment is avaiable this flag:
  
   **Configuration file for serializaton, cross validation and weka experiment**
   
-	dataset = `path of the dataset` (required!)
-	path = `path where all the files will be saved` (optional)
-  	(if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository)
-  
-  	key = [`name of the ensemble method` `options of the ensemble method`]  `name of the classifier` `options of the classifier`(required at least one classifier)
+	dataset = <path of the dataset>                          (required)
+	path = <path where all the files will be saved>          (optional)
+  	
+  	key = <name of the classifier options of the classifier> (required at least one classifier)
 	
 N.B. the names are inteded as the name __complete with the path__ of the weka class that corrispond with the classifier 
      you want to use (see [weka documetation](http://weka.sourceforge.net/doc.stable/)). You can also copy and paste the
      configuration of the classifier generate by the weka GUI.
+     if "path" will be not specified or it is incorrect the models will be saved in the folder "result" in the repository
   
   **Configuration file for prediction**
   
-  	dataset = `path dataset that contain the instances that have to be predict` (required!)
+  	dataset = <path dataset that contain the instances that have to be predict> (required!)
   
-  	key = `path of the serialized file` (required at least one)
+  	key =     <path of the serialized file>                                     (required at least one)
        
       
 			
