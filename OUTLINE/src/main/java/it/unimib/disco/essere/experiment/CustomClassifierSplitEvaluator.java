@@ -9,7 +9,7 @@ import weka.experiment.ClassifierSplitEvaluator;
 
 public class CustomClassifierSplitEvaluator extends ClassifierSplitEvaluator {
 
-	ArrayList<ResultCreator> threads = new ArrayList<ResultCreator>(); 
+	private ArrayList<ResultCreator> threads = new ArrayList<ResultCreator>(); 
 	private LinkedList<Object[]> queue = new  LinkedList<Object[]>();
 	private final Object lock = new Object();
 

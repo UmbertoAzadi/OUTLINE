@@ -29,7 +29,7 @@ public class LoaderProperties extends Loader{
 	}
 	
 	@Override
-	public ArrayList<Classifier> load(String path_properties) throws Exception{
+	public ArrayList<Classifier> loadForClassification(String path_properties) throws Exception{
 		ArrayList<Classifier> classifiers = new ArrayList<Classifier>();
 		Properties properties = this.readProperties(path_properties);
 
@@ -91,7 +91,7 @@ public class LoaderProperties extends Loader{
 	} 
 
 	@Override
-	public ArrayList<String> loadForPred(String path) throws Exception {
+	public ArrayList<String> loadForPrediction(String path) throws Exception {
 		Properties properties = this.readProperties(path);
 		ArrayList<String> result = new ArrayList<String>();
 		

@@ -2,18 +2,19 @@ package it.unimib.disco.essere;
 
 import org.junit.Before;
 
-import it.unimib.disco.essere.core.EntryPoint;
+import it.unimib.disco.essere.core.ClassificationHandler;
+import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 
 public class TestCodesmells extends TestCase {
 	
-	EntryPoint workflow;
+	InputParser workflow;
 	boolean correct; 
 	long start;
  
 	@Before
 	public void setUp(){
-		workflow = new EntryPoint();
+		workflow = new InputParser();
 		correct = true;
 		start = System.currentTimeMillis();
 		System.out.println("");

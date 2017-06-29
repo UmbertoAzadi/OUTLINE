@@ -105,7 +105,7 @@ public class DataExperimenter {
 		return DEFAULT_RUNS;
 	}
 
-	public boolean exptypeCheckValue(String exptype){
+	public static boolean exptypeCheckValue(String exptype){
 		for(String value: EXPTYPE_VALUES){
 			if(value.equals(exptype))
 				return true;
@@ -113,7 +113,7 @@ public class DataExperimenter {
 		return false;
 	}
 
-	public boolean splittypeCheckValue(String splittype){
+	public static boolean splittypeCheckValue(String splittype){
 		for(String value: SPLITTYPE_VALUES){
 			if(value.equals(splittype))
 				return true;

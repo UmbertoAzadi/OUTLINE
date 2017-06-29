@@ -13,6 +13,7 @@ import weka.core.Instances;
 import weka.core.ListOptions;
 import weka.core.OptionHandler;
 import weka.core.Utils;
+import weka.core.setupgenerator.ListParameter;
 
 public abstract class Loader {
 
@@ -23,8 +24,8 @@ public abstract class Loader {
 
 	public Loader(){}
 
-	public abstract ArrayList<Classifier> load(String path) throws Exception;
-	public abstract ArrayList<String> loadForPred(String path) throws Exception;
+	public abstract ArrayList<Classifier> loadForClassification(String path) throws Exception;
+	public abstract ArrayList<String> loadForPrediction(String path) throws Exception;
 
 	public String getPathForResult(){
 		return this.pathForResult;
@@ -45,7 +46,7 @@ public abstract class Loader {
 				String[] opt = parseOptions(options, oh);
 				oh.setOptions(opt);
 			} catch (Exception e) {
-				LOGGER.severe("------------------------------------------------------------------------------------------------- +\n"
+				LOGGER.severe("\n-------------------------------------------------------------------------------------------------\n"
 						+"ERROR : these options are incorrect: \n"
 						//+"\t"+Arrays.toString(tmp)+"\n"
 						+"\t" + oh.getClass().getName() + " " + options +"\n"
@@ -60,26 +61,39 @@ public abstract class Loader {
 	public String[] parseOptions(String options, OptionHandler oh) throws Exception {
 		String[] opt = options.split(" ");
 		if(options.contains("\"")){
+			
 			opt = options.split("\"");
+			
+			if(oh instanceof MultiSearch){
+				for(int i=0; i < opt.length; i++){
+					if(opt[i].contains("-list")){
+						opt[i] = opt[i] + "\"" + opt[i+1] + "\"";
+						opt[i + 1] = "";
+					}
+				}
+			}
 			ArrayList<String> selectedOpt = new ArrayList<String>();
 			for(int i=0; i < opt.length; i++){
-				if(i%2==0){
+				if(i % 2 == 0){
 					for(String s : Utils.splitOptions(opt[i])){
 						selectedOpt.add(Utils.backQuoteChars(s));
 					}
 				}
 				else{
-					selectedOpt.add(Utils.backQuoteChars(opt[i]));
+					//selectedOpt.add(Utils.backQuoteChars(opt[i]));
+					selectedOpt.add(opt[i]);
 				}
 			}
 			opt = selectedOpt.toArray(opt);
 		}
+
 		if(options.contains("-algorithm") && oh instanceof MultiSearch){
 			List<String> temp = Arrays.asList(opt);
 			int index = temp.indexOf("-algorithm");
 			opt[index] = "";
 			opt[index + 1] = "";
 		}
+
 		return opt;
 	}
 

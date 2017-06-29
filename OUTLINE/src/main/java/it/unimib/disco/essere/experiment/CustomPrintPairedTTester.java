@@ -2,9 +2,10 @@ package it.unimib.disco.essere.experiment;
 
 
 import weka.core.Instance;
+import weka.experiment.PairedCorrectedTTester;
 import weka.experiment.PairedTTester;
 
-public class CustomPrintPairedTTester extends PairedTTester{
+public class CustomPrintPairedTTester extends PairedCorrectedTTester{
 	
 	/**  for serialization */
 	private static final long serialVersionUID = 1L;

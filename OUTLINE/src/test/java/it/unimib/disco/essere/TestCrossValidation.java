@@ -3,16 +3,17 @@ package it.unimib.disco.essere;
 import org.junit.Before;
 import org.junit.Test;
 
-import it.unimib.disco.essere.core.EntryPoint;
+import it.unimib.disco.essere.core.ClassificationHandler;
+import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 
 public class TestCrossValidation extends TestCase{
-	EntryPoint workflow;
+	InputParser workflow;
 	boolean correct; 
 	
     @Before
     public void setUp(){
-    	workflow = new EntryPoint();
+    	workflow = new InputParser();
     	correct = true;
     	System.out.println("");
     	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");

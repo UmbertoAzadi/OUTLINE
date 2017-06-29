@@ -25,9 +25,11 @@ public class DatasetHandler {
 		catch(Exception e){
 			LOGGER.severe("------------------------------------------------------------------------------------------------\n"
 					+"ERROR : Incorrect dataset!\n"
-					+"	please check the path related to the dataset (remember to use <\\> not </> for the path),\n"
-					+"	and make sure that the dataset selected is well-formed \n"
+					+"	please check the path related to the dataset (remember to use </> not <\\> for the path, and \n"
+					+ " make sure that the path doesn't contain any letters with accents),\n"
+					+"	finally make sure that the dataset selected is well-formed \n"
 					+"	(Exemple: make sure that the \"not know\" value is represent with \"?\")\n"
+					+"  cause: " + e.getMessage() + "\n"
 					+"----------------------------------------------------------------------------------------------");
 			throw e;
 		}

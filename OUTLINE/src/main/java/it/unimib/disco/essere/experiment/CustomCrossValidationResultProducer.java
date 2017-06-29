@@ -134,7 +134,7 @@ public class CustomCrossValidationResultProducer extends CrossValidationResultPr
 			//a = lp.load("C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/Configuration_for_testing"
 			//			+ "/serialization/serialization_valid_with_path.properties");
 			//a = lp.load("C:\\Users\\uazad\\Desktop\\università\\Stage\\Progetto\\CodeSmellDetectorML\\configuration\\serialization_valid.properties");
-			a = lp.load("C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties");
+			a = lp.loadForClassification("C:/Users/uazad/Desktop/università/Stage/Progetto/CodeSmellDetectorML/configuration/is_dataset_classification.properties");
 
 		} catch (Exception e) {
 			e.printStackTrace();
