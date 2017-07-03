@@ -7,13 +7,10 @@ import java.util.logging.Logger;
 
 import it.unimib.disco.essere.core.DatasetHandler;
 import weka.classifiers.Classifier;
-import weka.classifiers.functions.Logistic;
 import weka.classifiers.meta.MultiSearch;
 import weka.core.Instances;
-import weka.core.ListOptions;
 import weka.core.OptionHandler;
 import weka.core.Utils;
-import weka.core.setupgenerator.ListParameter;
 
 public abstract class Loader {
 

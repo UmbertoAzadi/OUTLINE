@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import it.unimib.disco.essere.functionalities.Serializer;
 import it.unimib.disco.essere.load.Loader;
-import it.unimib.disco.essere.load.LoaderProperties;
 
 public abstract class Handler {
 

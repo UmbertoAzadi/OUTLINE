@@ -1,5 +1,12 @@
 # OUTLINE (tOol for aUtomating daTa anaLysis IN wEka)
 
+Requirements and info: 
+-----------
+
+  * this tool was developed and test with jdk1.8.0
+  * it is necessary to have installed any version of weka
+
+
 How to use: 
 -----------
 
@@ -65,7 +72,7 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
   **Configuration file for prediction**
   
   	dataset = <path dataset that contain the instances that have to be predict> (required!)
-  
+	labels = <list of class labels>
   	key =     <path of the serialized file>                                     (required at least one)
        
       
@@ -87,7 +94,7 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
   **Exemple of a .properties configuration file for prediction:**
   
 	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
-   
+	labels = true,false
 	key1 = C:/Users/uazad/Documents/Progetto/result/5_is_feature_envy_JRip.model
 	key2 = C:/Users/uazad/Documents/Progetto/result/1_is_feature_envy_AdaBoostM1_J48.model
 

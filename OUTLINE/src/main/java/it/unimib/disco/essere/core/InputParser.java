@@ -16,7 +16,7 @@ public class InputParser {
 	private DatasetHandler datasetHandler;
 
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args){
 		
 		InputParser workflow = new InputParser();
 		try {	
@@ -116,7 +116,10 @@ public class InputParser {
 		}
 		else{
 			predHandler = new PredictionHandler(); 
-			predHandler.predict(args[args.length - 1], args[args.length - 2]);
+			if(args.length > 3)
+				predHandler.predict(args[args.length - 2], args[args.length - 3], args[args.length - 1]);
+			else
+				predHandler.predict(args[args.length - 1], args[args.length - 2], null);
 		}
 	}
 

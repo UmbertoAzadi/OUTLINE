@@ -1,0 +1,22 @@
+weka.classifiers.meta.GridSearch:
+Classifier: weka.classifiers.trees.J48 -C 0.45 -M 10
+
+X property: confidenceFactor
+Y property: minNumObj
+
+Evaluation: Accuracy
+Coordinates: [0.45, 10.0]
+Values: 0.45 (X coordinate), 10.0 (Y coordinate)
+
+J48 pruned tree
+------------------
+
+ATFD_method <= 4: false (272.0/4.0)
+ATFD_method > 4: true (148.0/12.0)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+
+

@@ -98,6 +98,9 @@ public class LoaderProperties extends Loader{
 		String pathDataset = properties.getProperty("dataset");
 		properties.remove("dataset");
 		
+		String labels = properties.getProperty("labels");
+		properties.remove("labels");
+		
 		// ESTRAGGO E ITERO SULLE PROPERIETA'
 		Enumeration<?> e =  properties.propertyNames();
 		while (e.hasMoreElements()) {
@@ -107,6 +110,7 @@ public class LoaderProperties extends Loader{
 		}
 		
 		result.add(0, pathDataset);
+		result.add(1, labels);
 		
 		return result; 
 	}

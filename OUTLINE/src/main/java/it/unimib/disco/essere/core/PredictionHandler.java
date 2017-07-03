@@ -1,12 +1,10 @@
 package it.unimib.disco.essere.core;
 
-import java.io.File;
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
 
 import it.unimib.disco.essere.functionalities.Predictor;
 import it.unimib.disco.essere.load.Loader;
-import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
 
 public class PredictionHandler extends Handler {
@@ -38,13 +36,16 @@ public class PredictionHandler extends Handler {
 		
 		String	pathDataset =  paths.get(0);
 		paths.remove(0);
+		
+		String	labels =  paths.get(0);
+		paths.remove(0);
 
 		for(String s: paths){
-			predWithOneClassifier(pathDataset, s);
+			predWithOneClassifier(pathDataset, s, labels);
 		}
 	}
 	
-	public void predict(String path1, String path2) throws Exception{
+	public void predict(String path1, String path2, String labels) throws Exception{
 		String pathDataset = path1;
 		String pathSerialized = path2;
 		Classifier c = null;
@@ -61,10 +62,10 @@ public class PredictionHandler extends Handler {
 			} 
 		}
 
-		predictAndPrint(pathDataset, c);
+		predictAndPrint(pathDataset, c, labels);
 	}
 
-	private void predWithOneClassifier(String pathDataset, String pathSerialized) throws Exception{
+	private void predWithOneClassifier(String pathDataset, String pathSerialized, String labels) throws Exception{
 		
 		Classifier c = null;
 		try {
@@ -73,14 +74,15 @@ public class PredictionHandler extends Handler {
 			printErrorPred();
 		}
 
-		predictAndPrint(pathDataset, c);
+		predictAndPrint(pathDataset, c, labels);
 	}
 
-	private void predictAndPrint(String pathDataset, Classifier c) throws Exception {
+	private void predictAndPrint(String pathDataset, Classifier c, String labels) throws Exception {
 		//predict
 		DatasetHandler dataset = new DatasetHandler(pathDataset);
 		Predictor predictor = new Predictor(dataset.getDataset());
-		DatasetHandler datasetPredicted = predictor.makePredicitions(c, false);
+		DatasetHandler datasetPredicted = null;
+		datasetPredicted = predictor.makePredicitions(c, labels, false);
 
 		//print
 		String directory = pathDataset.substring(0, pathDataset.lastIndexOf('/')+1);

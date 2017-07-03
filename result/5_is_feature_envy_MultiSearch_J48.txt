@@ -1,0 +1,25 @@
+weka.classifiers.meta.MultiSearch:
+Classifier: weka.classifiers.trees.J48 -S -C 0.5 -M 8
+
+1. parameter: property: minNumObj, min: 1.0, max: 8.0, step: 1.0, base: 2.0, expr: I
+2. parameter: property: confidenceFactor, min: 0.05, max: 0.5, step: 0.05, base: 0.25, expr: I
+Evaluation: Accuracy
+Coordinates: 8, 0.5
+Values: 8, 0.5
+
+J48 pruned tree
+------------------
+
+ATFD_method <= 4: false (272.0/4.0)
+ATFD_method > 4
+|   LAA_method <= 0.428571: true (129.0/4.0)
+|   LAA_method > 0.428571
+|   |   NOA_type <= 16: false (10.0/3.0)
+|   |   NOA_type > 16: true (9.0/1.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+

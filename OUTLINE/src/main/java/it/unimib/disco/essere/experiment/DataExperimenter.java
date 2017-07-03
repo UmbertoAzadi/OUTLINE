@@ -18,15 +18,10 @@ import weka.experiment.ClassifierSplitEvaluator;
 import weka.experiment.CrossValidationResultProducer;
 import weka.experiment.Experiment;
 import weka.experiment.InstancesResultListener;
-import weka.experiment.PairedCorrectedTTester;
-import weka.experiment.PairedTTester;
 import weka.experiment.PropertyNode;
 import weka.experiment.RandomSplitResultProducer;
 import weka.experiment.RegressionSplitEvaluator;
 import weka.experiment.ResultMatrix;
-import weka.experiment.ResultMatrixCSV;
-import weka.experiment.ResultMatrixHTML;
-import weka.experiment.ResultMatrixLatex;
 import weka.experiment.ResultMatrixPlainText;
 import weka.experiment.SplitEvaluator;
 

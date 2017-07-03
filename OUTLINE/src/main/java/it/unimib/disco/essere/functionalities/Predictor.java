@@ -25,19 +25,13 @@ public class Predictor {
 		this(datasetToBePredict.getDataset());
 	}
 
-	public DatasetHandler makePredicitions(Classifier c, boolean printComparison) throws Exception{
+	public DatasetHandler makePredicitions(Classifier c, String labels, boolean printComparison) throws Exception{
 		
-		addClassAttribute();
+		addClassAttribute(labels);
 		
 		for (int i = 0; i < dataset.numInstances(); i++) {
 			Instance newInst = dataset.instance(i);
 			newInst.setClassMissing();
-			
-			String actual = "";
-			if(printComparison){
-				double actualClass = dataset.instance(i).classValue();
-				actual = dataset.classAttribute().value((int) actualClass);
-			}
 
 			double predicted = 0;
 			try {
@@ -47,21 +41,20 @@ public class Predictor {
 			}
 
 			newInst.setClassValue(predicted);
-
-			if(printComparison){
-				String predClass = dataset.classAttribute().value((int) predicted);
-				System.out.println(dataset.instance(i).value(0)+"  :  "+actual + ", " + predClass);
-			}
 		}
 
 		return new DatasetHandler(dataset);
 	}
 
-	private void addClassAttribute() throws Exception {
+	private void addClassAttribute(String labels) throws Exception {
 		Add _class = new Add();
 		_class.setAttributeIndex("last");
-		_class.setNominalLabels("false,true");
-		//_class.setAttributeName("predicted_class");
+		if(labels != null){
+			_class.setNominalLabels(labels);
+		}
+		else{
+			_class.setNominalLabels("false,true");
+		}
 		_class.setAttributeName(dataset.relationName());
 		try {
 			_class.setInputFormat(dataset);

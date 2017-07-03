@@ -1,8 +1,6 @@
 package it.unimib.disco.essere.functionalities;
 
 import weka.core.Instances;
-import weka.core.SetupGenerator;
-import weka.core.setupgenerator.AbstractParameter;
 
 import java.io.PrintWriter;
 import java.nio.file.Path;
@@ -13,8 +11,6 @@ import java.util.logging.Logger;
 import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
 import weka.classifiers.SingleClassifierEnhancer;
-import weka.classifiers.meta.GridSearch;
-import weka.classifiers.meta.MultiSearch;
 
 
 public class DataClassifier {

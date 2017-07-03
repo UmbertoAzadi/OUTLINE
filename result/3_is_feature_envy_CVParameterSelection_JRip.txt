@@ -1,16 +1,16 @@
 Cross-validated Parameter selection.
 Classifier: weka.classifiers.rules.JRip
-Classifier Options: -F 3 -N 2.0 -O 2 -S 1
+Cross-validation Parameter: '-F' ranged from 5.0 to 10.0 with 6.0 steps
+Cross-validation Parameter: '-N' ranged from 5.0 to 10.0 with 6.0 steps
+Classifier Options: -F 8 -N 5 -O 2 -S 1
 
 JRIP rules:
 ===========
 
-(ATFD_method >= 5) and (LAA_method <= 0.3125) => is_feature_envy=true (116.0/3.0)
-(ATFD_method >= 8) => is_feature_envy=true (21.0/2.0)
-(ATFD_method >= 3) and (NOLV_method >= 19) and (NOAV_method <= 34) => is_feature_envy=true (7.0/0.0)
- => is_feature_envy=false (276.0/1.0)
+(ATFD_method >= 5) => is_feature_envy=true (148.0/12.0)
+ => is_feature_envy=false (272.0/4.0)
 
-Number of Rules : 4
+Number of Rules : 2
 
 
 

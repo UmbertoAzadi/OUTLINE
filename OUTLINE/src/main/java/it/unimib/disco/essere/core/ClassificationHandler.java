@@ -2,25 +2,8 @@ package it.unimib.disco.essere.core;
 
 
 import weka.classifiers.Classifier;
-import weka.classifiers.meta.AdaBoostM1;
-import weka.classifiers.meta.CVParameterSelection;
-import weka.classifiers.meta.MultiSearch;
-import weka.classifiers.meta.multisearch.DefaultEvaluationMetrics;
-import weka.classifiers.trees.J48;
-import weka.core.SelectedTag;
-import weka.core.SetupGenerator;
-import weka.core.Utils;
-import weka.core.setupgenerator.AbstractParameter;
-import weka.core.setupgenerator.MathParameter;
-
 import java.io.File;
-import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 
@@ -83,12 +66,12 @@ public class ClassificationHandler extends Handler {
 
 	public void crossValidation(int fold, int seed) throws Exception{
 		LOGGER.info("Crossvalidating...");
-		boolean printOnFile = false;
 		DataEvaluator evaluator = new DataEvaluator();
 		StringBuilder message = new StringBuilder();
 		
 		for(Classifier c: classifiers){
-			message.append("_____"+c.getClass().getName()+ "_____" + evaluator.crossValidation(configuration.getDataset(), c, fold, seed)+"\n");
+			evaluator.crossValidation(configuration.getDataset(), c, fold, seed);
+			message.append("_____"+c.getClass().getName()+ "_____" + evaluator.getSummary()+"\n");
 		}
 		if(configuration.getPathForResult() != null){
 			printInConfiPath(message.toString(), "Saving the result of the cross validation...", "CrossValidation_Result", ".txt");
