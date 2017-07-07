@@ -2,7 +2,6 @@ package it.unimib.disco.essere.experiment;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import javax.swing.DefaultListModel;
@@ -13,12 +12,17 @@ import weka.core.Instances;
 import weka.core.Utils;
 import weka.experiment.CrossValidationResultProducer;
 import weka.experiment.OutputZipper;
-import weka.experiment.InstancesResultListener;
+
+/**
+ * This is one of the classes that allows to perform a custom weka experiment
+ * */
 
 public class CustomCrossValidationResultProducer extends CrossValidationResultProducer{
 
 	/** for serialization */
 	private static final long serialVersionUID = 1L;
+	
+	/** for synchronization */
 	private final Object lock = new Object();
 
 	/**

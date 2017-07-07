@@ -8,23 +8,41 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Logger;
 
-import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
 import weka.classifiers.SingleClassifierEnhancer;
 
+/**
+ * This class fulfills all the responsibilities that concern the building of classifiers and 
+ * it produce the human-readable results.
+ * */
 
 public class DataClassifier {
 
 	private static final Logger LOGGER = Logger.getLogger(DataClassifier.class.getName());
 
+	/** The dataset that has to used for building the classifier */
 	private Instances dataset;
+	
+	/** The list of the classifiers that have to be build */
 	private List<Classifier> classifiers;
-
-	public DataClassifier(Instances data){
+	
+	/**
+	 * Create an instance that can be used for build one classifier 
+	 * (using the buildClassifier(Classifier) method)
+	 * 
+	 * @param data        the dataset that has to used for building the classifier
+	 * */
+	public DataClassifier(Instances data) throws Exception{
 		this.dataset = data;
 		this.classifiers = null;
 	}
 	
+	/**
+	 * Create an instance and cycle on the classifier's list and build them.
+	 * 
+	 * @param data        the dataset that has to used for building the classifier
+	 * @param classifiers the list of the classifiers that have to be build
+	 * */
 	public DataClassifier(Instances data, List<Classifier> classifiers) throws Exception{
 		this.dataset = data;
 		this.classifiers = classifiers;
@@ -34,18 +52,19 @@ public class DataClassifier {
 		}
 	}
 
-	public DataClassifier(LoaderProperties data, List<Classifier> classifiers) throws Exception{
-		this(data.getDataset(), classifiers);
-	}
-
+	/** @return the dataset that has been used for building the classifier */
 	public Instances getDataset() {
 		return dataset;
 	}
 
+	/** @return the list of the classifiers that has been builded */
 	public List<Classifier> getClassifiers() {
 		return classifiers;
 	}
 
+	/** Build the classifier with the dataset specified using the constructor
+	 *  @param c the classifier that has to be build
+	 *  */
 	public void buildClassifier(Classifier c){
 		try {
 			c.buildClassifier(dataset);
@@ -55,6 +74,9 @@ public class DataClassifier {
 		}
 	}
 
+	/**
+	 * @return the summary of all the classifier in the list specified using the constructor
+	 * */
 	public String getSummary(){
 		StringBuilder summary = new StringBuilder();
 		for(Classifier c: classifiers){
@@ -63,6 +85,11 @@ public class DataClassifier {
 		return summary.toString();
 	}
 
+	/**
+	 * Create a file for each classifier in the list specified using the constructor, and print on it the releted summary
+	 * 
+	 * @param _path the path where the file will be saved 
+	 * */
 	public void getSummary(String _path) throws Exception{
 		Path path = Paths.get(_path); 
 		int indexForFile = 1;
@@ -79,13 +106,18 @@ public class DataClassifier {
 
 	}
 
-	public String generateNameForFile(Classifier c, int indexForFile){
-		String nameClassifier = c.getClass().getName();
+	
+	/**
+	 * @return the name of the file generated using the name of the classifier and the index in the list specified 
+	 * using the constructor
+	 * */
+	public String generateNameForFile(Classifier classifier, int indexForFile){
+		String nameClassifier = classifier.getClass().getName();
 		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf('.')).replace(".", "");
 		String name =  indexForFile + "_" + dataset.classAttribute().name() + "_" + nameClassifier;
 
 		try{
-			SingleClassifierEnhancer ens = (SingleClassifierEnhancer) c;
+			SingleClassifierEnhancer ens = (SingleClassifierEnhancer) classifier;
 			String nameClassIfEns = ens.getClassifier().getClass().getName();
 			String nameClassIfEns2  = nameClassIfEns.substring(nameClassIfEns.lastIndexOf('.')).replace(".", "");
 			name += "_" + nameClassIfEns2;

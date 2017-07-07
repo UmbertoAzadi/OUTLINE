@@ -12,32 +12,59 @@ import weka.core.Instances;
 import weka.core.OptionHandler;
 import weka.core.Utils;
 
+/**
+ * This is an abstract class that all the concrete loader must extends.
+ * */
+
 public abstract class Loader {
 
 	private static final Logger LOGGER = Logger.getLogger(Loader.class.getName());
 
+	/** The path where the result of the request will be saved */
 	protected String pathForResult;
+
+	/** The dataset that will be used */
 	protected DatasetHandler dataset;
 
-	public Loader(){}
-
+	/**
+	 * Load and parse the configuration file used for classification
+	 * 
+	 * @param path the path of the configuration file
+	 * @return the list of the classifier
+	 * */
 	public abstract ArrayList<Classifier> loadForClassification(String path) throws Exception;
+
+	/**
+	 * Load and parse the configuration file used for prediction
+	 * 
+	 * @param path the path of the configuration file
+	 * @return the list of the that will contain: path of the dataset, labels, path of the serialized classifiers
+	 * */
 	public abstract ArrayList<String> loadForPrediction(String path) throws Exception;
 
+	/** @return the path where the result of the request will be saved */
 	public String getPathForResult(){
 		return this.pathForResult;
 	}
 
+	/** @return the dataset as DatasetHandler*/
 	public DatasetHandler getDatasetHandler(){
 		return dataset;
 	}
 
+	/** @return the dataset as Instances*/
 	public Instances getDataset(){
 		return dataset.getDataset();
 	}
 
+	/**
+	 * Apply the options to the Classifier
+	 * 
+	 * @param oh      the classifier The classifier to which the options have to be applied 
+	 * 				  (the cast from any weka Classifier to OptionHandler will be always possible)
+	 * @param options the options 
+	 * */
 	protected void addOptions(OptionHandler oh, String options) throws Exception{
-		//String tmp = options.substring(0);
 		if(options.length() != 0){
 			try {
 				String[] opt = parseOptions(options, oh);
@@ -45,7 +72,6 @@ public abstract class Loader {
 			} catch (Exception e) {
 				LOGGER.severe("\n-------------------------------------------------------------------------------------------------\n"
 						+"ERROR : these options are incorrect: \n"
-						//+"\t"+Arrays.toString(tmp)+"\n"
 						+"\t" + oh.getClass().getName() + " " + options +"\n"
 						+"\t" + e + "\n"
 						+"	plese check them in the weka documentation\n\n"
@@ -55,12 +81,20 @@ public abstract class Loader {
 		}
 	}
 
+
+	/**
+	 * Parse the nested option
+	 * 
+	 * @param options the options
+	 * @param oh      the classifier The classifier to which the options have to be applied 
+	 * 				  (the cast from any weka Classifier to OptionHandler will be always possible)
+	 * */
 	public String[] parseOptions(String options, OptionHandler oh) throws Exception {
 		String[] opt = options.split(" ");
 		if(options.contains("\"")){
-			
+
 			opt = options.split("\"");
-			
+
 			if(oh instanceof MultiSearch){
 				for(int i=0; i < opt.length; i++){
 					if(opt[i].contains("-list")){
@@ -94,6 +128,11 @@ public abstract class Loader {
 		return opt;
 	}
 
+	/**
+	 * Find the class specified by the name and return an instance of that class
+	 * @param name the class name
+	 * @return an instance of the class 
+	 * */
 	protected OptionHandler findClass(String name) throws InstantiationException, IllegalAccessException{
 		OptionHandler o = null;
 
@@ -114,23 +153,29 @@ public abstract class Loader {
 		return o;
 	}
 
-	protected void checkNotNull(Object o, String type, String name) throws Exception{
+	/**
+	 * Print out the error message if the class is not found (if the object is equal to null)
+	 * @param obj  the object that you want to make sure that is not null
+	 * @param type if the object not found is a classifier or an ensemble method
+	 * @param name the name of the class not found
+	 * */
+	protected void checkNotNull(Object obj, String type, String name) throws Exception{
 
 		/* QUESTO METODO E' NECESSARIO POICHE' CI SONO DUE CHIAMATE A findClass ALLA RIGA 71 E 80 (LoaderProperties),
 		 * E L'ECCEZIONE DEVE ESSERE GENERATA SOLO DOPO CHE ENTRAMBE LE CHIAMATE SONO STATE FATTE  */
 
-		if(o == null){
+		if(obj == null){
 			if(!"".equals(type)){
-				System.out.println("-------------------------------------------------------------------------------------");
-				System.out.println("ERROR : There isn't a " + type + " with the name \"" + name +"\",");
-				System.out.println("	check the configuration file and please insert the name of a valid ");
-				System.out.println("	" + type + " and remember to respect the formats specified in the README.md");
-				System.out.println("-------------------------------------------------------------------------------------");
+				LOGGER.severe("-------------------------------------------------------------------------------------\n"
+						+"ERROR : There isn't a " + type + " with the name \"" + name +"\",\n"
+						+"	check the configuration file and please insert the name of a valid \n"
+						+"	" + type + " and remember to respect the formats specified in the README.md\n"
+						+"-------------------------------------------------------------------------------------");
 			}else{
-				System.out.println("-------------------------------------------------------------------------------------");
-				System.out.println("ERROR : There is an error in the configuration file, please make sure that all the");
-				System.out.println("	classifier specified respect the formats specified in the README.md");
-				System.out.println("-------------------------------------------------------------------------------------");
+				LOGGER.severe("-------------------------------------------------------------------------------------\n"
+						+"ERROR : There is an error in the configuration file, please make sure that all the \n"
+						+"	classifier specified respect the formats specified in the README.md \n"
+						+"-------------------------------------------------------------------------------------");
 			}
 			//System.exit(0);
 			throw new Exception();

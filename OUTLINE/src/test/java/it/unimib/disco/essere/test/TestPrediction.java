@@ -1,9 +1,9 @@
-package it.unimib.disco.essere;
+package it.unimib.disco.essere.test;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import it.unimib.disco.essere.core.ClassificationHandler;
+
 import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 
@@ -25,7 +25,7 @@ public class TestPrediction extends TestCase{
     @Test 
     public void testValidPredByConfigFile(){
     	String[] args = {"-pred", 
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/try_classification.properties"
+    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_prediction.properties"
     	};
     	
     	try{

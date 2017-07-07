@@ -7,15 +7,34 @@ import java.util.logging.Logger;
 import it.unimib.disco.essere.experiment.DataExperimenter;
 import it.unimib.disco.essere.load.LoaderProperties;
 
+/**
+ * The class that receive the input as flag, extract the values of each one of those and 
+ * call Handler's method that will contain all the steps for perform the request
+ * */
+
 public class InputParser {
 
+	/** The instance used for print out the information, warning and error messages */
 	private static final Logger LOGGER = Logger.getLogger(Handler.class.getName());
+	
+	/** The moment the program starts running */
 	private static long startTime = System.currentTimeMillis();
+	
+	/** An instance of the object that handle prediction */
 	private PredictionHandler predHandler;
+	
+	/** An instance of the object that handle classification */
 	private ClassificationHandler classHandler;
+	
+	/** An instance of the object that handle the dataset */
 	private DatasetHandler datasetHandler;
 
-
+	/** The vector of arguments that specify the request */
+	private String[] args;
+	
+	/**
+	 * Where the execution start using the jar
+	 * */
 	public static void main(String[] args){
 		
 		InputParser workflow = new InputParser();
@@ -32,83 +51,122 @@ public class InputParser {
 		LOGGER.info(time);
 		
 	}
+	
+	/**
+	 * @return the arguments
+	 * */
+	public String[] getArgs() {
+		return args;
+	}
 
+	
+	/**
+	 * Set the arguments
+	 * 
+	 * @param args the new arguments
+	 */
+	public void setArgs(String[] args) {
+		this.args = args;
+	}
+
+	/**
+	 * The method that parse the flag
+	 * 
+	 * @param args the arguments that have to be parse
+	 * */
 	public void start(String[] args) throws Exception{
 		List<String> input = Arrays.asList(args);
+		this.args = args;
 
 		if(input.contains("-pred")){
-			pred(args);
+			pred();
 		}
 		else if(input.contains("-toArff")){
-			toArff(input);
+			toArff();
 		}
 		else if(input.contains("-toCSV")){
-			toCSV(input);
+			toCSV();
 		}
 		else{
 			if(input.contains("-cross")){
-				cross(input, args[args.length - 1]);
+				cross();
 			}
 			if(input.contains("-wekaExp")){
-				wekaExp(input, args[args.length - 1]);
+				wekaExp();
 			}
 			if(input.contains("-customExp")){
-				customExp(args, args[args.length - 1]);
+				customExp();
 			}
 			if(classHandler == null){
-				classify(args);
+				classify();
 			}
 			if(input.contains("-print")){
-				print(input);
+				print();
 			}
 			if(input.contains("-save")){
-				save(input);
+				save();
 			}
 			if(input.contains("-ser")){
-				ser(input);
+				ser();
 			}
 		}
 
 		if(classHandler == null && predHandler == null && datasetHandler == null){
-			printAvaiableFlag();
+			printAvailableFlag();
 		}
 	}
 
-	private void classify(String[] args) throws Exception{
+	/**
+	 * Call the method that will build all the classifiers 
+	 * */
+	public void classify() throws Exception{
 		classHandler = new ClassificationHandler(new LoaderProperties(), args[args.length - 1]);
 		classHandler.classify();
 	}
 
-	private void print(List<String> input) throws Exception {
+	/**
+	 * Call the method that will print on screen the summary of all the classifiers 
+	 * */
+	public void print() throws Exception {
 		if(classHandler != null){
 			classHandler.printClassifier();
 		}else{
 			LOGGER.severe("Unable to print the classifiers, no operation specified");
-			this.printAvaiableFlag();
+			this.printAvailableFlag();
 		}
 	}
 
-	private void save(List<String> input) throws Exception {
+	/**
+	 * Call the method that will save the summary of all the classifiers
+	 * */
+	public void save() throws Exception {
 		if(classHandler != null){
 			LOGGER.info("Salving the human-readable description of the classifiers...");
 			classHandler.saveClassifier();
 		}else{
 			LOGGER.severe("Unable to save the classifiers, no operation specified");
-			this.printAvaiableFlag();
+			this.printAvailableFlag();
 		}
 	}
 
-	private void ser(List<String> input) throws Exception {
+	/**
+	 * Call the metohd that will serialize all the classifiers
+	 * */
+	public void ser() throws Exception {
 		if(classHandler != null){
 			LOGGER.info("Serializing the classifiers...");
 			classHandler.serialize();
 		}else{
 			LOGGER.severe("Unable to serialize the classifiers, no operation specified");
-			this.printAvaiableFlag();
+			this.printAvailableFlag();
 		}
 	}
 
-	private void pred(String[] args) throws Exception {
+	
+	/**
+	 * Call the method that will perform the prediction
+	 * */
+	public void pred() throws Exception {
 		LOGGER.info("Predicting...");
 		if(args.length == 2){
 			predHandler = new PredictionHandler(new LoaderProperties(), args[args.length - 1]);
@@ -122,8 +180,14 @@ public class InputParser {
 				predHandler.predict(args[args.length - 1], args[args.length - 2], null);
 		}
 	}
-
-	private void cross(List<String> input, String path) throws Exception {
+	
+	/**
+	 * Call the method that will perform the cross validation
+	 * */
+	public void cross() throws Exception {
+		List<String> input = Arrays.asList(args);
+		String path = args[args.length - 1];
+		
 		LOGGER.info("Crossvalidating...");
 		classHandler = new ClassificationHandler(new LoaderProperties(), path);
 		int fold = 10;
@@ -153,17 +217,26 @@ public class InputParser {
 		classHandler.crossValidation(fold, seed);
 	}
 
-	public void customExp(String[] args, String path) throws Exception{
-
+	/**
+	 * Call the method that will perform a custom experiment, which is basically a standard weka experiment where folds are 
+	 * created before the execution and then executed concurrently
+	 * */
+	public void customExp() throws Exception{
 		String[] custom = {"-exptype", "custom", "-splittype", "custom", args[args.length - 1]};
 		String[] newArgs = new String[args.length + custom.length - 1];
 		System.arraycopy(args, 0, newArgs, 0, args.length);
 		System.arraycopy(custom, 0, newArgs, args.length - 1, custom.length);
-
-		wekaExp(Arrays.asList(newArgs), path);
+		args = newArgs;
+		
+		wekaExp();
 	}
 
-	public void wekaExp(List<String> input, String path) throws Exception{
+	/**
+	 * Call the method that will perform a standard weka experiment
+	 * */
+	public void wekaExp() throws Exception{
+		List<String> input = Arrays.asList(args);
+		String path = args[args.length - 1];
 		classHandler = new ClassificationHandler(new LoaderProperties(), path);
 
 		String exptype = DataExperimenter.getDefaultExptype();
@@ -229,22 +302,35 @@ public class InputParser {
 
 		classHandler.wekaExperiment(exptype, splittype, runs, folds, percentage, randomized);
 	}
-
-	public void toArff(List<String> input) throws Exception{
+	
+	/**
+	 * Call the method that will convert a dataset in a .arff file
+	 **/ 
+	public void toArff() throws Exception{
+		List<String> input = Arrays.asList(args);
+		
 		String path = input.get(input.indexOf("-toArff") + 1);
 		datasetHandler = new DatasetHandler(path);
 		path = path.substring(0,path.lastIndexOf(".")-1) + ".arff";
 		datasetHandler.toArff(path);
 	}
 
-	public void toCSV(List<String> input) throws Exception{
+	/**
+	 * Call the method that will convert a dataset in a .csv file
+	 **/ 
+	public void toCSV() throws Exception{
+		List<String> input = Arrays.asList(args);
+		
 		String path = input.get(input.indexOf("-toCSV") + 1);
 		datasetHandler = new DatasetHandler(path);
 		path = path.substring(0,path.lastIndexOf(".")-1) + ".csv";
 		datasetHandler.toArff(path);
 	}
 
-	private void printAvaiableFlag() {
+	/**
+	 * Print out the available flag if no even one of them is specified
+	 * */
+	public void printAvailableFlag() {
 		LOGGER.severe("No valid operation selected, please use:\n"
 				+"-ser for serialize the classifier specified in the configuaration file\n"
 				+"-print for print the human-readable result of classification\n"

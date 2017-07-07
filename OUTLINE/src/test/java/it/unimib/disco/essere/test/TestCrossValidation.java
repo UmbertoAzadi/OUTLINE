@@ -1,9 +1,8 @@
-package it.unimib.disco.essere;
+package it.unimib.disco.essere.test;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import it.unimib.disco.essere.core.ClassificationHandler;
 import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 
@@ -24,7 +23,7 @@ public class TestCrossValidation extends TestCase{
     @Test
     public void testValid(){
     	String[] args = {"-cross", 
-    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
+    					 "C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_classification.properties"};
     	try{
     		workflow.start(args);
     	}catch(Exception e){

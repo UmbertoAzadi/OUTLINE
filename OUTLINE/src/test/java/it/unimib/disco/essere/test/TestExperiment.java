@@ -1,9 +1,8 @@
-package it.unimib.disco.essere;
+package it.unimib.disco.essere.test;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import it.unimib.disco.essere.core.ClassificationHandler;
 import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 
@@ -28,7 +27,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "crossvalidation",
 				"-runs", "2", 
 				"-folds", "8", 
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_classification.properties"};
 
 		try{
 			workflow.start(args);
@@ -46,7 +45,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "crossvalidation",
 				"-runs", "2", 
 				"-fold", "8",  
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/try_regression.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_regression.properties"};
 
 		try{
 			workflow.start(args);
@@ -64,7 +63,7 @@ public class TestExperiment extends TestCase{
 				"-runs", "2", 
 				"-percentage", "80",
 				"-randomized",
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_classification.properties"};
 
 		try{
 			workflow.start(args);
@@ -81,7 +80,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "randomsplit",
 				"-runs", "8", 
 				"-percentage", "70",  
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/try_regression.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_regression.properties"};
 
 		try{
 			workflow.start(args);
@@ -98,7 +97,7 @@ public class TestExperiment extends TestCase{
 				"-splittype", "NULL",
 				"-runs", "NULL", 
 				"-folds", "NULL",
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_classification.properties"};
 
 		try{
 			workflow.start(args);
@@ -132,7 +131,7 @@ public class TestExperiment extends TestCase{
 		String[] args = {"-customExp",
 				"-runs", "2", 
 				"-folds", "8", 
-		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/serialization_valid.properties"};
+		"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_classification.properties"};
 
 		try{
 			workflow.start(args);

@@ -9,18 +9,33 @@ import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVSaver;
 import weka.core.converters.ConverterUtils.DataSource;
 
+
+/**
+* Class  that wrap the dataset and provide some method can be useful to handle it. 
+* <br/>
+* */
 public class DatasetHandler {
 
+	/** The instance used for print out the information, warning and error messages */
 	private static final Logger LOGGER = Logger.getLogger(DatasetHandler.class.getName());
 
+	/** The dataset  wrapped */
 	private Instances dataset;
+	
+	/** The path of the dataset wrapped */
 	private String path;
-
+	
+	/**
+	 * Create an instance of a DatasetHandler and load the dataset
+	 * 
+	 * @param path the path of the dataset 
+	 * */
 	public DatasetHandler(String path) throws Exception{
 		try{ 
 			DataSource source = new DataSource(path);
 			dataset = source.getDataSet();
 			dataset.setClassIndex(dataset.numAttributes()-1);
+			this.path = path;
 		}
 		catch(Exception e){
 			LOGGER.severe("------------------------------------------------------------------------------------------------\n"
@@ -33,27 +48,37 @@ public class DatasetHandler {
 					+"----------------------------------------------------------------------------------------------");
 			throw e;
 		}
-		
-		this.path = path;
 	}
 	
+	/**
+	 * Create an instance of a DatasetHandler
+	 * 
+	 * @param dataset the weka.core.Instances that contain the dataset
+	 * */
+	public DatasetHandler(Instances dataset){
+		this.dataset = dataset;
+		this.path = "no path specified";
+	}
+	
+	/**
+	 * @return the path of the dataset 
+	 * */
 	public String getPath(){
 		return path;
 	}
 
-	public DatasetHandler(Instances dataset){
-		this.dataset = dataset;
-	}
-
+	/**
+	 * @return the dataset as a  weka.core.Instances
+	 * */
 	public Instances getDataset(){
 		return dataset;
 	}
 
-	@Override
-	public String toString(){
-		return dataset.toSummaryString();
-	}
-
+	/**
+	 * Convert a dataset in a .csv file
+	 * 
+	 * @param path the path where the .csv dataset has to be saved (complete with the name of the new file)
+	 * */
 	public void toCSV(String path){
 		CSVSaver saver = new CSVSaver();
 		saver.setInstances(dataset);
@@ -67,6 +92,11 @@ public class DatasetHandler {
 
 	}
 
+	/**
+	 * Convert a dataset in a .arff file
+	 * 
+	 * @param path the path where the .arff dataset has to be saved (complete with the name of the new file)
+	 * */
 	public void toArff(String path){
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(dataset);
@@ -80,4 +110,11 @@ public class DatasetHandler {
 		}
 	}
 
+	/**
+	 * @return the summary of the dataset wrapped
+	 * */
+	public String toString(){
+		return dataset.toSummaryString();
+	}
 }
+

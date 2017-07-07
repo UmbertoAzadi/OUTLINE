@@ -1,8 +1,7 @@
-package it.unimib.disco.essere;
+package it.unimib.disco.essere.test;
 
 import org.junit.Before;
 
-import it.unimib.disco.essere.core.ClassificationHandler;
 import it.unimib.disco.essere.core.InputParser;
 import junit.framework.TestCase;
 

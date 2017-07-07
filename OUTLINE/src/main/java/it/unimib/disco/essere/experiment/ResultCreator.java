@@ -18,9 +18,11 @@ import weka.core.OptionHandler;
 import weka.core.Summarizable;
 import weka.core.Utils;
 
-public class ResultCreator extends Thread {
+/**
+ * This is one of the classes that allows to perform a custom weka experiment
+ * */
 
-	private Object[] result;
+public class ResultCreator extends Thread {
 
 	/** The template classifier */
 	public Classifier m_Template;
@@ -71,11 +73,21 @@ public class ResultCreator extends Thread {
 	/** The number of unweighted averaged IR statistics */
 	private static final int NUM_UNWEIGHTED_IR_STATISTICS = 2;
 	
+	/** It will become true when this thread is terminated */
 	private boolean finish = false;
+	
+	/** The training Instances */
 	private Instances train;
+	
+	/** The testing Instances */
 	private Instances test;
 	
+	/** The vector that will contain the result of the execution */
+	private Object[] result;
 	
+	/**
+	 * The constructor customized to for the customized weka experiment
+	 * */
 	public ResultCreator(Classifier m_Template, String[] m_AdditionalMeasures, boolean[] m_doesProduce,
 			int m_numberAdditionalMeasures, String m_ClassifierOptions, String m_ClassifierVersion,
 			int m_IRclass, boolean m_predTargetColumn, int m_attID, List<AbstractEvaluationMetric> m_pluginMetrics,
@@ -99,6 +111,7 @@ public class ResultCreator extends Thread {
 		this.test = test;
 	}
 
+	/** @return the vector that will contain the result of the execution */
 	public Object[] getResultArray(){
 		if(result == null){
 			System.err.println("Classifier not build yet, start the thread for build it");
@@ -107,10 +120,17 @@ public class ResultCreator extends Thread {
 		return result;
 	}
 	
+	/** @return true if this thread is terminated, false otherwise */
 	public boolean isFinish(){
 		return finish;
 	}
 	
+	/** Performs a deep copy of the classifier before it is built and evaluated 
+	 * (just in case the classifier is not initialized properly in buildClassifier() and for handle concurrently problem)
+	 * 
+	 * @param classifier the classifier to be copied
+	 * @return the new classifier create as copy of that one passed as a parameter
+	 * */
 	private Classifier generateNewClassifier(Classifier classifier) throws Exception {
 		Classifier c = null;
 		String nameClassifier = classifier.getClass().getName();
@@ -128,6 +148,9 @@ public class ResultCreator extends Thread {
 		return c;
 	}
 
+	/**
+	 * Generate the results for the supplied train and test datasets and save them in the "result" vector 
+	 */	
 	public void getResult() throws Exception {
 
 		if (train.classAttribute().type() != Attribute.NOMINAL) {
@@ -412,6 +435,7 @@ public class ResultCreator extends Thread {
 		finish = true;
 	}
 	
+	/** for starting the execution (just call the getResult()) */
 	public void run(){
 		try {
 			this.getResult();

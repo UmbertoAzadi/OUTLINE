@@ -12,12 +12,17 @@ import weka.classifiers.Classifier;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * This class is able to load the .properties configuration files 
+ * */
+
 public class LoaderProperties extends Loader{
 	
-	public LoaderProperties(){
-		super();
-	}
-	 
+	/**
+	 * Generate the Properties instance that parse the configuration file
+	 * @param pathProperties the path of the configuration file
+	 * @return the Properties instances that contain all the information of the configuration file parsed 
+	 * */ 
 	private Properties readProperties(String pathProperties) throws Exception{
 		Properties properties = new Properties();
 
@@ -62,7 +67,7 @@ public class LoaderProperties extends Loader{
 		return classifiers;
 	}
 	
-	public Classifier extractClassifier(String key, String elem) throws Exception{
+	private Classifier extractClassifier(String key, String elem) throws Exception{
 		
 		String element = elem;
 		String classifier = key;
@@ -83,7 +88,6 @@ public class LoaderProperties extends Loader{
 		this.checkNotNull(oh, "Classifier", classifier);
 		
 	    if(!"".equals(element)){
-	    	//String[] option = element.split(" ");
 	    	this.addOptions(oh, element);
 	    }
 	    

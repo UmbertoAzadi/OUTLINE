@@ -3,29 +3,36 @@ package it.unimib.disco.essere.functionalities;
 import java.util.logging.Logger;
 
 import it.unimib.disco.essere.core.DatasetHandler;
-import it.unimib.disco.essere.load.LoaderProperties;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Add;
 
+/**
+ * This class fulfills all the responsibilities that concern the prediction of new instance.
+ * */
+
 public class Predictor {
 	
 	private static final Logger LOGGER = Logger.getLogger(Predictor.class.getName());
 	
+	/** The dataset that have to be predicted */
 	Instances dataset;
-	
 	
 	public Predictor(Instances datasetToBePredict) {
 		this.dataset = datasetToBePredict;
 	}
 
-	public Predictor(LoaderProperties datasetToBePredict) {
-		this(datasetToBePredict.getDataset());
-	}
-
-	public DatasetHandler makePredicitions(Classifier c, String labels, boolean printComparison) throws Exception{
+	/**
+	 * Perform the actual prediction, the class that has to predicted must be the last attribute
+	 * 
+	 * @param c      the classifier that have to be used to predict the instances
+	 * @param labels the value which the class that has to predicted can assume
+	 * 
+	 * @return the dataset with the values predicted
+	 * */
+	public DatasetHandler makePredicitions(Classifier c, String labels) throws Exception{
 		
 		addClassAttribute(labels);
 		
@@ -46,6 +53,11 @@ public class Predictor {
 		return new DatasetHandler(dataset);
 	}
 
+	/**
+	 * Generate the new attribute that will be predict
+	 * 
+	 *  @param labels the value which the class that has to predicted can assume
+	 * */
 	private void addClassAttribute(String labels) throws Exception {
 		Add _class = new Add();
 		_class.setAttributeIndex("last");

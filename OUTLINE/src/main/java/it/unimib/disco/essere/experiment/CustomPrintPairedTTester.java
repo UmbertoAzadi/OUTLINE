@@ -3,7 +3,10 @@ package it.unimib.disco.essere.experiment;
 
 import weka.core.Instance;
 import weka.experiment.PairedCorrectedTTester;
-import weka.experiment.PairedTTester;
+
+/**
+ * The classes that customize the result of the experiment to make it more readable
+ * */
 
 public class CustomPrintPairedTTester extends PairedCorrectedTTester{
 	
