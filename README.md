@@ -4,7 +4,9 @@ Requirements and info:
 -----------
 
   * this tool was developed and test with jdk1.8.0
-  * it is necessary to have installed any version of weka
+  * if you copy and paste the configuration of the classifier generate by the weka GUI, please make sure to delete 
+	"C:\Program Files\Weka-X-X" and the related flag, or check that the path is correct 
+
 
 
 How to use: 
