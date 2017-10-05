@@ -96,7 +96,7 @@ public class DataClassifier {
 		for(Classifier c: classifiers){
 			String name = this.generateNameForFile(c, indexForFile);
 			PrintWriter writer;
-			writer = new PrintWriter(path + "\\" + name +".txt", "UTF-8");
+			writer = new PrintWriter(path + "/" + name +".txt", "UTF-8");
 			writer.println(c.toString()+"\n\n");
 			writer.close();
 			indexForFile++;

@@ -37,12 +37,12 @@ public abstract class Handler {
 		try{
 			String path = configuration.getPathForResult();
 
-			String name = "\\" + nameOfTheFile + extensionWithPoint;
+			String name = "/" + nameOfTheFile + extensionWithPoint;
 			File f = new File(path + name);
 			int i = 0;
 
 			while(f.exists()) { 
-				name = "\\" + nameOfTheFile + "_" + i + extensionWithPoint;
+				name = "/" + nameOfTheFile + "_" + i + extensionWithPoint;
 				f = new File(path + name);
 				i++;
 			}

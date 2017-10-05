@@ -145,8 +145,12 @@ public class ClassificationHandler extends Handler {
 	 * It save them in the path specified by the configuration file or in the fold .\result of the repository 
 	 * */
 	public void saveClassifier() throws Exception{
-		try{	
+		try{
+			if(classifier == null)
+				classify();
 			classifier.getSummary(configuration.getPathForResult());
+		
+				
 		}catch(Exception e){
 			try {
 				LOGGER.warning("Path not specified or incorrect [" + e + "]");
@@ -183,7 +187,7 @@ public class ClassificationHandler extends Handler {
 		for(Classifier c: classifiers){
 			String name = classifier.generateNameForFile(c, i);
 			try{	
-				serializer.serialize(configuration.getPathForResult() + "\\" + name + ".model", c);
+				serializer.serialize(configuration.getPathForResult() + "/" + name + ".model", c);
 				pathToPrint = configuration.getPathForResult();
 			}catch(Exception e){
 				try {

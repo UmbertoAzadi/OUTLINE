@@ -378,12 +378,12 @@ public class DataExperimenter {
 		String statisticFileName = "ExperimentStatistics";
 
 		if(this.pathForResult != null){
-			String name = "\\" + statisticFileName + ".arff";
+			String name = "/" + statisticFileName + ".arff";
 			File file = new File(this.pathForResult+ name);
 			int i = 0;
 
 			while(file.exists()) { 
-				name = "\\"+ statisticFileName+"_"+i+".arff";
+				name = "/"+ statisticFileName+"_"+i+".arff";
 				file = new File(this.pathForResult + name);
 				i++;
 			}

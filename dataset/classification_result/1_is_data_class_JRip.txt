@@ -1,0 +1,11 @@
+JRIP rules:
+===========
+
+(WOC_type <= 0.333333) and (NOAM_type >= 3) and (RFC_type <= 42) => is_data_class=true (129.0/1.0)
+(AMW_type <= 1.285714) and (number_private_visibility_attributes >= 2) and (TCC_type <= 0.4) => is_data_class=true (11.0/1.0)
+ => is_data_class=false (280.0/2.0)
+
+Number of Rules : 3
+
+
+
