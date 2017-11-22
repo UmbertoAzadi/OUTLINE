@@ -7,7 +7,9 @@ Requirements and info:
   * if you copy and paste the configuration of the classifier generate by the weka GUI, please make sure to delete 
 	"C:\Program Files\Weka-X-X" and the related flag, or check that the path is correct 
 
-
+For any further information:
+-----------
+Section 3 of my [bachelor thesis](https://drive.google.com/a/campus.unimib.it/file/d/0B34r1SFSHGjVVnBxc3lsb3NzOWM/view?usp=sharing)
 
 How to use: 
 -----------
