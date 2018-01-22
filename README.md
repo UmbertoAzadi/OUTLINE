@@ -9,7 +9,7 @@ Requirements and info:
 
 For any further information:
 -----------
-Section 3 of my [bachelor thesis](https://drive.google.com/a/campus.unimib.it/file/d/0B34r1SFSHGjVVnBxc3lsb3NzOWM/view?usp=sharing)
+Section 3 of my [bachelor thesis](https://drive.google.com/file/d/0B34r1SFSHGjVVnBxc3lsb3NzOWM/view?usp=sharing)
 
 How to use: 
 -----------
