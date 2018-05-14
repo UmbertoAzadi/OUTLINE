@@ -25,7 +25,7 @@ public class TestPrediction extends TestCase{
     @Test 
     public void testValidPredByConfigFile(){
     	String[] args = {"-pred", 
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/configuration/Configuration_for_testing/try_prediction.properties"
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/configuration/Configuration_for_testing/try_prediction.properties"
     	};
     	
     	try{
@@ -39,8 +39,8 @@ public class TestPrediction extends TestCase{
     @Test
     public void testValidPredByArgumentsDatasetSerializedFile(){
     	String[] argsDS = {"-pred",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/dataset/feature-envy_for_pred.csv",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/result/2_is_feature_envy_LibSVM.model"
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/dataset/feature-envy_for_pred.csv",
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/result/2_is_feature_envy_LibSVM.model"
     	};
     	
     	try{
@@ -54,8 +54,9 @@ public class TestPrediction extends TestCase{
     @Test
     public void testValidPredByArgumentsSerializedFileDataset(){
     	String[] argsSD = {"-pred",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/result/2_is_feature_envy_LibSVM.model",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/dataset/feature-envy_for_pred.csv",	
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/result/2_is_feature_envy_LibSVM.model",
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/dataset/feature-envy_for_pred.csv",
+    			"prova"
     	};
     	
     	try{
@@ -69,8 +70,8 @@ public class TestPrediction extends TestCase{
     @Test
     public void testBadPathDataset(){
     	String[] argsSD = {"-pred",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/result/2_is_feature_envy_LibSVM.model",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/dataset/feature-envy_for_pred",	
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/result/2_is_feature_envy_LibSVM.model",
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/dataset/feature-envy_for_pred"	
     	};
     	
     	try{
@@ -84,8 +85,8 @@ public class TestPrediction extends TestCase{
     @Test
     public void testBadPathModel(){
     	String[] argsSD = {"-pred",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/result/2_is_feature_envy_LibSVM",
-    			"C:/Users/uazad/Desktop/università/Stage/Progetto/OUTLINE/dataset/feature-envy_for_pred.csv",	
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/result/2_is_feature_envy_LibSVM",
+    			"C:/Users/uazad/Desktop/TesiPolastri/OUTLINE/dataset/feature-envy_for_pred.csv"
     	};
     	
     	try{

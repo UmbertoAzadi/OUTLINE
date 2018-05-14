@@ -77,6 +77,9 @@ public class InputParser {
 	public void start(String[] args) throws Exception{
 		List<String> input = Arrays.asList(args);
 		this.args = args;
+		
+		if(args.length == 0)
+			this.printAvailableFlag();
 
 		if(input.contains("-pred")){
 			pred();
@@ -168,12 +171,16 @@ public class InputParser {
 	 * */
 	public void pred() throws Exception {
 		LOGGER.info("Predicting...");
+		
+		System.out.println(args.length);
+		
 		if(args.length == 2){
 			predHandler = new PredictionHandler(new LoaderProperties(), args[args.length - 1]);
 			predHandler.predict();
 		}
 		else{
 			predHandler = new PredictionHandler(); 
+			
 			if(args.length > 3)
 				predHandler.predict(args[args.length - 2], args[args.length - 3], args[args.length - 1]);
 			else

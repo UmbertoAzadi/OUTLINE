@@ -102,15 +102,22 @@ public class PredictionHandler extends Handler {
 		DatasetHandler dataset = new DatasetHandler(pathDataset);
 		Predictor predictor = new Predictor(dataset.getDataset());
 		DatasetHandler datasetPredicted = null;
-		datasetPredicted = predictor.makePredicitions(c, labels);
-
+		if(labels != null && labels.contains(","))
+			datasetPredicted = predictor.makePredicitions(c, labels);
+		else
+			datasetPredicted = predictor.makePredicitions(c, null);
+		
 		//print
 		String directory = pathDataset.substring(0, pathDataset.lastIndexOf('/')+1);
 		String name = pathDataset.substring(pathDataset.lastIndexOf('/') + 1);
 		String nameClassifier = c.getClass().getName();
 		nameClassifier = nameClassifier.substring(nameClassifier.lastIndexOf('.')).replace(".", "");
 
-		String path = directory + "Predicted_" + nameClassifier + "_" + name;
+		String path = "";
+		if(labels == null)
+			path = directory + "Predicted_" + nameClassifier + "_" + name;
+		else 
+			path = directory + labels;
 
 		//save
 		datasetPredicted.toCSV(path);
