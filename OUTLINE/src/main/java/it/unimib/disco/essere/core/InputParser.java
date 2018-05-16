@@ -172,8 +172,6 @@ public class InputParser {
 	public void pred() throws Exception {
 		LOGGER.info("Predicting...");
 		
-		System.out.println(args.length);
-		
 		if(args.length == 2){
 			predHandler = new PredictionHandler(new LoaderProperties(), args[args.length - 1]);
 			predHandler.predict();
