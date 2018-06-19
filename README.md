@@ -82,9 +82,9 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
       
 			
   
-  ### Exemples
+  ### Examples
   
-  **Exemple of a .properties configuration file for serialization:**
+  **Example of a .properties configuration file for serialization:**
   
 	dataset = C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
  
@@ -95,7 +95,7 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
 	weka.classifiers.meta.AdaBoostM1 -W weka.classifiers.rules.JRip
 	weka.classifiers.functions.LibSVM -P 100 -S 1 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.2 -M 40.0 -C 1.0 -E 0.001 -seed 1
   
-  **Exemple of a .properties configuration file for prediction:**
+  **Example of a .properties configuration file for prediction:**
   
 	dataset: C:/Users/uazad/Documents/Progetto/dataset/feature-envy.csv
 	labels = true,false
@@ -103,20 +103,20 @@ N.B. the names are inteded as the name __complete with the path__ of the weka cl
 	key2 = C:/Users/uazad/Documents/Progetto/result/1_is_feature_envy_AdaBoostM1_J48.model
 
   
-  **Exemple of execution**
+  **Examples of execution**
   
-	java -jar OUTLINE_v1.0.jar -ser -save -print .\configuration\try_classification.properties
+	java -jar OUTLINE_v1.1.jar -ser -save -print .\configuration\try_classification.properties
   
-	java -jar OUTLINE_v1.0.jar -pred .\configuration\try_prediction.properties
+	java -jar OUTLINE_v1.1.jar -pred .\configuration\try_prediction.properties
   
-	java -jar OUTLINE_v1.0.jar -pred .\result\5_is_feature_envy_J48.model .\dataset\feature-envy.csv
+	java -jar OUTLINE_v1.1.jar -pred .\result\5_is_feature_envy_J48.model .\dataset\feature-envy.csv
   
-	java -jar OUTLINE_v1.0.jar -pred .\dataset\feature-envy.csv .\result\5_is_feature_envy_J48.model
+	java -jar OUTLINE_v1.1.jar -pred .\dataset\feature-envy.csv .\result\5_is_feature_envy_J48.model
    
-	java -jar OUTLINE_v1.0.jar -cross -seed 2 -fold 8 .\configuration\try_classification.properties
+	java -jar OUTLINE_v1.1.jar -cross -seed 2 -fold 8 .\configuration\try_classification.properties
    
-	java -jar OUTLINE_v1.0.jar -wekaExp -exptype classification -splittype crossvalidation -runs 8 -folds 8  .\configuration\try_classification.properties
+	java -jar OUTLINE_v1.1.jar -wekaExp -exptype classification -splittype crossvalidation -runs 8 -folds 8  .\configuration\try_classification.properties
    
-	java -jar OUTLINE_v1.0.jar -wekaExp -exptype regression -splittype randomsplit -runs 6 -percentage 80.0 -randomized .\configuration\try_regression.properties
+	java -jar OUTLINE_v1.1.jar -wekaExp -exptype regression -splittype randomsplit -runs 6 -percentage 80.0 -randomized .\configuration\try_regression.properties
   
-	java -jar OUTLINE_v1.0.jar -customExp -fold 10 -runs 10 .\configuration\try_classification.properties
+	java -jar OUTLINE_v1.1.jar -customExp -fold 10 -runs 10 .\configuration\try_classification.properties
