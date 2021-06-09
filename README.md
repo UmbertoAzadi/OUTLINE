@@ -3,7 +3,7 @@
 Requirements and info: 
 -----------
 
-  * this tool was developed and test with jdk1.8.0
+  * this tool was developed and tested with jdk1.8.0
   * if you copy and paste the configuration of the classifier generate by the weka GUI, please make sure to delete 
 	"C:\Program Files\Weka-X-X" and the related flag, or check that the path is correct 
 
